@@ -5,8 +5,11 @@ import cpw.mods.fml.common.Loader;
 public class IC2Classic
 {
 	public static IWindTicker windNetwork;
-	private static IC2Type ic2;
+	private static IC2Type ic2 = IC2Type.NeedLoad;
 	
+	
+
+
 	
 	public static IC2Type getLoadedIC2Type()
 	{
