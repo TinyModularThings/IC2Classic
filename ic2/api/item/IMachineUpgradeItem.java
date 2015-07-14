@@ -1,6 +1,7 @@
 package ic2.api.item;
 
 import ic2.api.tile.IMachine;
+import ic2.api.tile.IMachine.UpgradeType;
 
 import java.util.List;
 
@@ -36,5 +37,8 @@ public interface IMachineUpgradeItem
 	public boolean useRedstoneinverter(ItemStack upgrade, IMachine machine);
 	
 	public void onInstalling(ItemStack upgrade, IMachine machine);
-
+	
+	public float getSoundVolumeMultiplier(ItemStack upgrade, IMachine machine);
+	
+	public UpgradeType getType(ItemStack par1);
 }
