@@ -60,17 +60,12 @@ public class IC2Classic
 		}
 		if(Loader.isModLoaded("IC2"))
 		{
-			try
+			if(Loader.isModLoaded("IC2-Classic-Spmod"))
 			{
-				Class clz = Class.forName("ic2.core.IC2");
-				clz.getField("ironName").get(null);
-				clz.getField("displayNoUseItems").get(null);
 				ic2 = IC2Type.SpeigersClassic;
+				return;
 			}
-			catch(Exception e)
-			{
-				ic2 = IC2Type.Experimental;
-			}
+			ic2 = IC2Type.Experimental;
 		}
 		else
 		{
