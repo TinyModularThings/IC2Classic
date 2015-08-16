@@ -12,7 +12,7 @@ public class Recipes {
 	public static IMachineRecipeManager compressor;
 	public static IMachineRecipeManager centrifuge;
 	public static IMachineRecipeManager blockcutter;
-	public static IMachineRecipeManager blastfurance;
+	public static IMachineRecipeManager blastfurnace;
 	public static IMachineRecipeManager recycler;
 	public static IMachineRecipeManager metalformerExtruding;
 	public static IMachineRecipeManager metalformerCutting;
