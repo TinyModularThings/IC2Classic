@@ -1,5 +1,7 @@
 package ic2.api.info;
 
+import ic2.api.item.IWrenchHandler;
+import ic2.api.item.IWrenchHandler.IWrenchRegistry;
 import cpw.mods.fml.common.Loader;
 
 public class IC2Classic
@@ -7,9 +9,6 @@ public class IC2Classic
 	public static IWindTicker windNetwork;
 	private static IC2Type ic2 = IC2Type.NeedLoad;
 	
-	
-
-
 	
 	public static IC2Type getLoadedIC2Type()
 	{
@@ -48,7 +47,17 @@ public class IC2Classic
 		return windNetwork != null;
 	}
 	
-	
+	public static void registerWrenchHandler(IWrenchHandler par1)
+	{
+		if(isIc2ClassicLoaded())
+		{
+			Object obj = Info.ic2ModInstance;
+			if(obj instanceof IWrenchRegistry)
+			{
+				((IWrenchRegistry)obj).registerWrenchSupporter(par1);
+			}
+		}
+	}
 	
 	
 	static void updateState()
