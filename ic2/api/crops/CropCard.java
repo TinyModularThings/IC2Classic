@@ -263,10 +263,8 @@ public abstract class CropCard {
 	 *
 	 * @return Chance to drop the gains
 	 */
-	public float dropGainChance() {
-		float base = 1F;
-		for (int i = 0; i < tier(); i++) {base*=0.95;}
-		return base;
+	public float dropGainChance() { // TODO: change to double
+		return (float) Math.pow(0.95, tier());
 	}
 
 	/**
@@ -398,7 +396,7 @@ public abstract class CropCard {
 	 */
 	public boolean isWeed(ICropTile crop) {
 		return crop.getSize() >= 2 &&
-				(crop == Crops.weed || crop.getGrowth() >= 24);
+				(crop.getCrop() == Crops.weed || crop.getGrowth() >= 24);
 	}
 
 
