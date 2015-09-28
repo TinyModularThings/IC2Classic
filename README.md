@@ -15,4 +15,9 @@ https://github.com/TinyModularThings/IC2Classic/issues/80
 Also the comming Update has already fixed a lot of stuff. Please Check this link if something is already beeing posted.
 
 (Current UpdateMileStone)
-https://github.com/TinyModularThings/IC2Classic/milestones/IC2%20Update%201.1.0.x
+
+
+
+If you want to support me, but can not make textures or something like that, you can make here a Donation.
+
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=X45JXBPYA26L6"> ![Paypal](https://www.paypalobjects.com/en_US/DE/i/btn/btn_donateCC_LG.gif)</a>
