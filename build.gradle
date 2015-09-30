@@ -1,0 +1,114 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+    }
+}
+
+apply plugin: 'forge'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+
+
+repositories {
+    maven {
+        name = "Modmuss50"
+        url = "http://maven.modmuss50.me/"
+    }
+	
+}
+
+
+def ENV = System.getenv()
+if (ENV.BUILD_NUMBER) {
+    version = "1.1.1.5-" + "${System.getenv().BUILD_NUMBER}"
+} else {
+    version = "1.1.1.5"
+}
+
+minecraft {
+    version = "1.7.10-10.13.4.1448-1.7.10"
+}
+
+group = 'IC2Classic'
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allSource
+    classifier = 'src'
+}
+
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    classifier = 'dev'
+}
+
+jar {
+    classifier = 'universal'
+}
+
+task apiJar(type: Jar) {
+    from sourceSets.main.allSource
+    from sourceSets.main.output
+
+    classifier = "api"
+}
+
+apiJar.mustRunAfter deobfJar
+
+artifacts {
+    archives sourceJar
+    archives deobfJar
+    archives apiJar
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "file:///var/www/maven/")
+            pom {
+                groupId = project.group
+                version = project.version
+                artifactId = project.archivesBaseName
+            }
+
+            pom.project {
+                name project.archivesBaseName
+                packaging 'jar'
+                description 'IC2Classic'
+                url 'https://github.com/TinyModularThings/IC2Classic'
+
+                scm {
+                    url 'https://github.com/TinyModularThings/IC2Classic'
+                    connection 'scm:git:git://github.com/TinyModularThings/IC2Classic.git'
+                    developerConnection 'scm:git:git@github.com/TinyModularThings/IC2Classic.git'
+                }
+
+                issueManagement {
+                    system 'github'
+                    url 'https://github.com/TinyModularThings/IC2Classicissues'
+                }
+
+               
+                developers {
+                    developer {
+                        id 'Speiger'
+                        name 'Speiger'
+                        roles {
+                            role 'developer'
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
