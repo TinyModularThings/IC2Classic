@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public interface IScannerItem extends IElectricItem
+public interface IScannerItem
 {
 	/**
 	 * This function is called by the miner when he try to find his target.
