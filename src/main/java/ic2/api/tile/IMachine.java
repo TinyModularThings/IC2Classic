@@ -14,7 +14,7 @@ public interface IMachine
 	
 	public boolean isRedstoneSensitive();
 	
-	public boolean getActive();
+	public boolean isProcessing();
 	
 	public boolean isValidInput(ItemStack par1);
 	
