@@ -8,7 +8,7 @@ public class IC2Classic
 {
 	public static IWindTicker windNetwork;
 	private static IC2Type ic2 = IC2Type.NeedLoad;
-	
+	public static IWrenchRegistry customRegistry;
 	
 	public static IC2Type getLoadedIC2Type()
 	{
@@ -56,6 +56,10 @@ public class IC2Classic
 			{
 				((IWrenchRegistry)obj).registerWrenchSupporter(par1);
 			}
+		}
+		else if(customRegistry != null)
+		{
+			customRegistry.registerWrenchSupporter(par1);
 		}
 	}
 	
