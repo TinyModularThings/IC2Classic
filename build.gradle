@@ -31,9 +31,9 @@ repositories {
 
 def ENV = System.getenv()
 if (ENV.BUILD_NUMBER) {
-    version = "1.1.1.5-" + "${System.getenv().BUILD_NUMBER}"
+    version = "1.1.3.3-" + "${System.getenv().BUILD_NUMBER}"
 } else {
-    version = "1.1.1.5"
+    version = "1.1.3.3"
 }
 
 minecraft {
