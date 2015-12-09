@@ -54,7 +54,6 @@ public interface IMachine
 	 * @return list of all valid UpgradeTypes
 	 */
 	public List<UpgradeType> getSupportedTypes();
-	
 
 	/**
 	 * Upgrade Types, These are only basic kinds what could be an upgrade be,
