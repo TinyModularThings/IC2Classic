@@ -34,4 +34,14 @@ public interface IElectricTool extends IElectricItem
 	 * @return if special Support required true everything else false
 	 */
 	public boolean isSpecialSupport(ItemStack item, Enchantment ench);
+	
+	/**
+	 * This function blocks a enchantment to be applied. That includes anvil Mode.
+	 * Simply on Electric Armor to block the basic Thorns Enchantment because it does distroy it and is not really
+	 * compatible...
+	 * @param item representation of your item
+	 * @param ench that could be blocked
+	 * @return if blocked or not. (true = blocked)
+	 */
+	public boolean isExcluded(ItemStack item, Enchantment ench);
 }
