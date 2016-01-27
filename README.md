@@ -16,6 +16,9 @@ Also the comming Update has already fixed a lot of stuff. Please Check this link
 
 (Current UpdateMileStone)
 
+Permissions:
+If you want to use IC2 Classic in your Modpack, i have nothing against that and permissions are given as long you do not break the IC2 Permissions.
+IC2 Permission: http://forum.industrial-craft.net/index.php?page=Thread&threadID=344
 
 
 If you want to support me, but can not make textures or something like that, you can make here a Donation.
