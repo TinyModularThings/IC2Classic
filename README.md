@@ -14,7 +14,7 @@ https://github.com/TinyModularThings/IC2Classic/issues/80
 
 Also the comming Update has already fixed a lot of stuff. Please Check this link if something is already beeing posted.
 
-(Current UpdateMileStone)
+IRC Channel: #IC2-Classic (in EsperNet)
 
 Permissions:
 If you want to use IC2 Classic in your Modpack, i have nothing against that and permissions are given as long you do not break the IC2 Permissions.
