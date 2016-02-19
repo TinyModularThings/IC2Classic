@@ -15,5 +15,7 @@ public interface IEnergyContainer extends IEnergyTile
 	
 	public int getEnergyUsage();
 	
+	public int getEnergyProduction();
+	
 	public int getMaxEnergyInput();
 }
