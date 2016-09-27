@@ -1,13 +1,17 @@
 package ic2.api.reactor;
 
+import java.util.List;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase.NBTPrimitive;
+import net.minecraft.nbt.NBTTagFloat;
 import net.minecraft.nbt.NBTTagInt;
 
 public interface IReactorPlannerComponent extends IReactorComponent
 {
 	/**
 	 * Null Tag for states so you do not need to create something differed
+	 * Also this will be counted as Ignore Modifier
 	 */
 	public static NBTPrimitive nulltag = new NBTNull();
 	/**
@@ -35,7 +39,9 @@ public interface IReactorPlannerComponent extends IReactorComponent
 	 * This function is for a simple ID system which reduce the data amount in the NBTData
 	 * Its only used for Coping&Pasting Setups for clip board.
 	 * Please use static numbers that never change.
-	 * ID0-200 Is bound to IC2 Classic. 
+	 * ID0-200 Is bound to IC2 Classic.
+	 * The ids are limited to 32k but the encrypting is limited at the moment
+	 * limited to 1023 Types (10 bit). (That is link exporting) (Will be expanded as soon we got short on ids)
 	 * As same as the ComponentStates these do not support NBTData for Types
 	 * @param stack YourItem
 	 * @return the ID
@@ -43,16 +49,31 @@ public interface IReactorPlannerComponent extends IReactorComponent
 	public short getID(ItemStack stack);
 	
 	/**
+	 * Function to allow you to define which reactor is supported
+	 * @param stack Your Component
+	 * @return which reactor is supported
+	 */
+	public ReactorType getReactorInfo(ItemStack stack);
+	
+	/**
 	 * @return the Reactor Part type so the Reactor Planner knows how to handle it. 
 	 */
-	public ReactorComponentType getType(ItemStack par1);
+	public ReactorComponentType getType(ItemStack stack);
+	
+	/**
+	 * Function to add custom Stats to the ItemInformation.
+	 * This only support basic stats and it will not ask if it is an advanced stat
+	 * @param stack YourStack
+	 * @return the list of customStats. If null it will ignore it
+	 */
+	public List<ReactorComponentStat> getExtraStats(ItemStack stack);
 	
 	/**
 	 * Based on the ReactorPart Type you return the Planner wants to know some stats,
 	 * which are important for the calculation.
 	 * @return the State based on the Item and the State it requests.
 	 */
-	public NBTPrimitive getReactorStat(ReactorComponentStat par1, ItemStack par2);
+	public NBTPrimitive getReactorStat(ReactorComponentStat stat, ItemStack stack);
 	
 	/**
 	 * This function is there to say if a state needs a reactor for more detailed info.
@@ -61,7 +82,7 @@ public interface IReactorPlannerComponent extends IReactorComponent
 	 * @param par2 The Item.
 	 * @return If the state has differed when in a grid.
 	 */
-	public boolean isAdvancedStat(ReactorComponentStat par1, ItemStack par2);
+	public boolean isAdvancedStat(ReactorComponentStat stat, ItemStack stack);
 	
 	/**
 	 * This function is for advanced/grid information about the state.
@@ -74,7 +95,7 @@ public interface IReactorPlannerComponent extends IReactorComponent
 	 * @param stat: The Requested State.
 	 * @return the result of the state
 	 */
-	public NBTPrimitive getReactorStat(IReactor par1, int x, int y, ItemStack item, ReactorComponentStat stat);
+	public NBTPrimitive getReactorStat(IReactor reactor, int x, int y, ItemStack stack, ReactorComponentStat stat);
 	
 	/**
 	 * Important Info. If a Type has a MaxDurabilty State
@@ -85,7 +106,7 @@ public interface IReactorPlannerComponent extends IReactorComponent
 	
 	public static enum ReactorComponentType
 	{
-		FuelRod(ReactorComponentStat.HeatProduction, ReactorComponentStat.EnergyProduction, ReactorComponentStat.MaxDurability, ReactorComponentStat.ReactorEEM),
+		FuelRod(ReactorComponentStat.RodAmount, ReactorComponentStat.PulseAmount, ReactorComponentStat.HeatProduction, ReactorComponentStat.EnergyProduction, ReactorComponentStat.MaxDurability, ReactorComponentStat.ReactorEEM),
 		CoolantCell(ReactorComponentStat.HeatStorage),
 		Conensator(ReactorComponentStat.HeatStorage),
 		HeatPack(ReactorComponentStat.HeatProduction),
@@ -111,18 +132,57 @@ public interface IReactorPlannerComponent extends IReactorComponent
 	
 	public static enum ReactorComponentStat
 	{
-		HeatProduction,
-		EnergyProduction,
-		SelfCooling,
-		PartCooling,
-		ReactorCooling,
-		PartChange,
-		ReactorChange,
-		HeatStorage,
-		ReactorMaxHeat,
-		ReactorEEM,
-		MaxDurability;
+		HeatProduction(false),
+		EnergyProduction(true),
+		RodAmount(false),
+		PulseAmount(false),
+		SelfCooling(false),
+		PartCooling(false),
+		ReactorCooling(false),
+		PartChange(false),
+		ReactorChange(false),
+		HeatStorage(false),
+		ReactorMaxHeat(false),
+		ReactorEEM(true),
+		MaxDurability(false),
+		EnergyUsage(true),
+		WaterConsumtion(true),
+		SteamProduction(true),
+		WaterStorage(true);
 		
+		
+		final boolean isFloat;
+		
+		private ReactorComponentStat(boolean isFloat)
+		{
+			this.isFloat = isFloat;
+		}
+		
+		public NBTPrimitive createStat(Number nr)
+		{
+			if(isFloat)
+			{
+				return new NBTTagFloat(nr.floatValue());
+			}
+			return new NBTTagInt(nr.intValue());
+		}
+	}
+	
+	public static enum ReactorType
+	{
+		Reactor,
+		SteamReactor,
+		Both;
+		
+		public boolean isReactor()
+		{
+			return this == Reactor || this == Both;
+		}
+		
+		public boolean isSteamReactor()
+		{
+			return this == SteamReactor || this == Both;
+		}
 	}
 	
 	public static class NBTNull extends NBTTagInt
