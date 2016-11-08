@@ -1,46 +1,60 @@
 package ic2.api.reactor;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ChunkCoordinates;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 /**
- * Interface implemented by the tile entity of nuclear reactors.
+ * Interface implemented nuclear reactors, expected to be a {@link TileEntity}, but does not have to be.
  */
 public interface IReactor {
 	/**
-	 * Get the reactor's position in the world.
-	 * 
-	 * @return Position of the reactor
+	 * Return the tile entity representing the reactor core.
+	 * <br/>
+	 * If null, {@link #getReactorWorld()} and {@link #getReactorPos()} can still be used if it's world and/or position are desired.
+	 *
+	 * @return the reactor core's TE or null.
 	 */
-	public ChunkCoordinates getPosition();
+	public TileEntity getCoreTe();
 
 	/**
-	 * Get the reactor's corresponding world.
-	 * 
-	 * @return The reactor's world
+	 * Return the reactor's current world instance (it's position can be acquired using {@link #getReactorPos()}.
+	 * <br/>
+	 * Should be the same world as {@link #getCoreTe()} returns if it's not null.
+	 *
+	 * @return The reactor's world object
 	 */
-	public World getWorld();
+	public World getReactorWorld(); //getWorld has obfuscation issues (https://github.com/md-5/SpecialSource/issues/12)
+
+	/**
+	 * Return the reactor's current position in the world ({@link #getReactorWorld()}.
+	 * <br/>
+	 * Should be the same position as {@link #getCoreTe()} returns if it's not null.
+	 *
+	 * @return The reactor's current position
+	 */
+	public BlockPos getReactorPos(); //As would getPos
 
 	/**
 	 * Get the reactor's heat.
-	 * 
+	 *
 	 * @return The reactor's heat
 	 */
 	public int getHeat();
 
 	/**
 	 * Set the reactor's heat.
-	 * 
+	 *
 	 * @param heat reactor heat
 	 */
 	public void setHeat(int heat);
 
 	/**
 	 * Increase the reactor's heat.
-	 * 
+	 *
 	 * Use negative values to decrease.
-	 * 
+	 *
 	 * @param amount amount of heat to add
 	 * @return The reactor's heat after adding the specified amount
 	 */
@@ -48,7 +62,7 @@ public interface IReactor {
 
 	/**
 	 * Get the reactor's maximum heat before exploding.
-	 * 
+	 *
 	 * @return Maximum heat value
 	 */
 	public int getMaxHeat();
@@ -75,7 +89,7 @@ public interface IReactor {
 	 * Basic value is 1.0F.
 	 * Reducing the value causes a weakening/reduction of the heat-based sideeffects of reactors
 	 * (F.e. water evaporation, melting, damaging entitys, etc)
-	 * 
+	 *
 	 * @return HEM
 	 */
 	public float getHeatEffectModifier();
@@ -88,28 +102,28 @@ public interface IReactor {
 
 	/**
 	 * Get the reactor's energy output.
-	 * 
+	 *
 	 * @return Energy output, not multiplied by the base EU/t value
 	 */
 	public float getReactorEnergyOutput();
 
 	/**
 	 * Get the reactor's energy output.
-	 * 
+	 *
 	 * @return Energy output, multiplied with base EU/t value and MainConfig.get().getFloat("balance/energy/generator/nuclear")
 	 */
 	public double getReactorEUEnergyOutput();
 
 	/**
 	 * Add's the given amount of energy to the Reactor's output.
-	 * 
+	 *
 	 * @return Energy output after adding the value, not multiplied by the base EU/t value
 	 */
 	public float addOutput(float energy);
 
 	/**
 	 * Get the item at the specified grid coordinates.
-	 * 
+	 *
 	 * @param x X position of the item, out of bounds returns null
 	 * @param y Y position of the item, out of bounds returns null
 	 * @return The item or null if there is no item
@@ -118,7 +132,7 @@ public interface IReactor {
 
 	/**
 	 * Set the item at the specified grid coordinates.
-	 * 
+	 *
 	 * @param x X position of the item, out of bounds is a no-op
 	 * @param y Y position of the item, out of bounds is a no-op
 	 * @param item The item to set.
@@ -132,7 +146,7 @@ public interface IReactor {
 
 	/**
 	 * Get the reactor's tick rate (game ticks per reactor tick).
-	 * 
+	 *
 	 * @return Tick rate
 	 */
 	public int getTickRate();
@@ -143,16 +157,9 @@ public interface IReactor {
 	 */
 	public boolean produceEnergy();
 
-	/**
-	 * Set Redstone Signal without direct contact
-	 * 
-	 */
-
-	public void setRedstoneSignal(boolean redstone);
 
 	/**
 	 * @return true if  the reactor is FluidCooled
 	 */
-
 	public boolean isFluidCooled();
 }

@@ -2,13 +2,8 @@ package ic2.api.crops;
 
 import java.util.Collection;
 
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.biome.BiomeGenBase;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary.Type;
 
 /**
@@ -46,7 +41,7 @@ public abstract class Crops {
 	 * @param biome Biome to check
 	 * @return Humidity bonus or 0 if none
 	 */
-	public abstract int getHumidityBiomeBonus(BiomeGenBase biome);
+	public abstract int getHumidityBiomeBonus(Biome biome);
 
 	/**
 	 * Gets the nutrient bonus for a biome.
@@ -54,7 +49,7 @@ public abstract class Crops {
 	 * @param biome Biome to check
 	 * @return Nutrient bonus or 0 if none
 	 */
-	public abstract int getNutrientBiomeBonus(BiomeGenBase biome);
+	public abstract int getNutrientBiomeBonus(Biome biome);
 
 	/**
 	 * Get the crop card for the specified owner and name.
@@ -81,41 +76,17 @@ public abstract class Crops {
 	public abstract Collection<CropCard> getCrops();
 
 	/**
-	 * Returns the list of registered crops.
-	 *
-	 * @return Registered crops by ID
-	 */
-	@Deprecated
-	public abstract CropCard[] getCropList();
-
-	/**
-	 * Register a plant.
-	 *
-	 * @param crop Plant to register.
-	 * @return Autoassigned id for legacy compatibility, TODO: change to void.
-	 */
-	public abstract short registerCrop(CropCard crop);
-
-	/**
 	 * Register a plant and provide a legacy id for migration.
 	 *
 	 * @param crop Plant to register.
-	 * @param legacyId ID previously used for this crop.
-	 * @return true, TODO: change to void.
 	 */
-	public abstract boolean registerCrop(CropCard crop, int legacyId);
-
-	/**
-	 * @deprecated use the CropCard version.
-	 */
-	@Deprecated
-	public abstract boolean registerBaseSeed(ItemStack stack, int id, int size, int growth, int gain, int resistance);
+	public abstract void registerCrop(CropCard crop);
 
 	/**
 	 * Registers a base seed, an item used to plant a crop.
 	 *
 	 * @param stack item
-	 * @param id plant ID
+	 * @param crop crop
 	 * @param size initial size
 	 * @param growth initial growth stat
 	 * @param gain initial gain stat
@@ -136,16 +107,6 @@ public abstract class Crops {
 	 *
 	 * This method will get called by IC2, don't call it yourself.
 	 */
-	@SideOnly(Side.CLIENT)
-	public abstract void startSpriteRegistration(IIconRegister iconRegister);
-
-	/**
-	 * Returns the ID for the given crop.
-	 *
-	 * @param crop Crop to look up
-	 * @return ID, or -1 if not found
-	 * @deprecated IDs aren't used anymore.
-	 */
-	@Deprecated
-	public abstract int getIdFor(CropCard crop);
+	//@SideOnly(Side.CLIENT)
+	//public abstract void startSpriteRegistration(IIconRegister iconRegister);
 }

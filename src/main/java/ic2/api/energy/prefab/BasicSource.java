@@ -1,34 +1,33 @@
 package ic2.api.energy.prefab;
 
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntity;
-
-import cpw.mods.fml.common.FMLCommonHandler;
-
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.util.ForgeDirection;
-
 import ic2.api.energy.EnergyNet;
 import ic2.api.energy.event.EnergyTileLoadEvent;
 import ic2.api.energy.event.EnergyTileUnloadEvent;
+import ic2.api.energy.tile.IEnergyAcceptor;
 import ic2.api.energy.tile.IEnergySource;
 import ic2.api.info.Info;
 import ic2.api.item.ElectricItem;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ITickable;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 
 /**
  * BasicSource is a simple adapter to provide an ic2 energy source.
- * 
+ *
  * It's designed to be attached to a tile entity as a delegate. Functionally BasicSource acts as a
  * one-time configurable output energy buffer, thus providing a common use case for generators.
- * 
+ *
  * Sub-classing BasicSource instead of using it as a delegate works as well, but isn't recommended.
  * The delegate can be extended with additional functionality through a sub class though.
- * 
+ *
  * The constraints set by BasicSource like the strict tank-like energy buffering should provide a
  * more easy to use and stable interface than using IEnergySource directly while aiming for
  * optimal performance.
- * 
+ *
  * Using BasicSource involves the following steps:
  * - create a BasicSource instance in your TileEntity, typically in a field
  * - forward invalidate, onChunkUnload, readFromNBT, writeToNBT and updateEntity to the BasicSource
@@ -45,56 +44,56 @@ import ic2.api.item.ElectricItem;
  * public class SomeTileEntity extends TileEntity {
  *     // new basic energy source, 1000 EU buffer, tier 1 (32 EU/t, LV)
  *     private BasicSource ic2EnergySource = new BasicSource(this, 1000, 1);
- * 
+ *
  *     @Override
  *     public void invalidate() {
  *         ic2EnergySource.invalidate(); // notify the energy source
  *         ...
  *         super.invalidate(); // this is important for mc!
  *     }
- * 
+ *
  *     @Override
  *     public void onChunkUnload() {
  *         ic2EnergySource.onChunkUnload(); // notify the energy source
  *         ...
  *     }
- * 
+ *
  *     @Override
  *     public void readFromNBT(NBTTagCompound tag) {
  *         super.readFromNBT(tag);
- * 
+ *
  *         ic2EnergySource.readFromNBT(tag);
  *         ...
  *     }
- * 
+ *
  *     @Override
  *     public void writeToNBT(NBTTagCompound tag) {
  *         super.writeToNBT(tag);
- * 
+ *
  *         ic2EnergySource.writeToNBT(tag);
  *         ...
  *     }
- * 
+ *
  *     @Override
- *     public void updateEntity() {
- *         ic2EnergySource.updateEntity(); // notify the energy source
+ *     public void update() {
+ *         ic2EnergySource.update(); // notify the energy source
  *         ...
  *         ic2EnergySource.addEnergy(5); // add 5 eu to the source's buffer this tick
  *         ...
  *     }
- * 
+ *
  *     ...
  * }
  * @endcode
  */
-public class BasicSource extends TileEntity implements IEnergySource {
+public class BasicSource extends TileEntity implements IEnergySource, ITickable {
 	// **********************************
 	// *** Methods for use by the mod ***
 	// **********************************
 
 	/**
 	 * Constructor for a new BasicSource delegate.
-	 * 
+	 *
 	 * @param parent1 Base TileEntity represented by this energy source.
 	 * @param capacity1 Maximum amount of eu to store.
 	 * @param tier1 IC2 tier, 1 = LV, 2 = MV, ...
@@ -111,11 +110,11 @@ public class BasicSource extends TileEntity implements IEnergySource {
 	// in-world te forwards	>>
 
 	/**
-	 * Forward for the base TileEntity's updateEntity(), used for creating the energy net link.
+	 * Forward for the base TileEntity's update(), used for creating the energy net link.
 	 * Either updateEntity or onLoaded have to be used.
 	 */
 	@Override
-	public void updateEntity() {
+	public void update() {
 		if (!addedToEnet) onLoaded();
 	}
 
@@ -125,12 +124,10 @@ public class BasicSource extends TileEntity implements IEnergySource {
 	 */
 	public void onLoaded() {
 		if (!addedToEnet &&
-				!FMLCommonHandler.instance().getEffectiveSide().isClient() &&
+				!parent.getWorld().isRemote &&
 				Info.isIc2Available()) {
-			worldObj = parent.getWorldObj();
-			xCoord = parent.xCoord;
-			yCoord = parent.yCoord;
-			zCoord = parent.zCoord;
+			worldObj = parent.getWorld();
+			pos = parent.getPos();
 
 			MinecraftForge.EVENT_BUS.post(new EnergyTileLoadEvent(this));
 
@@ -165,7 +162,7 @@ public class BasicSource extends TileEntity implements IEnergySource {
 
 	/**
 	 * Forward for the base TileEntity's readFromNBT(), used for loading the state.
-	 * 
+	 *
 	 * @param tag Compound tag as supplied by TileEntity.readFromNBT()
 	 */
 	@Override
@@ -179,11 +176,11 @@ public class BasicSource extends TileEntity implements IEnergySource {
 
 	/**
 	 * Forward for the base TileEntity's writeToNBT(), used for saving the state.
-	 * 
+	 *
 	 * @param tag Compound tag as supplied by TileEntity.writeToNBT()
 	 */
 	@Override
-	public void writeToNBT(NBTTagCompound tag) {
+	public NBTTagCompound writeToNBT(NBTTagCompound tag) {
 		try {
 			super.writeToNBT(tag);
 		} catch (RuntimeException e) {
@@ -195,6 +192,8 @@ public class BasicSource extends TileEntity implements IEnergySource {
 		data.setDouble("energy", energyStored);
 
 		tag.setTag("IC2BasicSource", data);
+
+		return tag;
 	}
 
 	// << in-world te forwards
@@ -202,7 +201,7 @@ public class BasicSource extends TileEntity implements IEnergySource {
 
 	/**
 	 * Get the maximum amount of energy this source can hold in its buffer.
-	 * 
+	 *
 	 * @return Capacity in EU.
 	 */
 	public double getCapacity() {
@@ -211,7 +210,7 @@ public class BasicSource extends TileEntity implements IEnergySource {
 
 	/**
 	 * Set the maximum amount of energy this source can hold in its buffer.
-	 * 
+	 *
 	 * @param capacity1 Capacity in EU.
 	 */
 	public void setCapacity(double capacity1) {
@@ -222,7 +221,7 @@ public class BasicSource extends TileEntity implements IEnergySource {
 
 	/**
 	 * Get the IC2 energy tier for this source.
-	 * 
+	 *
 	 * @return IC2 Tier.
 	 */
 	public int getTier() {
@@ -231,7 +230,7 @@ public class BasicSource extends TileEntity implements IEnergySource {
 
 	/**
 	 * Set the IC2 energy tier for this source.
-	 * 
+	 *
 	 * @param tier1 IC2 Tier.
 	 */
 	public void setTier(int tier1) {
@@ -246,7 +245,7 @@ public class BasicSource extends TileEntity implements IEnergySource {
 
 	/**
 	 * Determine the energy stored in the source's output buffer.
-	 * 
+	 *
 	 * @return amount in EU
 	 */
 	public double getEnergyStored() {
@@ -255,10 +254,10 @@ public class BasicSource extends TileEntity implements IEnergySource {
 
 	/**
 	 * Set the stored energy to the specified amount.
-	 * 
+	 *
 	 * This is intended for server -> client synchronization, e.g. to display the stored energy in
 	 * a GUI through getEnergyStored().
-	 * 
+	 *
 	 * @param amount
 	 */
 	public void setEnergyStored(double amount) {
@@ -267,7 +266,7 @@ public class BasicSource extends TileEntity implements IEnergySource {
 
 	/**
 	 * Determine the free capacity in the source's output buffer.
-	 * 
+	 *
 	 * @return amount in EU
 	 */
 	public double getFreeCapacity() {
@@ -276,7 +275,7 @@ public class BasicSource extends TileEntity implements IEnergySource {
 
 	/**
 	 * Add some energy to the output buffer.
-	 * 
+	 *
 	 * @param amount maximum amount of energy to add
 	 * @return amount added/used, NOT remaining
 	 */
@@ -291,7 +290,7 @@ public class BasicSource extends TileEntity implements IEnergySource {
 
 	/**
 	 * Charge the supplied ItemStack from this source's energy buffer.
-	 * 
+	 *
 	 * @param stack ItemStack to charge (null is ignored)
 	 * @return true if energy was transferred
 	 */
@@ -310,8 +309,8 @@ public class BasicSource extends TileEntity implements IEnergySource {
 	// backwards compatibility (ignore these) >>
 
 	@Deprecated
-	public void onUpdateEntity() {
-		updateEntity();
+	public void onupdate() {
+		update();
 	}
 
 	@Deprecated
@@ -343,7 +342,7 @@ public class BasicSource extends TileEntity implements IEnergySource {
 	// energy net interface >>
 
 	@Override
-	public boolean emitsEnergyTo(TileEntity receiver, ForgeDirection direction) {
+	public boolean emitsEnergyTo(IEnergyAcceptor receiver, EnumFacing direction) {
 		return true;
 	}
 

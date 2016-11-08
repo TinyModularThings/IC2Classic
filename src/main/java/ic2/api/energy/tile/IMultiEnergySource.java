@@ -1,20 +1,24 @@
 package ic2.api.energy.tile;
 
+/**
+ * Allows an {@link IEnergySource} to emit more than one EU packet per tick.
+ * Note: support for this will be dropped in a future version of IC2.
+ * @author Aroma1997
+ */
 public interface IMultiEnergySource extends IEnergySource
 {
-	
+
 	/**
-	 * If you have a Transformer that lows energy down
-	 * It sends the same amount of energy in more packets.
-	 * This function is mostly used in transformers.
+	 * If you want your machine to emit more than one EU packets per tick return true here.
+	 * @return if the machine in its current state can emit more than one EU packet per tick.
 	 */
-	public boolean sendMultibleEnergyPackets();
-	
+	public boolean sendMultipleEnergyPackets();
+
 	/**
-	 * returns the amount of Packets it sends.
-	 * Note: You have to provide More than 0 EU for each packet.
-	 * Else it breaks the Multible packets.
+	 * If {@link #sendMultipleEnergyPackets()} returned true, this will get called.
+	 * The value returned by this method will determine the amount of EU packets, this machine can emit.
+	 * @return the amount of EU packets, this machine can emit per tick.
 	 */
-	public int getMultibleEnergyPacketAmount();
-	
+	public int getMultipleEnergyPacketAmount();
+
 }

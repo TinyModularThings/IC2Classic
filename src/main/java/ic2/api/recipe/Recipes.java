@@ -7,12 +7,13 @@ package ic2.api.recipe;
  * @author Richard
  */
 public class Recipes {
+	public static IMachineRecipeManager furnace;
 	public static IMachineRecipeManager macerator;
 	public static IMachineRecipeManager extractor;
 	public static IMachineRecipeManager compressor;
 	public static IMachineRecipeManager centrifuge;
 	public static IMachineRecipeManager blockcutter;
-	public static IMachineRecipeManager blastfurance;
+	public static IMachineRecipeManager blastfurnace;
 	public static IMachineRecipeManager recycler;
 	public static IMachineRecipeManager metalformerExtruding;
 	public static IMachineRecipeManager metalformerCutting;
@@ -20,6 +21,8 @@ public class Recipes {
 	public static IMachineRecipeManager oreWashing;
 	public static ICannerBottleRecipeManager cannerBottle;
 	public static ICannerEnrichRecipeManager cannerEnrich;
+	public static IElectrolyzerRecipeManager electrolyzer;
+	public static IFermenterRecipeManager fermenter;
 
 	/**
 	 * Reference amplifier values:
@@ -56,7 +59,7 @@ public class Recipes {
 	public static ICraftingRecipeManager advRecipes;
 
 	public static ISemiFluidFuelManager semiFluidGenerator;
-	public static IFluidHeatManager FluidHeatGenerator;
+	public static IFluidHeatManager fluidHeatGenerator;
 	/**
 	 * Used by the Liquid Heat Exchanger to cool down liquids and determine the amount of hu generated for every mb.
 	 */

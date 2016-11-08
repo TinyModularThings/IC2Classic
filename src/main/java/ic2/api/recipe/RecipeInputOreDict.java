@@ -6,7 +6,6 @@ import java.util.List;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-
 import net.minecraftforge.oredict.OreDictionary;
 
 public class RecipeInputOreDict implements IRecipeInput {
@@ -56,21 +55,23 @@ public class RecipeInputOreDict implements IRecipeInput {
 		List<ItemStack> ores = getOres();
 
 		// check if we have to filter the list first
-		boolean hasInvalidEntries = false;
+		boolean hasUnsuitableEntries = false;
 
 		for (ItemStack stack : ores) {
-			if (stack.getItem() == null) {
-				hasInvalidEntries = true;
+			if (stack.getItem() == null || stack.stackSize != getAmount()) {
+				hasUnsuitableEntries = true;
 				break;
 			}
 		}
 
-		if (!hasInvalidEntries) return ores;
+		if (!hasUnsuitableEntries) return ores;
 
 		List<ItemStack> ret = new ArrayList<ItemStack>(ores.size());
 
 		for (ItemStack stack : ores) {
-			if (stack.getItem() != null) ret.add(stack); // ignore invalid
+			if (stack.getItem() != null) { // ignore invalid
+				ret.add(RecipeUtil.setImmutableSize(stack, getAmount()));
+			}
 		}
 
 		return Collections.unmodifiableList(ret);
