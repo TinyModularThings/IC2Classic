@@ -2,13 +2,11 @@ package ic2.api.info;
 
 import net.minecraft.potion.Potion;
 import net.minecraft.util.DamageSource;
-
-import cpw.mods.fml.common.Loader;
-import cpw.mods.fml.common.LoaderState;
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.LoaderState;
 
 public class Info {
-	public static IEnergyValueProvider itemEnergy;
-	public static IFuelValueProvider itemFuel;
+	public static IInfoProvider itemInfo;
 	public static Object ic2ModInstance;
 
 	/**

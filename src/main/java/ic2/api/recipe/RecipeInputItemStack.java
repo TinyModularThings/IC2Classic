@@ -1,10 +1,10 @@
 package ic2.api.recipe;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
-
 import net.minecraftforge.oredict.OreDictionary;
 
 public class RecipeInputItemStack implements IRecipeInput {
@@ -21,8 +21,9 @@ public class RecipeInputItemStack implements IRecipeInput {
 
 	@Override
 	public boolean matches(ItemStack subject) {
-		return subject.getItem() == input.getItem() &&
-				(subject.getItemDamage() == input.getItemDamage() || input.getItemDamage() == OreDictionary.WILDCARD_VALUE);
+		return subject.getItem() == input.getItem() && // Item matching
+				(subject.getMetadata() == input.getMetadata() || input.getMetadata() == OreDictionary.WILDCARD_VALUE) && //meta matching
+				(input.getMetadata() == OreDictionary.WILDCARD_VALUE || RecipeUtil.matchesNBT(subject.getTagCompound(), input.getTagCompound())); //nbt matching.
 	}
 
 	@Override
@@ -32,14 +33,12 @@ public class RecipeInputItemStack implements IRecipeInput {
 
 	@Override
 	public List<ItemStack> getInputs() {
-		return Arrays.asList(input);
+		return Collections.unmodifiableList(Arrays.asList(RecipeUtil.setImmutableSize(input, getAmount())));
 	}
 
 	@Override
 	public String toString() {
-		ItemStack stack = input.copy();
-		input.stackSize = amount;
-		return "RInputItemStack<"+stack+">";
+		return "RInputItemStack<"+RecipeUtil.setImmutableSize(input, amount)+">";
 	}
 
 	public final ItemStack input;

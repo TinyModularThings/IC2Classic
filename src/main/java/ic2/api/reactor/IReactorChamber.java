@@ -1,20 +1,24 @@
 package ic2.api.reactor;
 
+import ic2.core.block.generator.tile.TileEntityReactorChamberElectric;
+
 /**
- * Interface implemented by the reactor chamber tile entity.
+ * Interface implemented nuclear reactor chambers
  */
 public interface IReactorChamber {
 	/**
-	 * Get the chamber's reactor.
-	 * 
+	 * Return the {@link IReactor} this chamber is for
+	 *
 	 * @return The reactor
 	 */
-	public IReactor getReactor();
+	public IReactor getReactorInstance();
 
 	/**
-	 * Set Redstone Signal without direct contact
-	 * 
+	 * Returns <code>true</code> if the chamber is a reactor wall opposed to an actual chamber of items
+	 * <br/>
+	 * eg: {@link TileEntityReactorChamberElectric} returns <code>false</code>, but {@link TileEntityReactorVessel} returns <code>true</code>
+	 *
+	 * @return If the chamber is a wall or not
 	 */
-	
-	public void setRedstoneSignal(boolean redstone);
+	public boolean isWall();
 }

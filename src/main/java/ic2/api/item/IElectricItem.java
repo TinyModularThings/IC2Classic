@@ -1,6 +1,5 @@
 package ic2.api.item;
 
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 /**
@@ -14,28 +13,14 @@ public interface IElectricItem {
 	 *
 	 * @return Whether the item can supply energy
 	 */
-	boolean canProvideEnergy(ItemStack itemStack);
-
-	/**
-	 * Get the item ID to use for a charge energy greater than 0.
-	 *
-	 * @return Item ID to use
-	 */
-	Item getChargedItem(ItemStack itemStack);
-
-	/**
-	 * Get the item ID to use for a charge energy of 0.
-	 *
-	 * @return Item ID to use
-	 */
-	Item getEmptyItem(ItemStack itemStack);
+	boolean canProvideEnergy(ItemStack stack);
 
 	/**
 	 * Get the item's maximum charge energy in EU.
 	 *
 	 * @return Maximum charge energy
 	 */
-	double getMaxCharge(ItemStack itemStack);
+	double getMaxCharge(ItemStack stack);
 
 	/**
 	 * Get the item's tier, lower tiers can't send energy to higher ones.
@@ -45,13 +30,13 @@ public interface IElectricItem {
 	 *
 	 * @return Item's tier
 	 */
-	int getTier(ItemStack itemStack);
+	int getTier(ItemStack stack);
 
 	/**
 	 * Get the item's transfer limit in EU per transfer operation.
 	 *
 	 * @return Transfer limit
 	 */
-	double getTransferLimit(ItemStack itemStack);
+	double getTransferLimit(ItemStack stack);
 }
 
