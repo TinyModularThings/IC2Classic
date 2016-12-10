@@ -8,10 +8,12 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import ic2.api.info.ILocatable;
+
 /**
  * Interface implemented by the crop tile entity.
  */
-public interface ICropTile {
+public interface ICropTile extends ILocatable {
 	/**
 	 * Get the crop.
 	 *
@@ -195,16 +197,20 @@ public interface ICropTile {
 
 	/**
 	 * Get the crop's world.
+	 * @deprecated This method causes a MethodNotFoundException in a obfuscated environment.
+	 * Use {@link #getWorldObj()} instead
 	 *
 	 * @return Crop world
 	 */
+	@Deprecated
 	public World getWorld();
 
 	/**
 	 * Get the crop's location.
-	 *
+	 * @deprecated Use {@link #getPosition()} instead.
 	 * @return Crop location
 	 */
+	@Deprecated
 	public BlockPos getLocation();
 
 	/**

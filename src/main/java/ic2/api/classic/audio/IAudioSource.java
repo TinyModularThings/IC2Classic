@@ -1,6 +1,5 @@
 package ic2.api.classic.audio;
 
-import net.minecraft.entity.player.EntityPlayer;
 
 public interface IAudioSource
 {
@@ -28,10 +27,24 @@ public interface IAudioSource
 	public void stop();
 	
 	/**
+	 * Sounds can be disabled if to many are get played at once near
+	 * the player. This is a function if your sound is active or not
+	 * While the sound is disabled you can only remove it or modify its pitch/volume
+	 * All other actions are not getting processed
+	 * @return if the sound is enabled
+	 */
+	public boolean isEnabled();
+	
+	/**
 	 * Function to detect if the Sound isPlaying.
 	 * @return true if playing. Pause = false
 	 */
 	public boolean isPlaying();
+	
+	/**
+	 * @return is the sound is removed
+	 */
+	public boolean isRemoved();
 	
 	/**
 	 * Function to detect how loud the sound is in the SoundEngine
@@ -46,6 +59,12 @@ public interface IAudioSource
 	public void setVolume(float volume);
 	
 	/**
+	 * Function to detect the current pitch of a sound
+	 * @return the pitch
+	 */
+	public float getPitch();
+	
+	/**
 	 * Function to to set the Pitch of the Sound
 	 * @param pitch new Pitch of the Sound
 	 */
@@ -58,11 +77,14 @@ public interface IAudioSource
 	public float getRealVolume();
 
 	/**
-	 * Function to detect if the Sound is in the same Dimension as the Player
-	 * @param player The Player
-	 * @return true if it is in the same Dimension
+	 * function that allows you to get the direct position of the sound (4D)
+	 * @return position of the sound
 	 */
-	public boolean matchDimension(EntityPlayer player);
+	public IAudioPosition getPosition();
 	
-
+	/**
+	 * Manual function that allows you to update the position of the sound
+	 * This function will be called automated
+	 */
+	public void updatePosition();
 }

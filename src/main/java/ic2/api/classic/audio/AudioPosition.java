@@ -3,25 +3,40 @@ package ic2.api.classic.audio;
 import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public class AudioPosition
+/**
+ * 
+ * @author IC2Team
+ * @Modified Speiger
+ * Static SoundPosition class
+ * this allows you to get a None moving sound on Entities, Tiles or other things
+ */
+
+public class AudioPosition implements IAudioPosition
 {
 	public World world;
-	public float x;
-	public float y;
-	public float z;
+	public Vec3d pos;
 	
-	public static AudioPosition getFrom(Object obj, PositionSpec positionSpec)
+	public static IAudioPosition getFrom(Object obj, PositionSpec spec)
 	{
-		if(obj instanceof AudioPosition)
+		if(obj instanceof ISoundProvider)
 		{
-			return (AudioPosition)obj;
+			return ((ISoundProvider)obj).getAudioPositon();
+		}
+		if(obj instanceof IAudioPosition)
+		{
+			return (IAudioPosition)obj;
 		}
 		if(obj instanceof Entity)
 		{
 			Entity e = (Entity)obj;
-			return new AudioPosition(e.worldObj, (float)e.posX, (float)e.posY, (float)e.posZ);
+			if(spec == PositionSpec.Center)
+			{
+				return new AudioPosition(e.worldObj, e.getPositionVector());
+			}
+			return new MovingEntityAudioPosition(e);
 		}
 		if(obj instanceof TileEntity)
 		{
@@ -31,21 +46,31 @@ public class AudioPosition
 		return null;
 	}
 	
-	public AudioPosition(World world, BlockPos par1)
+	public AudioPosition(World world, BlockPos pos)
 	{
-		this(world, par1.getX() + 0.5F, par1.getY() + 0.5F, par1.getZ() + 0.5F);
+		this(world, new Vec3d(pos).addVector(0.5D, 0.5D, 0.5D));
 	}
 	
 	public AudioPosition(World world, float x, float y, float z)
 	{
-		this.world = world;
-		this.x = x;
-		this.y = y;
-		this.z = z;
+		this(world, new Vec3d(x, y, z));
 	}
-	
-	public BlockPos asBlockPos()
+
+	public AudioPosition(World world, Vec3d pos)
 	{
-		return new BlockPos(x, y, z);
+		this.world = world;
+		this.pos = pos;
+	}
+
+	@Override
+	public Vec3d getPosition()
+	{
+		return pos;
+	}
+
+	@Override
+	public World getWorld()
+	{
+		return world;
 	}
 }

@@ -41,11 +41,7 @@ public abstract class ClassicCrops extends Crops
 	 */
 	public abstract Map<IBlockState, IFarmland> getFarmlandMap();
 	
-	/**
-	 * 
-	 * @param soil
-	 * @param state
-	 */
+
 	public abstract void registerCropSoil(ICropSoil soil, IBlockState... state);
 	
 	public abstract void registerCropSoil(ICropSoil soil, Block... block);

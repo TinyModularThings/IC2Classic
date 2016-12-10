@@ -21,4 +21,13 @@ public interface ICropSoil
 	 * @Note: Supports negative Values
 	 */
 	public int getNutrientEffect(World world, BlockPos pos);
+	
+	/**
+	 * Function to apply custom hydration to the crops
+	 * @param world World the Block is in
+	 * @param pos Position of the Block
+	 * @return the hydration of the soil.
+	 * @Note: Supports negative values
+	 */
+	public int getHumidityEffect(World world, BlockPos pos);
 }
