@@ -378,7 +378,7 @@ public abstract class CropCard {
 	 * @return The crop world object.
 	 */
 	public World getWorld(ICropTile cropTile) {
-		return cropTile.getWorld();
+		return cropTile.getWorldObj();
 	}
 
 	public List<ResourceLocation> getModelLocation() {

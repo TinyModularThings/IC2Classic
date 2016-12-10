@@ -46,6 +46,7 @@ public interface IInfoTile
 		ReceiveData("ic2.receiveData"),
 		EmitData("ic2.emitData"),
 		MachineProgress("ic2.machineProg"),
+		Crop("ic2.crop"),
 		Custom("ic2.custom");
 		
 		String configID;

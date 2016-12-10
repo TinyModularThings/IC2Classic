@@ -32,6 +32,14 @@ public interface INetworkManagerExt extends INetworkManager
 	public void initiateCustomClientTileEntityEvent(TileEntity te, INetworkFieldData data);
 	
 	/**
+	 * Function to send custom Data from server to client
+	 * Note: You need to register the class before calling this. Else it will not get send over
+	 * @param te TileEntity who will receive the Event
+	 * @param data The Data you want to send over
+	 */
+	public void initiateCustomTileEntityEvent(TileEntity te, EntityPlayer player, INetworkFieldData data);
+	
+	/**
 	 * Function to send Custom Data from client to server
 	 * Note: You need to register the class before calling this. Else it will not get send over
 	 * @param te TileEntity who will receive the Event

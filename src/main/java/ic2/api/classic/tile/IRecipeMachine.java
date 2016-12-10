@@ -2,7 +2,7 @@ package ic2.api.classic.tile;
 
 import ic2.api.classic.recipe.machine.IMachineRecipeList;
 
-public interface IRecipeMachine extends IMachine
+public interface IRecipeMachine
 {
 	/**
 	 * @return RecipeList of that Machine. Can be Null

@@ -107,16 +107,16 @@ public interface IReactorPlannerComponent extends IReactorComponent
 	
 	public static enum ReactorComponentType
 	{
-		FuelRod(ReactorComponentStat.RodAmount, ReactorComponentStat.PulseAmount, ReactorComponentStat.HeatProduction, ReactorComponentStat.EnergyProduction, ReactorComponentStat.MaxDurability, ReactorComponentStat.ReactorEEM),
+		FuelRod(ReactorComponentStat.RodAmount, ReactorComponentStat.PulseAmount, ReactorComponentStat.HeatProduction, ReactorComponentStat.EnergyProduction, ReactorComponentStat.MaxDurability),
 		CoolantCell(ReactorComponentStat.HeatStorage),
 		Conensator(ReactorComponentStat.HeatStorage),
 		HeatPack(ReactorComponentStat.HeatProduction),
 		Vent(ReactorComponentStat.SelfCooling, ReactorComponentStat.ReactorCooling),
 		VentSpread(ReactorComponentStat.PartCooling, ReactorComponentStat.ReactorCooling),
 		HeatSwitch(ReactorComponentStat.ReactorChange, ReactorComponentStat.PartChange),
-		Plating(ReactorComponentStat.ReactorMaxHeat, ReactorComponentStat.ReactorEEM),
+		Plating(ReactorComponentStat.ReactorMaxHeat),
 		Reflection(ReactorComponentStat.EnergyProduction, ReactorComponentStat.MaxDurability),
-		IsotopeCell(ReactorComponentStat.MaxDurability, ReactorComponentStat.ReactorEEM);
+		IsotopeCell(ReactorComponentStat.MaxDurability);
 		
 		ReactorComponentStat[] parts;
 		

@@ -1,6 +1,10 @@
 package ic2.api.classic.item;
 
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.common.ForgeHooks;
 /**
  * 
  * @author Speiger
@@ -59,4 +63,17 @@ public interface IMiningDrill
 	 * @Note: Even if the Mining Drill is Unbreakable if he requires charge to run return only true if the energy he uses is enough to operate at least once
 	 */
 	public boolean canMine(ItemStack drill);
+	
+	/**
+	 * Function to check if the tool can mine the block
+	 * by default just call here the ForgeHooks.canToolHarvestBlock function.
+	 * This function just exist for anything special.
+	 * If this returns false it will still call. ItemStack.canHarvestBlock()
+	 * @param drill your Tool
+	 * @param the block that wants to be mined
+	 * @param access the world,
+	 * @param pos the Pos
+	 * @return if it can mine the block
+	 */
+	public boolean canMineBlock(ItemStack drill, IBlockState state, IBlockAccess access, BlockPos pos);
 }

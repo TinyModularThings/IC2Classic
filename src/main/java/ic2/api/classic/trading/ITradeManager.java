@@ -62,7 +62,9 @@ public interface ITradeManager
 	public List<ITrade> getWorldGenTrades();
 	
 	/**
-	 * Register Custom Trades that can be loaded into the TradeMaker..
+	 * Register Custom Trades that can be loaded into the TradeMaker.
+	 * Note: These have to be registered Server & Client. 
+	 * If the client misses it it will not be listed
 	 * @param trade Trade Itself
 	 * @param id The ID so the syncing can be happening.
 	 */

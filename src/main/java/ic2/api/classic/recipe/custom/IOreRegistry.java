@@ -1,5 +1,6 @@
 package ic2.api.classic.recipe.custom;
 
+import java.util.List;
 import java.util.Map;
 
 import net.minecraft.block.Block;
@@ -44,6 +45,12 @@ public interface IOreRegistry
 	 * @return the highest ever registered OreValue ever
 	 */
 	public int getHighestOreValue();
+	
+	/**
+	 * Basic inverse function
+	 * @return a Map with a list of blocks per ore value
+	 */
+	public Map<Integer, List<IBlockState>> getValueToOresMap();
 	
 	/**
 	 * Access function for the registry
