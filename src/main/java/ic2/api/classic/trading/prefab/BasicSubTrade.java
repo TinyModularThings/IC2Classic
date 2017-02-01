@@ -42,7 +42,18 @@ public class BasicSubTrade implements ISubTrade
 	@Override
 	public List<String> getToolTip()
 	{
-		return new ArrayList<String>();
+		return EMPTY_LIST;
 	}
-	
+
+	@Override
+	public boolean isMoneyTrade()
+	{
+		return false;
+	}
+
+	@Override
+	public int getNeededMoney()
+	{
+		return 0;
+	}
 }

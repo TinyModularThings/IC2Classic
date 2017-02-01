@@ -3,10 +3,14 @@ package ic2.api.classic.trading.trades;
 import java.util.List;
 import java.util.UUID;
 
+import com.google.common.collect.ImmutableList;
+
 import net.minecraft.item.ItemStack;
 
 public interface ISubTrade
 {
+	public static final List<String> EMPTY_LIST = ImmutableList.of();
+	
 	/**
 	 * @return the trade Which it is bound to
 	 */
@@ -31,4 +35,17 @@ public interface ISubTrade
 	 * @return the list of text you want to display
 	 */
 	public List<String> getToolTip();
+	
+	/**
+	 * This function is only used in the gui for the Trade-O-Mats
+	 * so you can easier see how much money is needed.
+	 * In IC2C there is no other use by it
+	 * @return the currentTrade is a money trade
+	 */
+	public boolean isMoneyTrade();
+	
+	/**
+	 * @return how much Money is needed to do this trade
+	 */
+	public int getNeededMoney();
 }

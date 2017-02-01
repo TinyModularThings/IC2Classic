@@ -11,7 +11,8 @@ public interface IClassicScrapBoxManager extends IScrapboxManager
 	/**
 	 * Function to access the Drops that are implemented
 	 * Do not delete/add via this list the drops
-	 * (it breaks the chances for drops use removeDrop/addDrop also the map access does nothing if you want to delete/add drops)
+	 * It does not change anything since its a copy of the Actual List.
+	 * (Its this way to solve some issues)
 	 * @return the list of the DropInstances
 	 */
 	public List<IDrop> getEntries();

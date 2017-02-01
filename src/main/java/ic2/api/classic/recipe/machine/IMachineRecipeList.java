@@ -38,11 +38,12 @@ public interface IMachineRecipeList
 	/**
 	 * Function to get a Recipe output of a Item
 	 * @param input The item you want to process
+	 * @param if stacksize should not matter
 	 * @return the result. Can be null 
 	 * @Note: Input could be null to keep that in mind
 	 * @Note: If stackSize is less then the Recipe requested counts not as a match
 	 */
-	public RecipeEntry getRecipeInAndOutput(ItemStack input);
+	public RecipeEntry getRecipeInAndOutput(ItemStack input, boolean ignoreStackSize);
 	
 	/**
 	 * Access to the Recipe List. You can delete here but you do not have to..
