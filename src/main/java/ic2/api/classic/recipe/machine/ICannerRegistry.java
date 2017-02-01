@@ -35,6 +35,7 @@ public interface ICannerRegistry
 	 * 3: Hunger (Raw Chicken) (30% chance)
 	 * 4: Golden Apple
 	 * 5: Notch Apple
+	 * 6: Corus Fruit
 	 * 
 	 * @param effectID you want to apply
 	 * @param items you want to apply the Effects

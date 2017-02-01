@@ -63,11 +63,11 @@ public interface IMachine
 	 * World Access because not every machine is a TileEntity
 	 * @return the World (can be null in rare cases)
 	 */
-	public World getWorld();
+	public World getMachineWorld();
 	
 	/**
 	 * Pos access of the Machine because a machine does not have to be a TileEntity
 	 * @return the pos (can be null in rare cases)
 	 */
-	public BlockPos getPos();
+	public BlockPos getMachinePos();
 }

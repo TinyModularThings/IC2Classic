@@ -7,6 +7,7 @@ import java.util.Map;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 public abstract class ClassicCrops extends Crops
@@ -51,6 +52,12 @@ public abstract class ClassicCrops extends Crops
 	public abstract Map<IBlockState, ICropSoil> getSoilMap();
 	
 	public abstract CropCard getCropCard(ResourceLocation card);
+	
+	public abstract void registerCropDisplayItem(CropCard card, ItemStack displayItem);
+		
+	public abstract ItemStack getDisplayItem(CropCard card);
+	
+	public abstract Map<ResourceLocation, ItemStack> getDisplayItems();
 	
 	public abstract void registerCustomRenderer(CropCard card, ICustomCropRenderer renderer);
 }

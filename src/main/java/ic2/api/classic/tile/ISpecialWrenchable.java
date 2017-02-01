@@ -5,6 +5,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public interface ISpecialWrenchable extends IWrenchable
@@ -27,7 +28,7 @@ public interface ISpecialWrenchable extends IWrenchable
 	 * @param player the Player who does the click
 	 * @return if it has a special action
 	 */
-	public boolean hasSpecialAction(World world, BlockPos pos, EnumFacing dir, EntityPlayer player);
+	public boolean hasSpecialAction(World world, BlockPos pos, EnumFacing dir, EntityPlayer player, Vec3d hit);
 	
 	/**
 	 * Function to apply the Special Action.
@@ -37,5 +38,5 @@ public interface ISpecialWrenchable extends IWrenchable
 	 * @param player the Player who does the click
 	 * @return If it did work of nothing happend or failed
 	 */
-	public EnumActionResult onSpecialAction(World world, BlockPos pos, EnumFacing dir, EntityPlayer player);
+	public EnumActionResult onSpecialAction(World world, BlockPos pos, EnumFacing dir, EntityPlayer player, Vec3d hit);
 }

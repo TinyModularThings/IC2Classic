@@ -23,4 +23,22 @@ public interface IFuelableItem
 	 * @return if the item can be filled
 	 */
 	public boolean canFill(ItemStack stack);
+	
+	/**
+	 * Function to check if the fuelable Item has fuel to give.
+	 * Its basicly the check if you can drain fuel for it.
+	 * @param stack the FueableStack
+	 * @return true if it can provide & has fuel
+	 */
+	public boolean hasFuel(ItemStack stack);
+	
+	/**
+	 * Function to drain fuel from the IFueableItem.
+	 * The returned amount is how much you want to have.
+	 * @param stack YourStack basicly.
+	 * @param requested the amount that is wanted
+	 * @param doDrain if it is only for a test or if it should be drained
+	 * @return the amount that is provided
+	 */
+	public int getFuel(ItemStack stack, int requested, boolean doDrain);
 }

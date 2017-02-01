@@ -16,7 +16,7 @@ public interface IFoamProvider
 	 * @return if it provides the requested amount of foam
 	 * @Note: It checks armor first
 	 */
-	public boolean canProvideFoam(EntityPlayer player, ItemStack stack, int amount, SlotType slotType);
+	public boolean canProvideFoam(EntityPlayer player, ItemStack stack, int amount, ProviderSlot slotType);
 	
 	/**
 	 * Function is called when foam is used and spraying was successful
@@ -40,7 +40,7 @@ public interface IFoamProvider
 	 */
 	public int getFreeRoom(ItemStack stack);
 	
-	public static enum SlotType
+	public static enum ProviderSlot
 	{
 		Hotbar,
 		OffHand,
