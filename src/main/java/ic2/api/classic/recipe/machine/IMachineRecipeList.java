@@ -26,12 +26,21 @@ public interface IMachineRecipeList
 	/**
 	 * Extra Function to add Flags
 	 * @param nbt Custom Flags/Mods
+	 * @param output Recipe Result
+	 * @param exp XP drop
+	 * Possible Recipe Mods/Flags:
+	 * RecipeEnergyModifier: Double Value which allows you to give a Multiplier to the Recipe Energy Needed.
+	 * RecipeEnergy: Integer Value which allows you to give a Direct Energy Increase/Decrease to the Recipe. (Supports negatives)
+	 * RecipeTimeModifier: Double Value which allows you to give a Multiplier on the Time that the Machine needs to process this Recipe.
+	 * RecipeTime: Integer Value which allows you to give a Direct time value that the machine needs extra/less to process this machine (Supports negatives)
+	 * These modifiers have to be in that NBTCompound you provide and no SubCompounds supported.
 	 */
 	public void addRecipe(IRecipeInput input, NBTTagCompound nbt, ItemStack output, float exp);
 	
 	/**
 	 * Advanced Recipe Adding Function. Allowing Random & Fortune control
 	 * @param output Your Recipe Output
+	 * Modifiers can be applied here in the output see Function above this one to see the modifiers
 	 */
 	public void addRecipe(IRecipeInput input, MachineOutput output);
 	
