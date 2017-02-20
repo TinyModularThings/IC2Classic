@@ -93,8 +93,16 @@ public interface IMachineUpgradeItem
 	 */
 	public void onProcessEndPost(ItemStack upgrade, IMachine machine, IRecipeInput input, MachineOutput output, List<ItemStack> results);
 	
-
-	
+	/**
+	 * A Function called by machines which have upgrade Slots but don't have a Proper RecipeList.
+	 * This call is basically when the machine has done something and the inventory would have changed
+	 * so that upgrades can still work properly.
+	 * Note: A Machine that calls this does not call onProcessEnd (Pre/Post)
+	 * So if you have upgrades keep that in mind
+	 * @param upgrade Item instance
+	 * @param machine Machine Instance which machine its using it
+	 */
+	public void onProcessFinished(ItemStack upgrade, IMachine machine);
 	
 	public UpgradeType getType(ItemStack par1);
 	
