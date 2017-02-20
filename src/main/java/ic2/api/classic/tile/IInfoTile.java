@@ -2,6 +2,7 @@ package ic2.api.classic.tile;
 
 import java.util.List;
 
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.text.translation.I18n;
 
 /**
@@ -26,7 +27,7 @@ public interface IInfoTile
 		/**
 		 * @return displayText that is shown in Waila & The One Probe
 		 */
-		public String getDisplayText();
+		public String getDisplayText(EntityPlayer player);
 		
 		/**
 		 * What type of info it is.

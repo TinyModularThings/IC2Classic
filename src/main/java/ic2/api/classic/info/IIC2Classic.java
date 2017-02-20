@@ -1,4 +1,4 @@
-package ic2.api.info;
+package ic2.api.classic.info;
 
 import ic2.api.classic.audio.IAudioManager;
 import ic2.api.classic.trading.ITradeManager;
