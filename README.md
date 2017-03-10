@@ -23,6 +23,6 @@ IC2 Permission: http://forum.industrial-craft.net/index.php?page=Thread&threadID
 
 
 
-If you want to support me, but can not make textures or something like that, you can make here a Do.
+If you want to support me, but can not make textures or something like that, you can make here a donation:
 
 [PayPal Donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MD6VV3X83LMZU)
