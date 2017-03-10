@@ -25,4 +25,4 @@ IC2 Permission: http://forum.industrial-craft.net/index.php?page=Thread&threadID
 
 If you want to support me, but can not make textures or something like that, you can make here a Donation.
 
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=X45JXBPYA26L6"> ![Paypal](https://www.paypalobjects.com/en_US/DE/i/btn/btn_donateCC_LG.gif)</a>
+<a href="https://mobile.paypal.com/us/cgi-bin/webscr?cmd=_express-checkout-mobile&useraction=commit&token=EC-1H43850741376824T#m"> ![Paypal](https://www.paypalobjects.com/en_US/DE/i/btn/btn_donateCC_LG.gif)</a>
