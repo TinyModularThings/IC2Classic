@@ -3,10 +3,12 @@
 Official IC2 Classic Github Page.
 IC2Classic Bugtracker
 
-# Supporting Speiger in Development
+# Supporting Speiger in Development & Beta Access
 If you want to access the IC2Classic Beta. Here you can get it.<br/>
 <a href="https://www.patreon.com/Speiger"><img alt="" border="0" src="https://s3.amazonaws.com/patreon_public_assets/toolbox/patreon.png" width="200" height="50"></a>
 
+
+Not bound to the beta.
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WH5EBD2MSHSWE"> ![Paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)</a> <br/>
 
 # Contact:
