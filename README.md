@@ -8,7 +8,7 @@ IRC Channel: #IC2-Classic (in EsperNet) <br/>
 Discord Channel: https://discord.gg/ySK5tzY
 
 # Supporting Speiger in Development
-[PayPal Donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MD6VV3X83LMZU)
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WH5EBD2MSHSWE"> ![Paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)</a>
 
 # Permissions:
 If you want to use IC2 Classic in your Modpack, i have nothing against that and permissions are given as long you do not break the IC2 Permissions. <br/>
