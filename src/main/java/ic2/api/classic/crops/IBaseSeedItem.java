@@ -1,6 +1,5 @@
 package ic2.api.classic.crops;
 
-import ic2.api.crops.BaseSeed;
 import net.minecraft.item.ItemStack;
 
 public interface IBaseSeedItem
@@ -13,5 +12,5 @@ public interface IBaseSeedItem
 	 * @param stack yourInstance
 	 * @return the Base Seed. Can be null
 	 */
-	public BaseSeed getBaseSeed(ItemStack stack);
+	public ClassicBaseSeed getBaseSeed(ItemStack stack);
 }

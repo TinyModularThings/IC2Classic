@@ -1,9 +1,8 @@
 package ic2.api.classic.tile;
 
-import ic2.api.classic.item.IMachineUpgradeItem.UpgradeType;
-
 import java.util.Set;
 
+import ic2.api.classic.item.IMachineUpgradeItem.UpgradeType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

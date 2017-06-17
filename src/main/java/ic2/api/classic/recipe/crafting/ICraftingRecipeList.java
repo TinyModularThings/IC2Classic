@@ -1,11 +1,10 @@
 package ic2.api.classic.recipe.crafting;
 
+import java.util.List;
+
 import ic2.api.item.ICustomDamageItem;
 import ic2.api.recipe.ICraftingRecipeManager;
 import ic2.api.recipe.IRecipeInput;
-
-import java.util.List;
-
 import net.minecraft.item.ItemStack;
 
 public interface ICraftingRecipeList
@@ -58,4 +57,35 @@ public interface ICraftingRecipeList
 	 * @return Helper function for IC2Exp stuff...
 	 */
 	public ICraftingRecipeManager toIC2Exp();
+	
+	public static interface IRecipeModifier
+	{
+		/**
+		 * Function that clears your cachedData when  checking is done.
+		 * Called on every: recipeMatches try.
+		 */
+		public void clear();
+		
+		/**
+		 * Special Override to allow you to say if a stack isnt valid or not.
+		 * @param provided NoneNull ItemStack
+		 * @return true = ignored or valid, false = invaldate it.
+		 */
+		public boolean isStackValid(ItemStack provided);
+		
+		/**
+		 * Function to get the final Output
+		 * @param output the Copy of the output.
+		 * @param forDisplay If it is for the Display or actual result.
+		 * @return the result item NoneNull!
+		 */
+		public ItemStack getOutput(ItemStack output, boolean forDisplay);
+		
+		/**
+		 * Function to get the Input of the craftingGrid as output
+		 * @param possibleOutput the Item that could be your output
+		 * @return true if it is then it will be used to generate the output
+		 */
+		public boolean isOutput(ItemStack possibleOutput);
+	}
 }

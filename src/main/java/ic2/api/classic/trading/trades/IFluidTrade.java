@@ -2,9 +2,9 @@ package ic2.api.classic.trading.trades;
 
 import java.util.List;
 
-import net.minecraftforge.fluids.FluidStack;
-
 import com.google.common.collect.ImmutableList;
+
+import net.minecraftforge.fluids.FluidStack;
 
 
 public interface IFluidTrade extends ITrade<FluidStack>

@@ -16,6 +16,8 @@ import net.minecraftforge.fml.common.eventhandler.Event;
  * Custom event that tells you whenever a ScrapBox is opened.
  * You can modify the list how you wish. You can add/remove drops.
  * Also you can detect which item is used. By default it will be IC2s scrapbox
+ * 
+ * The Scrapbox Event itself is being Fired Too. By the Extractor Recipe
  */
 public class ScrapBoxEvent extends Event
 {
@@ -89,6 +91,5 @@ public class ScrapBoxEvent extends Event
 		{
 			return source;
 		}
-		
 	}
 }

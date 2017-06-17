@@ -1,9 +1,9 @@
 package ic2.api.classic.trading;
 
+import java.util.UUID;
+
 import ic2.api.classic.trading.providers.ITradeProvider;
 import ic2.api.classic.trading.trades.ISubTrade;
-
-import java.util.UUID;
 
 public interface ITradeListener
 {

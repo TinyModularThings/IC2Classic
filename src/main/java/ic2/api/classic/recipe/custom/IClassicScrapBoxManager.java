@@ -1,9 +1,8 @@
 package ic2.api.classic.recipe.custom;
 
-import ic2.api.recipe.IScrapboxManager;
-
 import java.util.List;
 
+import ic2.api.recipe.IScrapboxManager;
 import net.minecraft.item.ItemStack;
 
 public interface IClassicScrapBoxManager extends IScrapboxManager

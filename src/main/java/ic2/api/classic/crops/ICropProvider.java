@@ -49,4 +49,11 @@ public interface ICropProvider
 	 * @return yourResistanceStat (between 0-31)
 	 */
 	public int getStatResistance();
+	
+	/**
+	 * Function to get the Scanlevel of the crop.
+	 * Needed for cropCoping
+	 * @return scanlevel: 0-4
+	 */
+	public int getScanningLevel();
 }

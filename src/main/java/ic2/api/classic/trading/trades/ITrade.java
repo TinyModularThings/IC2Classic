@@ -1,11 +1,10 @@
 package ic2.api.classic.trading.trades;
 
-import ic2.api.classic.trading.ITradeInventory;
-import ic2.api.classic.trading.providers.ITradeProvider;
-
 import java.util.List;
 import java.util.UUID;
 
+import ic2.api.classic.trading.ITradeInventory;
+import ic2.api.classic.trading.providers.ITradeProvider;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ActionResult;
 
@@ -28,7 +27,7 @@ public interface ITrade<T>
 	 * @param player the player who wants to get subtrade
 	 * @return if empty means he can not access any trade
 	 */
-	public List<ISubTrade> getSubTrades(UUID player);
+	public List<ISubTrade> getSubTrades(UUID player, boolean ignoreOwner);
 	
 	/**
 	 * function to get a special sub Trade
@@ -36,7 +35,7 @@ public interface ITrade<T>
 	 * @param player the player who should get it.
 	 * @return the sub Trade for the player. can be null if the player is no longer able to get the sub Trade
 	 */
-	public ISubTrade getSubTradeFromSlot(int slot, UUID player);
+	public ISubTrade getSubTradeFromSlot(int slot, UUID player, boolean ignoreOwner);
 	
 	/**
 	 * Function to get the ID for the subTrade

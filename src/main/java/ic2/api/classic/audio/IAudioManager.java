@@ -13,6 +13,14 @@ import net.minecraft.util.ResourceLocation;
 public interface IAudioManager
 {
 	/**
+	 * Register a SoundModifier that modifies sounds in a Area
+	 * @param mod your Modifier
+	 */
+	public void addModifier(ISoundModifier mod);
+	
+	public void removeModifier(ISoundModifier mod);
+	
+	/**
 	 * Basic Single Sound Play function.
 	 * @param obj Sound Source Producer. Valid Cases: TileEntity, Entity, IAudioPosition, ISoundProvider
 	 * @param soundFile Path of the SoundFile (supports also Vanilla Sounds)

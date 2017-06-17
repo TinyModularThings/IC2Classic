@@ -7,9 +7,6 @@ import java.io.IOException;
  * Register this to DataEncoder itself using #addNetworkEncoder(Class, INetworkCustomEncoder).
  *
  * @author Chocohead
- *
- * IC2Exp Only!
- *
  */
 public interface INetworkCustomEncoder {
 	/**

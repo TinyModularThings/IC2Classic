@@ -18,6 +18,7 @@ public class ClassicRecipes
 	public static IMachineRecipeList macerator;
 	public static IMachineRecipeList compressor;
 	public static IMachineRecipeList extractor;
+	public static IMachineRecipeList sawMill;
 	public static IRecyclerRecipeList recycler;
 	public static ICannerRegistry canningMachine;
 	public static IElectrolyzerRecipeList electrolyzer;

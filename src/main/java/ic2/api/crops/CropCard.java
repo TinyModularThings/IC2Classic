@@ -1,8 +1,6 @@
 package ic2.api.crops;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -25,7 +23,7 @@ public abstract class CropCard {
 	 * <br/>
 	 * The id has to be unique within the mod and is used for saving.
 	 * <br/>
-	 * By default this id will be also used to determine {@link #getUnlocalizedName()} and {@link #getModelLocation()}.
+	 * By default this id will be also used to determine {@link #getUnlocalizedName()} and {@link #getTexturesLocation()}.
 	 *
 	 * @note changing the id or owner will cause existing crops in users' worlds to disappear.
 	 *
@@ -299,7 +297,7 @@ public abstract class CropCard {
 	 * @param crop reference to ICropTile
 	 */
 	public void onNeighbourChange(ICropTile crop) {
-		//
+		// NO-OP
 	}
 
 	/**
@@ -311,7 +309,7 @@ public abstract class CropCard {
 		return false;
 	}
 
-	/***
+	/**
 	 * Get the emitted redstone signal strength.
 	 *
 	 * @return The redstone signal strength.
@@ -381,13 +379,5 @@ public abstract class CropCard {
 		return cropTile.getWorldObj();
 	}
 
-	public List<ResourceLocation> getModelLocation() {
-		List<ResourceLocation> ret = new ArrayList<ResourceLocation>(getMaxSize());
-
-		for (int i = 1; i <= getMaxSize(); i++) {
-			ret.add(new ResourceLocation(getOwner().toLowerCase(Locale.ENGLISH), "blocks/crop/"+getId()+"_"+i));
-		}
-
-		return ret;
-	}
+	public abstract List<ResourceLocation> getTexturesLocation();
 }

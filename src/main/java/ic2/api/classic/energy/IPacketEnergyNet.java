@@ -1,11 +1,10 @@
 package ic2.api.classic.energy;
 
+import java.util.List;
+
 import ic2.api.classic.energy.render.IRenderValidator;
 import ic2.api.energy.IEnergyNet;
 import ic2.api.energy.tile.IEnergyTile;
-
-import java.util.List;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.math.BlockPos;

@@ -29,6 +29,8 @@ public interface IInfoTile
 		 */
 		public String getDisplayText(EntityPlayer player);
 		
+		public boolean canShow(EntityPlayer player);
+		
 		/**
 		 * What type of info it is.
 		 * used for Waila & The One Probe

@@ -4,6 +4,11 @@ import java.util.List;
 
 import net.minecraft.item.ItemStack;
 
+/**
+ * Interface for recipe ingredient matchers.
+ *
+ * See {@link Recipes#inputFactory} for some default factory methods.
+ */
 public interface IRecipeInput {
 	/**
 	 * Check if subject matches this recipe input, ignoring the amount.

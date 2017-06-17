@@ -1,5 +1,9 @@
 package ic2.api.classic.trading.prefab;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
+
 import ic2.api.classic.trading.ITradeInventory;
 import ic2.api.classic.trading.providers.IItemTradeProvider;
 import ic2.api.classic.trading.providers.ITradeProvider;
@@ -9,11 +13,6 @@ import ic2.api.classic.trading.trades.ITrade;
 import ic2.api.classic.trading.trades.TradeType;
 import ic2.api.recipe.IRecipeInput;
 import ic2.api.recipe.RecipeInputItemStack;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
-
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ActionResult;
@@ -53,13 +52,13 @@ public class BasicItemTrade implements IItemTrade
 	}
 	
 	@Override
-	public List<ISubTrade> getSubTrades(UUID player)
+	public List<ISubTrade> getSubTrades(UUID player, boolean ignoreOwner)
 	{
 		return Arrays.asList(subTrade);
 	}
 	
 	@Override
-	public ISubTrade getSubTradeFromSlot(int slot, UUID player)
+	public ISubTrade getSubTradeFromSlot(int slot, UUID player, boolean ignoreOwner)
 	{
 		return slot == 0 ? subTrade : null;
 	}

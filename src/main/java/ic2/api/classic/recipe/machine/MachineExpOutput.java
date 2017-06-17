@@ -1,9 +1,12 @@
 package ic2.api.classic.recipe.machine;
 
 import java.util.List;
+import java.util.function.BiConsumer;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.math.Vec3i;
+import net.minecraft.util.text.translation.I18n;
 
 public class MachineExpOutput extends MachineOutput
 {
@@ -25,6 +28,15 @@ public class MachineExpOutput extends MachineOutput
 	public float getExperienceOutput()
 	{
 		return exp;
+	}
+	
+	@Override
+	public void onJEIInfo(BiConsumer<String, Vec3i> consumer)
+	{
+		if(getExperienceOutput() > 0F)
+		{
+			consumer.accept(I18n.translateToLocalFormatted("jeiInfo.xpProduction.name", exp), aboveOutput);
+		}
 	}
 	
 	@Override

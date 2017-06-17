@@ -1,10 +1,9 @@
 package ic2.api.classic.crops;
 
-import ic2.api.crops.CropCard;
-import ic2.api.crops.Crops;
-
 import java.util.Map;
 
+import ic2.api.crops.CropCard;
+import ic2.api.crops.Crops;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
@@ -101,6 +100,12 @@ public abstract class ClassicCrops extends Crops
 	 * @return the map
 	 */
 	public abstract Map<ResourceLocation, ItemStack> getDisplayItems();
+	
+	/**
+	 * Temporary HelperFunction from Crops Class Until IC2Exp
+	 * gets its shit together
+	 */
+	public abstract ClassicBaseSeed getClassicBaseSeed(ItemStack stack);
 	
 	/**
 	 * Function to register a Custom Renderer to the IC2Crops.

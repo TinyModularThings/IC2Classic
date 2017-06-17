@@ -2,6 +2,9 @@ package ic2.api.classic.network;
 
 import java.util.List;
 
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
 /**
  * 
  * @author Speiger
@@ -21,4 +24,7 @@ public interface INetworkGuiDataProvider
 	 * @return all field names that need to be sync when a Gui is opened
 	 */
 	public List<String> getGuiFields();
+	
+	@SideOnly(Side.CLIENT)
+	public void onGuiFieldSynced(String field);
 }

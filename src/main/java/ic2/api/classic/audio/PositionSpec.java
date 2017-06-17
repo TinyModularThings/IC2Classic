@@ -2,7 +2,19 @@ package ic2.api.classic.audio;
 
 public enum PositionSpec
 {
-	Center, //Mostly TileEntities or Blocks
-	Backpack, //Back of a Player (Armor Slots)
-	Hand; //Equipped Item
+	Center(0), //Mostly TileEntities or Blocks
+	Backpack(1), //Back of a Player (Armor Slots)
+	Hand(2); //Equipped Item
+	
+	int type;
+	
+	private PositionSpec(int theType)
+	{
+		type = theType;
+	}
+	
+	public int getType()
+	{
+		return type;
+	}
 }
