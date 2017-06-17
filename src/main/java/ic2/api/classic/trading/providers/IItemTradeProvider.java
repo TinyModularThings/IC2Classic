@@ -1,9 +1,8 @@
 package ic2.api.classic.trading.providers;
 
-import ic2.api.recipe.IRecipeInput;
-
 import java.util.List;
 
+import ic2.api.recipe.IRecipeInput;
 import net.minecraft.item.ItemStack;
 
 public interface IItemTradeProvider extends ITradeProvider

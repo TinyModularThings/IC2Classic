@@ -5,18 +5,23 @@ import java.util.Collections;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
+
 import net.minecraftforge.oredict.OreDictionary;
 
+/**
+ * @deprecated Use {@link Recipes#inputFactory} instead.
+ */
+@Deprecated
 public class RecipeInputItemStack implements IRecipeInput {
-	public RecipeInputItemStack(ItemStack aInput) {
-		this(aInput, aInput.stackSize);
+	public RecipeInputItemStack(ItemStack input) {
+		this(input, input.stackSize);
 	}
 
-	public RecipeInputItemStack(ItemStack aInput, int aAmount) {
-		if (aInput.getItem() == null) throw new IllegalArgumentException("Invalid item stack specfied");
+	public RecipeInputItemStack(ItemStack input, int amount) {
+		if (input == null || input.getItem() == null || input.stackSize <= 0) throw new IllegalArgumentException("invalid input stack");
 
-		input = aInput.copy(); // Never forget to copy.
-		amount = aAmount;
+		this.input = input.copy(); // Never forget to copy.
+		this.amount = amount;
 	}
 
 	@Override

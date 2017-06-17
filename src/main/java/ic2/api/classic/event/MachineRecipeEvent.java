@@ -87,4 +87,12 @@ public abstract class MachineRecipeEvent extends PlayerEvent
 			super(player, stack, isAutoamted);
 		}	
 	}
+	
+	public static class ItemSawCuttedEvent extends MachineRecipeEvent
+	{
+		public ItemSawCuttedEvent(EntityPlayer player, ItemStack stack, boolean isAutoamted)
+		{
+			super(player, stack, isAutoamted);
+		}		
+	}
 }

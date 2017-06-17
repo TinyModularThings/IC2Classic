@@ -1,13 +1,11 @@
 package ic2.api.classic.trading.prefab;
 
-import ic2.api.classic.trading.trades.ISubTrade;
-import ic2.api.classic.trading.trades.ITrade;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
+import ic2.api.classic.trading.trades.ISubTrade;
+import ic2.api.classic.trading.trades.ITrade;
 import net.minecraft.item.ItemStack;
 
 public class BasicSubTrade implements ISubTrade

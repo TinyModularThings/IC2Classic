@@ -5,6 +5,7 @@ import ic2.api.classic.event.MachineRecipeEvent.ItemCompressedEvent;
 import ic2.api.classic.event.MachineRecipeEvent.ItemExtractedEvent;
 import ic2.api.classic.event.MachineRecipeEvent.ItemMaceratedEvent;
 import ic2.api.classic.event.MachineRecipeEvent.ItemRecycledEvent;
+import ic2.api.classic.event.MachineRecipeEvent.ItemSawCuttedEvent;
 import ic2.api.classic.event.MachineRecipeEvent.ItemSmeltedEvent;
 import ic2.api.classic.event.MachineRecipeEvent.MatterCreatedEvent;
 import net.minecraft.entity.player.EntityPlayer;
@@ -19,6 +20,7 @@ public abstract class MachineType
 	public static final MachineType compressed = new IC2MachineType(3, 3);
 	public static final MachineType recylced = new IC2MachineType(4, 4);
 	public static final MachineType massFabricated = new IC2MachineType(5, 5);
+	public static final MachineType sawMill = new IC2MachineType(6, 6);
 	
 	int recipeID;
 	
@@ -93,6 +95,7 @@ public abstract class MachineType
 				case 3: return new ItemCompressedEvent(player, stack, automated);
 				case 4: return new ItemRecycledEvent(player, stack, automated);
 				case 5: return new MatterCreatedEvent(player, stack, automated);
+				case 6: return new ItemSawCuttedEvent(player, stack, automated);
 			}
 			return null;
 		}

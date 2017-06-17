@@ -1,10 +1,9 @@
 package ic2.api.classic.reactor;
 
-import ic2.api.reactor.IReactor;
-import ic2.api.reactor.IReactorComponent;
-
 import java.util.List;
 
+import ic2.api.reactor.IReactor;
+import ic2.api.reactor.IReactorComponent;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTPrimitive;
 import net.minecraft.nbt.NBTTagFloat;
@@ -146,6 +145,7 @@ public interface IReactorPlannerComponent extends IReactorComponent
 		ReactorMaxHeat(false),
 		ReactorEEM(true),
 		MaxDurability(false),
+		Rechargeable(false),
 		EnergyUsage(true),
 		WaterConsumtion(true),
 		SteamProduction(true),

@@ -1,10 +1,9 @@
 package ic2.api.classic.recipe.machine;
 
-import ic2.api.recipe.IMachineRecipeManager;
-import ic2.api.recipe.IRecipeInput;
-
 import java.util.List;
 
+import ic2.api.recipe.IMachineRecipeManager;
+import ic2.api.recipe.IRecipeInput;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
@@ -63,10 +62,10 @@ public interface IMachineRecipeList
 	/**
 	 * Function to delete a Recipe Based round the input
 	 * @param input Input you want to delete with
-	 * @return the Deleted Output. If null it could not find it.
+	 * @return the Deleted Entires. Can be empty if nothing found
 	 * Note it takes StackSize into account
 	 */
-	public MachineOutput removeRecipe(IRecipeInput input);
+	public List<RecipeEntry> removeRecipe(IRecipeInput input);
 	
 	/**
 	 * Function to delete an Exact Entry that was added

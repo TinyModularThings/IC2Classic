@@ -1,7 +1,5 @@
 package ic2.api.reactor;
 
-import ic2.core.block.generator.tile.TileEntityReactorChamberElectric;
-
 /**
  * Interface implemented nuclear reactor chambers
  */

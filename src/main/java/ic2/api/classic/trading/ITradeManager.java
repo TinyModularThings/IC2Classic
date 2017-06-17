@@ -1,15 +1,12 @@
 package ic2.api.classic.trading;
 
-import ic2.api.classic.trading.ITradeMarket.ITradeMarketManager;
-import ic2.api.classic.trading.providers.ITradeProvider;
-import ic2.api.classic.trading.trades.ITrade;
-import ic2.api.classic.trading.trades.TradeType;
-
 import java.util.List;
 import java.util.Map;
 
+import ic2.api.classic.trading.providers.ITradeProvider;
+import ic2.api.classic.trading.trades.ITrade;
+import ic2.api.classic.trading.trades.TradeType;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.math.AxisAlignedBB;
 
 public interface ITradeManager
 {
@@ -84,30 +81,10 @@ public interface ITradeManager
 	public void addGlobalListener(ITradeListener listener);
 	
 	/**
-	 * Function to add a tradeMarket for a range.
-	 * @param market The market you want to add
-	 * @param effectRange the range it has. Do not use block pos. Its offsetting the block pos when there is a check so 
-	 * moving trade markets should be supported
-	 * Whenever a new tradeProvider gets added it will automatically will add Local markets if they are in range
-	 */
-	public void addLocalTradeMarket(ITradeMarket market, AxisAlignedBB effectRange);
-	
-	/**
-	 * Function to remove a local trade market from the list.
-	 * @param market that you want to be removed
-	 */
-	public void removeLocalTradeMarket(ITradeMarket market);
-	
-	/**
 	 * Function that have to be called on Load or later when the TileEntity is loaded to world (Or Entity or anything else)
 	 * What it does it load all the global listeners to the Trade-O-Mat so you do not have to take care of that
 	 * @param prov the Trade-O-Mat
 	 */
 	public void onTraderCreated(ITradeProvider prov);
-	
-	/**
-	 * @return global tradeMarket manager.
-	 */
-	public ITradeMarketManager getGlobalMarketManager();
 	
 }

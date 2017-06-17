@@ -1,10 +1,11 @@
 package ic2.api.classic.tile;
 
-import ic2.api.info.ILocatable;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import com.google.common.base.Objects;
+
+import ic2.api.info.ILocatable;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -12,8 +13,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
-
-import com.google.common.base.Objects;
 
 public interface ITeleporterTarget extends ILocatable
 {
@@ -67,9 +66,11 @@ public interface ITeleporterTarget extends ILocatable
 	/**
 	 * 
 	 * @author Speiger
-	 * Name registry for teleporters
-	 * This includes only teleporters which have a custom name.
-	 * if a teleporter has no custom name then remove yourself from here
+	 * Name registry for Teleporters
+	 * This includes only Teleporters which have a custom name.
+	 * if a Teleporters has no custom name then remove yourself from here
+	 * also this is a backup solution if your Teleporter can not implement IWorldNameable.
+	 * Please use that interface instead of this. The interface is more reliable.
 	 */
 	public static final class TeleporterNameRegistry
 	{
@@ -126,9 +127,9 @@ public interface ITeleporterTarget extends ILocatable
 			isCustom = nbt.getBoolean("IsCustom");
 		}
 		
-		public TeleporterTarget(TileEntity tile)
+		public TeleporterTarget(ITeleporterTarget target)
 		{
-			this(tile.getPos(), tile.getWorld());
+			this(target.getPosition(), target.getWorldObj());
 		}
 		
 		public TeleporterTarget(BlockPos pos, World world)

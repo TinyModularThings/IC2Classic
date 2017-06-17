@@ -1,7 +1,7 @@
 package ic2.api.classic.network;
 
-import java.io.DataInput;
-import java.io.DataOutput;
+import ic2.api.classic.network.adv.IInputBuffer;
+import ic2.api.classic.network.adv.IOutputBuffer;
 
 /**
  * 
@@ -24,10 +24,10 @@ public interface INetworkFieldData
 	/**
 	 * Read function. Please make sure you do not read more data then necessary.
 	 */
-	public void read(DataInput stream);
+	public void read(IInputBuffer buffer);
 	
 	/**
 	 * Write Function.
 	 */
-	public void write(DataOutput stream);
+	public void write(IOutputBuffer buffer);
 }

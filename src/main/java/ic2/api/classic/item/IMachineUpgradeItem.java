@@ -1,11 +1,10 @@
 package ic2.api.classic.item;
 
+import java.util.List;
+
 import ic2.api.classic.recipe.machine.MachineOutput;
 import ic2.api.classic.tile.IMachine;
 import ic2.api.recipe.IRecipeInput;
-
-import java.util.List;
-
 import net.minecraft.item.ItemStack;
 
 public interface IMachineUpgradeItem

@@ -2,9 +2,7 @@ package ic2.api.network;
 
 import java.io.DataInput;
 import java.io.DataOutput;
-/**
- * IC2Exp Only!
- */
+
 public interface IGrowingBuffer extends DataInput, DataOutput {
 	/**
 	 * Write a number of variable size to the buffer

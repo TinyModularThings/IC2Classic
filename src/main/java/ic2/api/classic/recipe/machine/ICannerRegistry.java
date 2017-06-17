@@ -1,11 +1,10 @@
 package ic2.api.classic.recipe.machine;
 
-import ic2.api.item.ICustomDamageItem;
-import ic2.api.recipe.IRecipeInput;
-
 import java.util.List;
 import java.util.Map;
 
+import ic2.api.item.ICustomDamageItem;
+import ic2.api.recipe.IRecipeInput;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Tuple;
 

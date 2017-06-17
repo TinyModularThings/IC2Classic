@@ -1,13 +1,11 @@
 package ic2.api.classic.trading.providers;
 
-import ic2.api.classic.trading.ITradeListener;
-import ic2.api.classic.trading.ITradeMarket.ITradeMarketManager;
-import ic2.api.classic.trading.trades.ISubTrade;
-import ic2.api.classic.trading.trades.ITrade;
-
 import java.util.List;
 import java.util.UUID;
 
+import ic2.api.classic.trading.ITradeListener;
+import ic2.api.classic.trading.trades.ISubTrade;
+import ic2.api.classic.trading.trades.ITrade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -71,13 +69,6 @@ public interface ITradeProvider
 	 * @param listener that wants to be removed
 	 */
 	public void removeListener(ITradeListener listener);
-	
-	/**
-	 * function to get the internal TradeMarketManager
-	 * for this trader.
-	 * @return local markets for this tradeProvider. has to be a none null version!
-	 */
-	public ITradeMarketManager getLocalMarkedManager();
 	
 	/**
 	 * Function to add a trade to the Trade Provider

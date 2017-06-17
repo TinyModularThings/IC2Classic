@@ -93,14 +93,14 @@ public interface ICropTile extends ILocatable {
 	 *
 	 * @return Crop nutrient storage
 	 */
-	public int getStorageNutrient();
+	public int getStorageNutrients();
 
 	/**
 	 * Set the crop's nutrient storage.
 	 *
-	 * @param storageNutrient Crop nutrient storage
+	 * @param nutrients Crop nutrient storage
 	 */
-	public void setStorageNutrient(int storageNutrient);
+	public void setStorageNutrients(int nutrients);
 
 	/**
 	 * Get the crop's hydration storage.
@@ -113,9 +113,9 @@ public interface ICropTile extends ILocatable {
 	/**
 	 * Set the crop's water storage.
 	 *
-	 * @param storageWater Crop water storage
+	 * @param water Crop water storage
 	 */
-	public void setStorageWater(int storageWater);
+	public void setStorageWater(int water);
 
 	/**
 	 * Get the crop's Weed-Ex storage.
@@ -127,9 +127,9 @@ public interface ICropTile extends ILocatable {
 	/**
 	 * Set the crop's Weed-Ex storage.
 	 *
-	 * @param storageWeedEX Crop Weed-Ex storage
+	 * @param weedEX Crop Weed-Ex storage
 	 */
-	public void setStorageWeedEX(int storageWeedEX);
+	public void setStorageWeedEX(int weedEX);
 
 	/**
 	 * Get the crop's plant scan level.
@@ -171,7 +171,7 @@ public interface ICropTile extends ILocatable {
 	 *
 	 * @return Crop humidity level
 	 */
-	public int getHumidity();
+	public int getTerrainHumidity();
 
 	/**
 	 * Get the crop's nutrient level.
@@ -182,7 +182,7 @@ public interface ICropTile extends ILocatable {
 	 *
 	 * @return Crop nutrient level
 	 */
-	public int getNutrients();
+	public int getTerrainNutrients();
 
 	/**
 	 * Get the crop's air quality.
@@ -193,7 +193,7 @@ public interface ICropTile extends ILocatable {
 	 *
 	 * @return Crop air quality
 	 */
-	public int getAirQuality();
+	public int getTerrainAirQuality();
 
 	/**
 	 * Get the crop's world.
@@ -208,6 +208,7 @@ public interface ICropTile extends ILocatable {
 	/**
 	 * Get the crop's location.
 	 * @deprecated Use {@link #getPosition()} instead.
+	 *
 	 * @return Crop location
 	 */
 	@Deprecated

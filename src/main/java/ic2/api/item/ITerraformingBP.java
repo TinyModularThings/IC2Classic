@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 public interface ITerraformingBP {
 	/**
 	 * Get the energy consumption per operation of the blueprint.
-	 * @param stack 
+	 * @param stack TODO
 	 *
 	 * @return Energy consumption in EU
 	 */
@@ -20,7 +20,7 @@ public interface ITerraformingBP {
 	/**
 	 * Get the maximum range of the blueprint.
 	 * Should be a divisor of 5.
-	 * @param stack 
+	 * @param stack TODO
 	 *
 	 * @return Maximum range in blocks
 	 */
@@ -30,7 +30,7 @@ public interface ITerraformingBP {
 
 	/**
 	 * Perform the terraforming operation.
-	 * @param stack 
+	 * @param stack TODO
 	 * @param world world to terraform
 	 * @param x X position to terraform
 	 * @param z Z position to terraform

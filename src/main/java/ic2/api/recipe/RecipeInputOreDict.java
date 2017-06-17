@@ -6,20 +6,25 @@ import java.util.List;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
 import net.minecraftforge.oredict.OreDictionary;
 
+/**
+ * @deprecated Use {@link Recipes#inputFactory} instead.
+ */
+@Deprecated
 public class RecipeInputOreDict implements IRecipeInput {
-	public RecipeInputOreDict(String input1) {
-		this(input1, 1);
+	public RecipeInputOreDict(String input) {
+		this(input, 1);
 	}
 
-	public RecipeInputOreDict(String input1, int amount1) {
-		this(input1, amount1, null);
+	public RecipeInputOreDict(String input, int amount) {
+		this(input, amount, null);
 	}
 
-	public RecipeInputOreDict(String input1, int amount1, Integer meta) {
-		this.input = input1;
-		this.amount = amount1;
+	public RecipeInputOreDict(String input, int amount, Integer meta) {
+		this.input = input;
+		this.amount = amount;
 		this.meta = meta;
 	}
 

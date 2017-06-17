@@ -1,24 +1,31 @@
 package ic2.api.classic.recipe.machine;
 
-import ic2.api.recipe.RecipeOutput;
-
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.function.BiConsumer;
 
+import ic2.api.recipe.RecipeOutput;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.math.Vec3i;
 
 public class MachineOutput
 {
+	public static final int defaultColor = Color.gray.getRGB();
+	public static final Vec3i aboveOutput = new Vec3i(60, 5, defaultColor);
+	public static final Vec3i aboveOutputLeft = new Vec3i(30, 5, defaultColor);
+	public static final Vec3i belowOutput = new Vec3i(60, 43, defaultColor);
+	public static final Vec3i belowOutputLeft = new Vec3i(30, 43, defaultColor);
+	
 	protected NBTTagCompound metadata;
 	protected List<ItemStack> items;
 	
 	public MachineOutput(NBTTagCompound meta, List<ItemStack> items)
 	{
 		assert !items.contains(null);
-		
 		this.metadata = meta;
 		this.items = new ArrayList<ItemStack>(items);
 	}
@@ -92,6 +99,18 @@ public class MachineOutput
 	}
 	
 	/**
+	 * Function to add Information into the JEI RecipeTab.
+	 * The String is your Text that you want to display.
+	 * The Vec3i is the position where you display it.
+	 * And the Color you want to have
+	 * @param consumer just a helper
+	 */
+	public void onJEIInfo(BiConsumer<String, Vec3i> consumer)
+	{
+		
+	}
+	
+	/**
 	 * Function to copy the Recipe. Fortune will be not copied
 	 * It get reseted
 	 * @return copy of the RecipeInstance
@@ -99,6 +118,16 @@ public class MachineOutput
 	public MachineOutput copy()
 	{
 		return new MachineOutput(copyNBT(metadata), copyItems(items));
+	}
+	
+	/**
+	 * I still need to support IC2 Exp.
+	 * So provide that function to make it compatible to IC2Exp
+	 * But you still can decide that.
+	 */
+	public RecipeOutput toIC2Exp()
+	{
+		return new RecipeOutput(metadata, items);
 	}
 	
 	/**
@@ -126,16 +155,6 @@ public class MachineOutput
 		return newList;
 	}
 	
-	/**
-	 * I still need to support IC2 Exp.
-	 * So provide that function to make it compatible to IC2Exp
-	 * But you still can decide that.
-	 */
-	public RecipeOutput toIC2Exp()
-	{
-		return new RecipeOutput(metadata, items);
-	}
-	
 	public static enum EfficiencyType
 	{
 		Enchantment,
@@ -156,6 +175,7 @@ public class MachineOutput
 	public static enum EfficiencyEffect
 	{
 		MainProducts,
-		SubProducts;
+		SubProducts,
+		Experience;
 	}
 }

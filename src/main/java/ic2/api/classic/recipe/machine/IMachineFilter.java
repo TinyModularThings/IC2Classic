@@ -1,10 +1,9 @@
 package ic2.api.classic.recipe.machine;
 
-import ic2.api.recipe.IListRecipeManager;
-import ic2.api.recipe.IRecipeInput;
-
 import java.util.List;
 
+import ic2.api.recipe.IListRecipeManager;
+import ic2.api.recipe.IRecipeInput;
 import net.minecraft.item.ItemStack;
 
 public interface IMachineFilter
