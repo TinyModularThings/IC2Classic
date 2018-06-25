@@ -11,10 +11,6 @@ If you want to access the IC2Classic Beta. Here you can get it.<br/>
 Not bound to the beta.<br/>
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WH5EBD2MSHSWE"> ![Paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)</a> <br/>
 
-# Contact:
-IRC Channel: #IC2-Classic (in EsperNet) <br/>
-Discord Channel: https://discord.gg/ySK5tzY
-
 # Permissions:
 If you want to use IC2 Classic in your Modpack, i have nothing against that and permissions are given as long you do not break the IC2 Permissions. <br/>
 IC2 Permission: http://forum.industrial-craft.net/index.php?page=Thread&threadID=344
