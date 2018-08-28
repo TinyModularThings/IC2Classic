@@ -5,6 +5,7 @@ import java.util.function.BiConsumer;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.text.translation.I18n;
 

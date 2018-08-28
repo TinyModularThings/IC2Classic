@@ -6,6 +6,7 @@ import ic2.api.recipe.IMachineRecipeManager;
 import ic2.api.recipe.IRecipeInput;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ResourceLocation;
 
 public interface IMachineRecipeList
 {	
@@ -13,14 +14,15 @@ public interface IMachineRecipeList
 	 * Basic Function to add a Recipe to a Machine
 	 * @param input The Input Items
 	 * @param output What you want to have a Output
+	 * @param id the id for the validation config. Null or empty = crash
 	 */
-	public void addRecipe(IRecipeInput input, ItemStack output);
+	public void addRecipe(IRecipeInput input, ItemStack output, String id);
 	
 	/**
 	 * Extra Function to add Exp For Outputs
 	 * @param exp how much Exp the Recipe Produces
 	 */
-	public void addRecipe(IRecipeInput input, ItemStack output, float exp);
+	public void addRecipe(IRecipeInput input, ItemStack output, float exp, String id);
 	
 	/**
 	 * Extra Function to add Flags
@@ -34,14 +36,14 @@ public interface IMachineRecipeList
 	 * RecipeTime: Integer Value which allows you to give a Direct time value that the machine needs extra/less to process this machine (Supports negatives)
 	 * These modifiers have to be in that NBTCompound you provide and no SubCompounds supported.
 	 */
-	public void addRecipe(IRecipeInput input, NBTTagCompound nbt, ItemStack output, float exp);
+	public void addRecipe(IRecipeInput input, NBTTagCompound nbt, ItemStack output, float exp, String id);
 	
 	/**
 	 * Advanced Recipe Adding Function. Allowing Random & Fortune control
 	 * @param output Your Recipe Output
 	 * Modifiers can be applied here in the output see Function above this one to see the modifiers
 	 */
-	public void addRecipe(IRecipeInput input, MachineOutput output);
+	public void addRecipe(IRecipeInput input, MachineOutput output, String id);
 	
 	/**
 	 * Function to get a Recipe output of a Item

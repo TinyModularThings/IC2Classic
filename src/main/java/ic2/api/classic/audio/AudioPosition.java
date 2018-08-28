@@ -34,7 +34,7 @@ public class AudioPosition implements IAudioPosition
 			Entity e = (Entity)obj;
 			if(spec == PositionSpec.Center)
 			{
-				return new AudioPosition(e.worldObj, e.getPositionVector());
+				return new AudioPosition(e.getEntityWorld(), e.getPositionVector());
 			}
 			return new MovingEntityAudioPosition(e);
 		}

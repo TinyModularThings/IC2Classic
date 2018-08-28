@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import ic2.api.classic.network.adv.NetworkField.BitLevel;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.fml.common.registry.IForgeRegistryEntry;
+import net.minecraftforge.registries.IForgeRegistryEntry;
 
 public interface IOutputBuffer
 {

@@ -28,7 +28,7 @@ public class BasicFoodCanEffect implements IFoodCanEffect
 	@Override
 	public void onEaten(ItemStack stack, World world, EntityPlayer player)
 	{
-		if(player.worldObj.isRemote)
+		if(player.world.isRemote)
 		{
 			return;
 		}

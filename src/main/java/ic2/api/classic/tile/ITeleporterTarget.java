@@ -134,12 +134,7 @@ public interface ITeleporterTarget extends ILocatable
 		
 		public TeleporterTarget(BlockPos pos, World world)
 		{
-			this(pos, world.provider.getDimensionType().getId());
-		}
-		
-		public TeleporterTarget(BlockPos pos, DimensionType dim)
-		{
-			this(pos, dim.getId());
+			this(pos, world.provider.getDimension());
 		}
 		
 		public TeleporterTarget(BlockPos pos, int id)
@@ -194,7 +189,7 @@ public interface ITeleporterTarget extends ILocatable
 		
 		public World getWorld()
 		{
-			return FMLCommonHandler.instance().getMinecraftServerInstance().worldServerForDimension(dim);
+			return FMLCommonHandler.instance().getMinecraftServerInstance().getWorld(dim);
 		}
 	}
 }

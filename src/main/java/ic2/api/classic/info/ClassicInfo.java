@@ -42,7 +42,7 @@ public class ClassicInfo
 	
 	public static boolean isIC2ClassicHelperLoaded()
 	{
-		return Loader.isModLoaded("IC2-Classic-Spmod");
+		return Loader.isModLoaded("ic2-classic-spmod");
 	}
 	
 }

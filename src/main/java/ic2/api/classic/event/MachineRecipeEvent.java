@@ -23,7 +23,7 @@ public abstract class MachineRecipeEvent extends PlayerEvent
 	{
 		super(player);
 		automated = isAutoamted;
-		output = automated ? ItemStack.copyItemStack(stack) : stack;
+		output = automated ? stack.copy() : stack;
 	}
 	
 	/**

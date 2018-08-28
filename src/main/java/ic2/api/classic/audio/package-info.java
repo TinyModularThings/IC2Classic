@@ -1,4 +1,4 @@
-@API(apiVersion="1.0", owner="IC2", provides="IC2AudioAPI")
+@API(apiVersion="1.0", owner="ic2", provides="ic2audioapi")
 package ic2.api.classic.audio;
 import net.minecraftforge.fml.common.API;
 

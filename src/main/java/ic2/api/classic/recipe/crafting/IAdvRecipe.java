@@ -13,7 +13,7 @@ public interface IAdvRecipe
 	/** 
 	 * @return if the recipe is a secret recipe
 	 */
-	public boolean isHidden();
+	public boolean isInvisible();
 	
 	/**
 	 * @return Input of the Recipe

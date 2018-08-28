@@ -13,7 +13,7 @@ public class RecipeObject implements IRecipeObject
 	
 	public RecipeObject(int slot, ItemStack item)
 	{
-		this(slot, Arrays.asList(item), item.stackSize);
+		this(slot, Arrays.asList(item), item.getCount());
 	}
 	
 	public RecipeObject(int slot, List<ItemStack> items, int stacksize)

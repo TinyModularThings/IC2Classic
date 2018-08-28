@@ -12,6 +12,7 @@ public interface IElectrolyzerRecipeList
 	 * @param input Input Stack
 	 * @param output Output Stack
 	 * @param energy Energy used to produce the output
+	 * @param id is being used to validate the entry in the config. Null or Empty = crash
 	 * @Info Input & Output do not support NBT unless it is used in Meta-data
 	 * Output is used for reverse and will throw the input item out.
 	 * NBT is supported for the Output not for the Input
@@ -19,15 +20,16 @@ public interface IElectrolyzerRecipeList
 	 * This function will set the stack-size of the side (charge = input, discharge = output) to 1
 	 * But keeps the other side as it was
 	 */
-	public void addBothRecipe(ItemStack input, ItemStack output, int energy);
+	public void addBothRecipe(ItemStack input, ItemStack output, int energy, String id);
 	
 	/**
 	 * Recipe Method for Charging.
 	 * @param input Input Stack (Stack-size max = 1)
 	 * @param output Output Stack (No Stack-size limit)
 	 * @param energy needed in the process
+	 * @param id is being used to validate the entry in the config. Null or Empty = crash
 	 */
-	public void addChargeRecipe(ItemStack input, ItemStack output, int energy);
+	public void addChargeRecipe(ItemStack input, ItemStack output, int energy, String id);
 	
 	/**
 	 * Recipe Method for discharging
@@ -35,8 +37,9 @@ public interface IElectrolyzerRecipeList
 	 * @param output Output Stack (No Stack-size limit)
 	 * @param energy that will be gained. Note: 60% of the charge will be gained back.
 	 * This is hard-coded
+	 * @param id is being used to validate the entry in the config. Null or Empty = crash
 	 */
-	public void addDischargeRecipe(ItemStack input, ItemStack output, int energy);
+	public void addDischargeRecipe(ItemStack input, ItemStack output, int energy, String id);
 	
 	/**
 	 * Function to read the Recipe List. Read only function

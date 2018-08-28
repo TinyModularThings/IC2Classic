@@ -32,14 +32,25 @@ public interface ICraftingRecipeManager {
 	public static class AttributeContainer {
 		public final boolean hidden;
 		public final boolean consuming;
+		public final boolean fixedSize;
 
 		/**
 		 * @param hidden Whether the recipe is hidden from JEI by default
 		 * @param consuming Whether containers should be consumed or returned empty
 		 */
 		public AttributeContainer(boolean hidden, boolean consuming) {
+			this(hidden, consuming, false);
+		}
+
+		/**
+		 * @param hidden Whether the recipe is hidden from JEI by default
+		 * @param consuming Whether containers should be consumed or returned empty
+		 * @param fixedSize Whether empty rows or columns can be safely ignored as intentional
+		 */
+		public AttributeContainer(boolean hidden, boolean consuming, boolean fixedSize) {
 			this.hidden = hidden;
 			this.consuming = consuming;
+			this.fixedSize = fixedSize;
 		}
 	}
 }

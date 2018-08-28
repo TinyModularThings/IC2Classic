@@ -12,7 +12,7 @@ import ic2.api.classic.trading.trades.ISubTrade;
 import ic2.api.classic.trading.trades.ITrade;
 import ic2.api.classic.trading.trades.TradeType;
 import ic2.api.recipe.IRecipeInput;
-import ic2.api.recipe.RecipeInputItemStack;
+import ic2.core.item.recipe.entry.RecipeInputItemStack;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ActionResult;
@@ -78,23 +78,23 @@ public class BasicItemTrade implements IItemTrade
 		}
 		IRecipeInput input = new RecipeInputItemStack(required);
 		int total = inv.getItemCount(input); //Getting total count
-		int count = Math.min(limit, total / required.stackSize);
+		int count = Math.min(limit, total / required.getCount());
 		if(count <= 0)
 		{
 			return new ActionResult(EnumActionResult.PASS, EMPTY_LIST);
 		}
-		List<ItemStack> list = ((IItemTradeProvider)prov).getNearbyItemStack(new RecipeInputItemStack(gain), gain.stackSize * count, true); 
+		List<ItemStack> list = ((IItemTradeProvider)prov).getNearbyItemStack(new RecipeInputItemStack(gain), gain.getCount() * count, true); 
 		if(list.isEmpty())
 		{
 			return new ActionResult(EnumActionResult.PASS, EMPTY_LIST);
 		}
-		float multiplier = ((float)getTotalStackSize(list) / (float)gain.stackSize); 
+		float multiplier = ((float)getTotalStackSize(list) / (float)gain.getCount()); 
 		if(multiplier <= 0)
 		{
 			return new ActionResult(EnumActionResult.PASS, EMPTY_LIST);
 		}
-		((IItemTradeProvider)prov).getNearbyItemStack(new RecipeInputItemStack(gain), (int)(gain.stackSize * count), false);
-		List<ItemStack> removed = inv.removeItems(input, Math.min(total, (int)(required.stackSize * multiplier)));
+		((IItemTradeProvider)prov).getNearbyItemStack(new RecipeInputItemStack(gain), (int)(gain.getCount() * count), false);
+		List<ItemStack> removed = inv.removeItems(input, Math.min(total, (int)(required.getCount() * multiplier)));
 		prov.onTradePerformed(player, trade, removed); 
 		return ActionResult.newResult(EnumActionResult.SUCCESS, list); 
 	}
@@ -104,7 +104,7 @@ public class BasicItemTrade implements IItemTrade
 		int total = 0;
 		for(ItemStack stack : list)
 		{
-			total += stack.stackSize;
+			total += stack.getCount();
 		}
 		return total;
 	}
@@ -119,9 +119,9 @@ public class BasicItemTrade implements IItemTrade
 	@Override
 	public void readFromNBT(NBTTagCompound nbt) throws Exception
 	{
-		required = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("wanted"));
-		gain = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("give"));
-		if(gain == null || required == null)
+		required = new ItemStack(nbt.getCompoundTag("wanted"));
+		gain = new ItemStack(nbt.getCompoundTag("give"));
+		if(gain.isEmpty() || required.isEmpty())
 		{
 			throw new Exception("Items got removed. Trade is now invalid");
 		}
@@ -152,8 +152,8 @@ public class BasicItemTrade implements IItemTrade
 		{
 			return 0;
 		}
-		List<ItemStack> count = ((IItemTradeProvider)prov).getNearbyItemStack(new RecipeInputItemStack(gain), gain.stackSize * Short.MAX_VALUE, false);
-		return getTotalStackSize(count) / gain.stackSize;
+		List<ItemStack> count = ((IItemTradeProvider)prov).getNearbyItemStack(new RecipeInputItemStack(gain), gain.getCount() * Short.MAX_VALUE, false);
+		return getTotalStackSize(count) / gain.getCount();
 	}
 	
 }

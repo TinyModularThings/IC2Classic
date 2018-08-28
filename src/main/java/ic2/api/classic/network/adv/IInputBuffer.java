@@ -4,8 +4,9 @@ import java.util.UUID;
 
 import ic2.api.classic.network.adv.NetworkField.BitLevel;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.fml.common.registry.IForgeRegistry;
-import net.minecraftforge.fml.common.registry.IForgeRegistryEntry;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.RegistryNamespaced;
+import net.minecraftforge.registries.IForgeRegistryEntry;
 
 
 public interface IInputBuffer
@@ -41,7 +42,7 @@ public interface IInputBuffer
 	
 	public NBTTagCompound readNBTData();
 	
-	public <T extends IForgeRegistryEntry> T readForgeRegistryEntry(IForgeRegistry registry);
+	public <T extends IForgeRegistryEntry> T readForgeRegistryEntry(RegistryNamespaced<ResourceLocation, T> registry);
 	
 	public UUID readUUID();
 
