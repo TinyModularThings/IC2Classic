@@ -120,6 +120,20 @@ public class MachineOutput
 		return new MachineOutput(copyNBT(metadata), copyItems(items));
 	}
 	
+	public boolean canOverride()
+	{
+		return true;
+	}
+	
+	public MachineOutput overrideOutput(List<ItemStack> list)
+	{
+		if(!canOverride())
+		{
+			return copy();
+		}
+		return new MachineOutput(copyNBT(metadata), copyItems(list));
+	}
+	
 	/**
 	 * I still need to support IC2 Exp.
 	 * So provide that function to make it compatible to IC2Exp

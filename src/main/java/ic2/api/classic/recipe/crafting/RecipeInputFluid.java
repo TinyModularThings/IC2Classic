@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import ic2.api.recipe.IRecipeInput;
+import ic2.api.classic.recipe.ICustomRecipeInput;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -13,9 +13,8 @@ import net.minecraft.util.NonNullList;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
-import net.minecraftforge.fml.common.FMLLog;
 
-public class RecipeInputFluid implements IRecipeInput
+public class RecipeInputFluid implements ICustomRecipeInput
 {
 	private static final Map<Fluid, List<ItemStack>> map = new LinkedHashMap<Fluid, List<ItemStack>>();
 	private static boolean init = false;
@@ -70,6 +69,24 @@ public class RecipeInputFluid implements IRecipeInput
 			list = getFluids();
 		}
 		return list;
+	}
+	
+	@Override
+	public boolean isSpecial()
+	{
+		return true;
+	}
+
+	@Override
+	public boolean isOreDict()
+	{
+		return false;
+	}
+
+	@Override
+	public String getOreDictEntry()
+	{
+		return null;
 	}
 
 	private List<ItemStack> getFluids()

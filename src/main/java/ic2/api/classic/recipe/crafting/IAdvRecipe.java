@@ -2,6 +2,8 @@ package ic2.api.classic.recipe.crafting;
 
 import java.util.List;
 
+import ic2.api.recipe.IRecipeInput;
+
 public interface IAdvRecipe
 {
 	
@@ -20,6 +22,8 @@ public interface IAdvRecipe
 	 */
 	public List<IRecipeObject> getRecipeInput();
 	
+	public IRecipeInput getTrueInput(int index);
+	
 	/**
 	 * It will return -1 on Shapeless
 	 * @return Recipe Grid Height
@@ -31,6 +35,12 @@ public interface IAdvRecipe
 	 * @return Recipe Grid Length
 	 */
 	public int getRecipeLength();
+	
+	/**
+	 * Returns the recipe id of this recipe
+	 * @return Recipe id
+	 */
+	public String getRecipeID();
 	
 	
 	public static enum RecipeType

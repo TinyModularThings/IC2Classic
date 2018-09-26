@@ -1,5 +1,6 @@
 package ic2.api.classic.crops;
 
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -19,6 +20,9 @@ public interface IFarmland
 	 * @Note Supports negative Effects
 	 */
 	public int getHumidity(World world, BlockPos pos);
+
+	public int getHumidity(IBlockState state);
+	
 	
 	/**
 	 * Function to return the Nutrients from the farmland. Farmland (block) adds 1 nutrient
@@ -27,4 +31,7 @@ public interface IFarmland
 	 * @return the Value of the Nutrients
 	 */
 	public int getNutrients(World world, BlockPos pos);
+
+	public int getNutrients(IBlockState state);
+
 }

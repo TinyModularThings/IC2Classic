@@ -26,12 +26,30 @@ public interface ICraftingRecipeList
 	public void addRecipe(ItemStack output, Object... input);
 	
 	/**
+	 * Replaces the shaped recipe with the given recipeId with the new recipe.
+	 * 
+	 * @param recipeId Recipe id
+	 * @param output Recipe output
+	 * @param input Recipe input
+	 */
+	public void overrideRecipe(String recipeId, ItemStack output, Object... input);
+	
+	/**
 	 * Adds a shapeless crafting recipe.
 	 * 
 	 * @param output Recipe output
 	 * @param input Recipe input
 	 */
 	public void addShapelessRecipe(ItemStack output, Object... input);
+	
+	/**
+	 * Replaces the shapeless recipe with the given recipeId with the new recipe.
+	 * 
+	 * @param recipeId Recipe id
+	 * @param output Recipe output
+	 * @param input Recipe input
+	 */
+	public void overrideShapelessRecipe(String recipeId, ItemStack output, Object... input);
 	
 	/**
 	 * Function to add a repair Recipe really easy.

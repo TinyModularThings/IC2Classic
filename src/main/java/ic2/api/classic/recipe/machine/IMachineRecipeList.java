@@ -6,7 +6,6 @@ import ic2.api.recipe.IMachineRecipeManager;
 import ic2.api.recipe.IRecipeInput;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.ResourceLocation;
 
 public interface IMachineRecipeList
 {	
@@ -99,11 +98,13 @@ public interface IMachineRecipeList
 	{
 		IRecipeInput input;
 		MachineOutput output;
+		String recipeID;
 		
-		public RecipeEntry(IRecipeInput in, MachineOutput out)
+		public RecipeEntry(IRecipeInput in, MachineOutput out, String id)
 		{
 			input = in;
 			output = out;
+			recipeID = id;
 		}
 		
 		public IRecipeInput getInput()
@@ -114,6 +115,11 @@ public interface IMachineRecipeList
 		public MachineOutput getOutput()
 		{
 			return output;
+		}
+		
+		public String getRecipeID()
+		{
+			return recipeID;
 		}
 	}
 }

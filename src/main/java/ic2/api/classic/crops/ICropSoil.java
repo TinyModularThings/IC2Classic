@@ -1,5 +1,6 @@
 package ic2.api.classic.crops;
 
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -22,6 +23,8 @@ public interface ICropSoil
 	 */
 	public int getNutrientEffect(World world, BlockPos pos);
 	
+	public int getNutrientEffect(IBlockState state);
+	
 	/**
 	 * Function to apply custom hydration to the crops
 	 * @param world World the Block is in
@@ -30,4 +33,6 @@ public interface ICropSoil
 	 * @Note: Supports negative values
 	 */
 	public int getHumidityEffect(World world, BlockPos pos);
+	
+	public int getHumidityEffect(IBlockState state);
 }

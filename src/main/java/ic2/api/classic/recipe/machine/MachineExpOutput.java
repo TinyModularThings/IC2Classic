@@ -45,4 +45,16 @@ public class MachineExpOutput extends MachineOutput
 	{
 		return new MachineExpOutput(copyNBT(metadata), exp, copyItems(items));
 	}
+
+	@Override
+	public MachineOutput overrideOutput(List<ItemStack> list)
+	{
+		if(!canOverride())
+		{
+			return copy();
+		}
+		return new MachineExpOutput(copyNBT(metadata), exp, copyItems(list));
+	}
+	
+	
 }
