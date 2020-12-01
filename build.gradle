@@ -25,7 +25,6 @@ repositories {
         name = "Modmuss50"
         url = "http://maven.modmuss50.me/"
     }
-	
 }
 
 
