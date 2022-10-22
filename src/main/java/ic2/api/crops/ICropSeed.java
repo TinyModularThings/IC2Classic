@@ -1,81 +1,89 @@
 package ic2.api.crops;
 
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.ItemStack;
 
 /**
- * Interface implemented by ItemCropSeed.
- * @author estebes
+ * 
+ * @author Speiger
+ * 
+ * API to the CropSeedItem implementation
  */
-public interface ICropSeed {
+public interface ICropSeed
+{
+	/** Cost Values how much each scan tier would cost */
+	int[] SCAN_COST = new int[]{10, 90, 900, 9000};
+	/** Tier values for each crop tier */
+	String[] TIERS = new String[]{"0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI"};
+	
 	/**
-	 * Get the seed's crop.
-	 * @param itemStack The seed's itemstack.
-	 * @return Seed's crop.
+	 * Get's the Crop in the seed.
+	 * @param stack of the seed
+	 * @return the Crop that is in said item
 	 */
-	public CropCard getCropFromStack(ItemStack itemStack);
-
+	ICrop getCrop(ItemStack stack);
+	
 	/**
-	 * Set the seed's crop.
-	 * @param itemStack The seed's itemstack.
-	 * @param crop New CropCard object.
+	 * Get's the Scan Level of the seed
+	 * @param stack the seed
+	 * @return the scan level of said seed.
 	 */
-	public void setCropFromStack(ItemStack itemStack, CropCard crop);
-
+	int getScanLevel(ItemStack stack);
+	
 	/**
-	 * Get the seed's growth.
-	 * @param itemStack The seed's itemstack.
-	 * @return Seed's growth.
+	 * Set's the Scan Level of the seed
+	 * @param stack the seed
+	 * @param level that it should be set to.
 	 */
-	public int getGrowthFromStack(ItemStack itemStack);
-
+	void setScanLevel(ItemStack stack, int level);
+	
 	/**
-	 * Set the seed's growth.
-	 * @param itemStack The seed's itemstack.
-	 * @param value New growth value.
+	 * Increments the Scan Level of the seed
+	 * @param stack the seed itself
 	 */
-	public void setGrowthFromStack(ItemStack itemStack, int value);
-
+	default void increaseScanLevel(ItemStack stack)
+	{
+		setScanLevel(stack, getScanLevel(stack) + 1);
+	}
+	
 	/**
-	 * Get the seed's gain.
-	 * @param itemStack The seed's itemstack.
-	 * @return Seed's gain.
+	 * Get's the Growth Stat of the Seed
+	 * @param stack the seed
+	 * @return the Growth stat of the Seed. Between 0-31 (inclusive)
 	 */
-	public int getGainFromStack(ItemStack itemStack);
-
+	int getGrowth(ItemStack stack);
+	
 	/**
-	 * Set the seed's growth.
-	 * @param itemStack The seed's itemstack.
-	 * @param value New growth value.
+	 * Set's the Growth Stat of the Seed
+	 * @param stack the seed
+	 * @param growth what the stat should be. Clamped between 0-31 (inclusive)
 	 */
-	public void setGainFromStack(ItemStack itemStack, int value);
-
+	void setGrowth(ItemStack stack, int growth);
+	
 	/**
-	 * Get the seed's resistance.
-	 * @param itemStack The seed's itemstack.
-	 * @return Seed's resistance.
+	 * Get's the Gain Stat of the Seed
+	 * @param stack the seed
+	 * @return the Gain stat of the Seed. Between 0-31 (inclusive)
 	 */
-	public int getResistanceFromStack(ItemStack itemStack);
-
+	int getGain(ItemStack stack);
+	
 	/**
-	 * Set the seed's resistance.
-	 * @param itemStack The seed's itemstack.
-	 * @param value New resistance value.
+	 * Set's the Gain Stat of the Seed
+	 * @param stack the seed
+	 * @param gain what the stat should be. Clamped between 0-31 (inclusive)
 	 */
-	public void setResistanceFromStack(ItemStack itemStack, int value);
-
+	void setGain(ItemStack stack, int gain);
+	
 	/**
-	 * Get the seed's scan level.
-	 * @param itemStack The seed's itemstack.
-	 * @return Seed's scan level.
+	 * Get's the Resistance Stat of the Seed
+	 * @param stack the seed
+	 * @return the Resistance stat of the Seed. Between 0-31 (inclusive)
 	 */
-	public int getScannedFromStack(ItemStack itemStack);
-
+	int getResistance(ItemStack stack);
+	
 	/**
-	 * Set the seed's scan level.
-	 * @param itemStack The seed's itemstack.
-	 * @param value New scan level value.
+	 * Set's the Resistance Stat of the Seed
+	 * @param stack the seed
+	 * @param resistance what the stat should be. Clamped between 0-31 (inclusive)
 	 */
-	public void setScannedFromStack(ItemStack itemStack, int value);
-
-	public void incrementScannedFromStack(ItemStack itemStack);
+	void setResistance(ItemStack stack, int resistance);
 }

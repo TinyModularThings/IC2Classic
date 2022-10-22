@@ -1,57 +1,42 @@
 package ic2.api.crops;
 
+import net.minecraft.world.item.ItemStack;
+
 /**
- * Base agriculture seed. Used to determine the state of a plant once it is planted from an item.
+ * 
+ * @author Speiger
+ * 
+ * A Helper class that allows to define a crop with its Stats and required stacksize
+ *
  */
-public class BaseSeed {
-	/**
-	 * Create a BaseSeed object.
-	 *
-	 * @param crop plant
-	 * @param size plant size
-	 * @param statGrowth plant growth stat
-	 * @param statGain plant gain stat
-	 * @param statResistance plant resistance stat
-	 * @param stackSize for internal usage only
-	 */
-	public BaseSeed(CropCard crop, int size, int statGrowth, int statGain, int statResistance) {
+public class BaseSeed
+{
+	public final ICrop crop;
+	public int stage;
+	public int growth;
+	public int gain;
+	public int resistance;
+	public int stack_size;
+	
+	public BaseSeed(ICrop crop, int stage, int growth, int gain, int resistance, int stack_size)
+	{
 		this.crop = crop;
-		this.size = size;
-		this.statGrowth = statGrowth;
-		this.statGain = statGain;
-		this.statResistance = statResistance;
+		this.stage = stage;
+		this.growth = growth;
+		this.gain = gain;
+		this.resistance = resistance;
+		this.stack_size = stack_size;
 	}
-
-	/**
-	 * @deprecated use the other constructor instead
-	 */
-	@Deprecated
-	public BaseSeed(CropCard crop, int size, int statGrowth, int statGain, int statResistance, int stackSize) {
-		this(crop, size, statGrowth, statGain, statResistance);
+	
+	public BaseSeed(ItemStack stack)
+	{
+		ICropSeed seed = (ICropSeed)stack.getItem();
+		crop = seed.getCrop(stack);
+		stage = 1;
+		growth = seed.getGrowth(stack);
+		gain = seed.getGain(stack);
+		resistance = seed.getResistance(stack);
+		stack_size = 1;
 	}
-
-	/**
-	 * Plant.
-	 */
-	public final CropCard crop;
-
-	/**
-	 * Plant size.
-	 */
-	public int size;
-
-	/**
-	 * Plant growth stat.
-	 */
-	public int statGrowth;
-
-	/**
-	 * Plant gain stat.
-	 */
-	public int statGain;
-
-	/**
-	 * Plant resistance stat.
-	 */
-	public int statResistance;
+	
 }

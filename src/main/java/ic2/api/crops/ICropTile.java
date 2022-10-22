@@ -1,284 +1,274 @@
 package ic2.api.crops;
 
 import java.util.List;
+import java.util.Set;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import ic2.api.util.ILocation;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 
-import ic2.api.info.ILocatable;
-
-/**
- * Interface implemented by the crop tile entity.
- */
-public interface ICropTile extends ILocatable {
+public interface ICropTile extends ILocation
+{
 	/**
-	 * Get the crop.
-	 *
-	 * @return CropCard, or null if there is no plant currently on the crop
+	 * Get's the current Farmland underneath the CropTile
+	 * @return the farmland
 	 */
-	public CropCard getCrop();
-
+	IFarmland getFarmland();
+	
+	/** @return true if the crop tile is waterlogged */
+	boolean isWaterLogged();
+	
 	/**
-	 * Set the crop.
-	 *
-	 * @param cropCard CropCard or null for no plant
+	 * @param water if the crop should be waterlogged
 	 */
-	public void setCrop(CropCard cropCard);
-
+	void setWaterlogged(boolean water);
+	
 	/**
-	 * Get the crop's plant size.
-	 *
-	 * @return Plant size, starting with 1 and maximum varies depending on plant
+	 * Get's the planted crop
+	 * @return the planted crop
 	 */
-	public int getCurrentSize();
-
+	ICrop getCrop();
+	
 	/**
-	 * Set the crop's plant size.
-	 *
-	 * @param size Plant size
+	 * Set's the planted Crop
+	 * @param crop the crop to be planted
 	 */
-	public void setCurrentSize(int size);
-
+	void setCrop(ICrop crop);
+	
 	/**
-	 * Get the crop's plant growth stat.
-	 * Higher values indicate faster growth.
-	 *
-	 * @return Plant growth stat
+	 * Get's the current Crop Growth Stage
+	 * @return the current Crop Growth Stage
 	 */
-	public int getStatGrowth();
-
+	int getGrowthStage();
+	
 	/**
-	 * Set the crop's plant growth stat.
-	 *
-	 * @param growth Plant growth stat
+	 * Set's the current Crop Growth Stage
+	 * @param stage that should be set
 	 */
-	public void setStatGrowth(int growth);
-
+	void setGrowthStage(int stage);
+	
 	/**
-	 * Get the crop's plant gain stat.
-	 * Higher values indicate more drops.
-	 *
-	 * @return Plant gain stat
+	 * Get's the current amount of points the Crop has grown.
+	 * @return growth Points of the crop.
 	 */
-	public int getStatGain();
-
+	int getGrowthPoints();
+	
 	/**
-	 * Set the crop's plant gain stat.
-	 *
-	 * @param gain Plant gain stat
+	 * Set's the current amount of points the Crop has grown.
+	 * @param points of the crop.
 	 */
-	public void setStatGain(int gain);
-
+	void setGrowthPoints(int points);
+	
 	/**
-	 * Get the crop's plant resistance stat.
-	 * Higher values indicate more resistance against trampling.
-	 *
-	 * @return Plant resistance stat
+	 * Get's the Scan Level of the Crop.
+	 * @return Crop Scan Level
 	 */
-	public int getStatResistance();
-
+	int getScanLevel();
+	
 	/**
-	 * Set the crop's plant resistance stat.
-	 *
-	 * @param resistance Plant resistance stat
+	 * Sets the Crop Scan Level
+	 * @param level of the crop
 	 */
-	public void setStatResistance(int resistance);
-
+	void setScanLevel(int level);
+	
 	/**
-	 * Get the crop's nutrient storage.
-	 * Ranges from 0 to 100.
-	 *
-	 * @return Crop nutrient storage
+	 * @return true if the Crop is Breeding.
 	 */
-	public int getStorageNutrients();
-
+	boolean isCrossBreeding();
+	
 	/**
-	 * Set the crop's nutrient storage.
-	 *
-	 * @param nutrients Crop nutrient storage
+	 * Set's the crops breeding state
+	 * @param breed if the crop should be in a breeding state
 	 */
-	public void setStorageNutrients(int nutrients);
-
+	void setCrossBreeding(boolean breed);
+	
 	/**
-	 * Get the crop's hydration storage.
-	 * 0 indicates nothing, 1-10 indicate water hydration and 11-100 for hydration cells.
-	 *
-	 * @return Crop hydration storage
+	 * Get's Gain Stat of the current crop
+	 * @return gain Stat
 	 */
-	public int getStorageWater();
-
+	int getGainStat();
+	
 	/**
-	 * Set the crop's water storage.
-	 *
-	 * @param water Crop water storage
+	 * Set's Gain Stat of the current crop
+	 * @param level it should be
 	 */
-	public void setStorageWater(int water);
-
+	void setGainStat(int level);
+	
 	/**
-	 * Get the crop's Weed-Ex storage.
-	 *
-	 * @return Crop Weed-Ex storage
+	 * Get's Gain Stat of the current crop
+	 * @return gain Stat
 	 */
-	public int getStorageWeedEX();
-
+	int getGrowthStat();
+	
 	/**
-	 * Set the crop's Weed-Ex storage.
-	 *
-	 * @param weedEX Crop Weed-Ex storage
+	 * Set's Gain Stat of the current crop
+	 * @param level it should be
 	 */
-	public void setStorageWeedEX(int weedEX);
-
+	void setGrowthStat(int level);
+	
 	/**
-	 * Get the crop's plant scan level.
-	 * Increases every time the seed is analyzed.
-	 *
-	 * @return Plant scan level
+	 * Get's Gain Stat of the current crop
+	 * @return gain Stat
 	 */
-	public int getScanLevel();
-
+	int getResistanceStat();
+	
 	/**
-	 * Set the crop's plant scan level.
-	 *
-	 * @param scanLevel Plant scan level
+	 * Set's Gain Stat of the current crop
+	 * @param level it should be
 	 */
-	public void setScanLevel(int scanLevel);
-
-	public int getGrowthPoints();
-
-	public void setGrowthPoints(int growthPoints);
-
-	public boolean isCrossingBase();
-
-	public void setCrossingBase(boolean crossingBase);
-
+	void setResistanceStat(int level);
+	
 	/**
-	 * Get the crop's plant custom data, stored alongside the crop.
-	 * Can be modified in place.
-	 *
-	 * @return Plant custom data
+	 * If the crop is ready to crossbreed.
+	 * @return true if it can crossbreed.
 	 */
-	public NBTTagCompound getCustomData();
-
+	boolean canBreed();
+	
 	/**
-	 * Get the crop's humidity.
-	 * Ranges from 0 (dry) to 10 (humid).
-	 * Updates every couple of seconds or when an update is requested.
-	 *
-	 * @see #updateState()
-	 *
-	 * @return Crop humidity level
+	 * Resets the Environment Qualities of the crop to be recalculate on the next crop tick.
 	 */
-	public int getTerrainHumidity();
-
+	void requestStateUpdate();
+	
 	/**
-	 * Get the crop's nutrient level.
-	 * Ranges from 0 (empty) to 10 (full).
-	 * Updates every couple of seconds or when an update is requested.
-	 *
-	 * @see #updateState()
-	 *
-	 * @return Crop nutrient level
+	 * Requests a Synchronization of the custom Crop Specific NBT Data.
 	 */
-	public int getTerrainNutrients();
-
+	void onCustomDataChanged();
+	
 	/**
-	 * Get the crop's air quality.
-	 * Ranges from 0 (cluttered) to 10 (fresh).
-	 * Updates every couple of seconds or when an update is requested.
-	 *
-	 * @see #updateState()
-	 *
-	 * @return Crop air quality
+	 * Calculates the crop growth for the next crop tick, once calculated this is cached.
+	 * @return the next growth ticks points that will be added
 	 */
-	public int getTerrainAirQuality();
-
+	int calculateGrowthSpeed();
+	
 	/**
-	 * Get the crop's world.
-	 * @deprecated This method causes a MethodNotFoundException in a obfuscated environment.
-	 * Use {@link #getWorldObj()} instead
-	 *
-	 * @return Crop world
+	 * Performs a Manual Harvest of the Crops
+	 * @return true if the harvest was successful (drops items on to the ground)
 	 */
-	@Deprecated
-	public World getWorld();
-
+	boolean performManualHarvest();
+	
 	/**
-	 * Get the crop's location.
-	 * @deprecated Use {@link #getPosition()} instead.
-	 *
-	 * @return Crop location
+	 * Performs the harvest and returns the drops of the Crops
+	 * @param manual if the harvest is manual.
+	 * @return the drops of the Crop.
 	 */
-	@Deprecated
-	public BlockPos getLocation();
-
+	List<ItemStack> performHarvest(boolean manual);
+	
 	/**
-	 * Get the crop's light level.
-	 *
-	 * @return Crop light level
+	 * Removes the crop from the Tile and spawns a crop seed.
+	 * @return if anything happend.
 	 */
-	public int getLightLevel();
-
+	boolean pickCrop();
+	
 	/**
-	 * Pick the crop, removing and giving seeds for the plant.
-	 *
-	 * @return true if successfully picked
+	 * Destroyes the crop with 0 drops.
 	 */
-	public boolean pick();
-
+	void removeCrop();
+	
 	/**
-	 * Harvest the crop, turning it into gain and resetting its size.
-	 * drop output on ground
+	 * Checks if the desired BlockState is below. Checks the SubSoils and the block underneath the SubSoil. If air blocks are between causes to stop checks at that point.
+	 * @param state that you search for.
+	 * @return true if it is underneath.
 	 */
-	public boolean performManualHarvest();
-
+	boolean isBlockBelow(BlockState state);
+	
 	/**
-	 * Harvest the crop, turning it into gain and resetting its size.
-	 * drop output on ground
-	 * @return List<ItemStack> of harvest output
+	 * Checks if the desired Block is below. Checks the SubSoils and the block underneath the SubSoil. If air blocks are between causes to stop checks at that point.
+	 * @param block that you search for.
+	 * @return true if it is underneath.
 	 */
-
-	public List<ItemStack> performHarvest();
-
+	boolean isBlockBelow(Block block);
+	
 	/**
-	 * Fully clears the crop without dropping anything.
+	 * Checks if the desired BlockTag is below. Checks the SubSoils and the block underneath the SubSoil. If air blocks are between causes to stop checks at that point.
+	 * @param tag that you search for.
+	 * @return true if it is underneath.
 	 */
-	public void reset();
-
+	boolean isBlockBelow(TagKey<Block> tag);
+	
 	/**
-	 * Request a texture and lighting update.
+	 * Helper function that gets all blocks underneath the crop 
+	 * Stops when it encounters air.
+	 * @return the list of blocks below the Crop
 	 */
-	public void updateState();
-
+	Set<Block> getBlocksBelow();
+	
 	/**
-	 * Check if a block is under the farmland containing the crop.
-	 * Searches up to 4 blocks below the farmland or an air space, whichever appears first.
-	 *
-	 * @param block block to search
-	 * @return Whether the block was found
+	 * Crop Specific NBT Data that can be synchronized.
+	 * @return the Crop Specific Data
 	 */
-	public boolean isBlockBelow(Block block);
+	CompoundTag getCustomData();
+	
+	/**
+	 * Gets the Light Level at the Crops position.
+	 * @return the current light level.
+	 */
+	int getLightLevel();
+	
+	/**
+	 * Get's or calculates the Crop Environment Quality.
+	 * @return 0-10 for the current quality.
+	 */
+	int getEnvironmentQuality();
+	
+	/**
+	 * Get's or calculates the Crop Nutrient Level.
+	 * @return 0-20 for the current Nutrient Level.
+	 */
+	int getNutrients();
+	
+	/**
+	 * Get's or calculates the Crop Humidity Level.
+	 * @return 0-20 for the current Humidity Level.
+	 */
+	int getHumidity();
+	
+	/**
+	 * Get's the current Water stored in the crop.
+	 * @return 0-200 based on how much water there is stored.
+	 */
+	int getWaterStorage();
+	
+	/**
+	 * Set's the current water storage.
+	 * @param water between 0-200
+	 */
+	void setWaterStorage(int water);
+	
+	/**
+	 * Get's the current Fertilizer stored in the crop.
+	 * @return 0-300 based on how much Fertilizer there is stored.
+	 */
+	int getFertilizerStorage();
+	
+	/**
+	 * Set's the current Fertilizer storage.
+	 * @param fertilizer between 0-300
+	 */
+	void setFertilizerStorage(int fertilizer);
+	
+	/**
+	 * Get's the current Weedex Stored
+	 * @return 0-150 based on how much WeedEx is stored.
+	 */
+	int getWeedExStorage();
 
 	/**
-	 * Check if a block is under the farmland containing the crop.
-	 * Searches up to 4 blocks below the farmland or an air space, whichever appears first.
-	 *
-	 * @param oreDictionaryName blocks to search
-	 * @return Whether the blocks were found
+	 * Set's the current WeedEx storage.
+	 * @param weedEx between 0-150
 	 */
-	public boolean isBlockBelow(String oreDictionaryName);
-
+	void setWeedExStorage(int weedEx);
+	
 	/**
-	 * Generate plant seeds with the given parameters.
-	 *
-	 * @param crop plant
-	 * @param growth plant growth stat
-	 * @param gain plant gain stat
-	 * @param resistance plant resistance stat
-	 * @param scan plant scan level
-	 * @return Plant seed item
+	 * Creates A Crop Seed Bag with the desired Crop and stats and scan Level
+	 * @param crop that the seed should have.
+	 * @param growthStat that the seed should have
+	 * @param gainStat that the seed should have
+	 * @param resistanceStat that the seed should have
+	 * @param scanLevel that the seed should have
+	 * @return a Seed Bag
 	 */
-	public ItemStack generateSeeds(CropCard crop, int growth, int gain, int resistance, int scan);
+	ItemStack createSeeds(ICrop crop, int growthStat, int gainStat, int resistanceStat, int scanLevel);
 }
