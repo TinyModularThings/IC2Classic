@@ -16,6 +16,7 @@ import ic2.api.tiles.display.IDisplayInfo;
 import ic2.api.tiles.display.IMonitorRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
+import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.nbt.LongArrayTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.FriendlyByteBuf;
@@ -62,6 +63,7 @@ public class ProgressDisplayInfo implements IDisplayInfo
 		}
 		RenderSystem.enableDepthTest();
 		RenderSystem.disableTexture();
+		RenderSystem.setShader(GameRenderer::getPositionColorShader);
 		tes.end();
 	}
 	

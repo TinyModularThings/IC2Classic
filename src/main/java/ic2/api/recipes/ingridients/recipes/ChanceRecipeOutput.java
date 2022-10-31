@@ -25,7 +25,7 @@ public class ChanceRecipeOutput implements IRecipeOutput
 	public ChanceRecipeOutput(JsonObject obj)
 	{
 		chance = obj.get("chance").getAsFloat();
-		xp = obj.get("chance").getAsFloat();
+		xp = obj.get("xp").getAsFloat();
 		if(obj.has("nbt"))
 		{
 			nbt = IInput.readNBT(obj.get("nbt").getAsString());

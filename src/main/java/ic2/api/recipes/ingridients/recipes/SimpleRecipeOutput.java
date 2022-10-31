@@ -22,7 +22,7 @@ public class SimpleRecipeOutput implements IRecipeOutput
 	
 	public SimpleRecipeOutput(JsonObject obj)
 	{
-		xp = obj.get("chance").getAsFloat();
+		xp = obj.get("xp").getAsFloat();
 		if(obj.has("nbt"))
 		{
 			nbt = IInput.readNBT(obj.get("nbt").getAsString());
