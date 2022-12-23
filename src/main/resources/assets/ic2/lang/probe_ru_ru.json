@@ -138,10 +138,10 @@
 "ic2.probe.tube.requests": "Запросы:",
 "ic2.probe.tube.missing": "Отсутствует:",
 "ic2.probe.tube.requesting": "Запрашиваю:",
-"ic2.probe.tube.stuck": "Застрявшие элементы:",
+"ic2.probe.tube.stuck": "Застрявшие предметы:",
 "ic2.probe.redirector.slave.info": "%s%% Поделиться",
 "ic2.probe.base_teleporter.connections": "Подключения: ",
 "ic2.probe.villager_o_mat.usage": "Использование за сделку: %sEU",
 "ic2.probe.villager_o_mat.next": "Следующая сделка: %s тиков",
-"item.ic2.electric_probe": "Единый зонд (модуль брони)"
+"item.ic2.electric_probe": "The One Probe (Модуль брони)"
 }
