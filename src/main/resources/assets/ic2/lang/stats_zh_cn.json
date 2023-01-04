@@ -11,14 +11,14 @@
 "stat.ic2.electric_enchanted":"电子物品魔法",
 "stat.ic2.foam_sprayed":"喷涂施工泡沫",
 "stat.ic2.food_cans_eaten":"食用的食品罐",
-"stat.ic2.jetpack_fly_time":"Jetpack飞行时间",
+"stat.ic2.jetpack_fly_time":"喷气背包飞行时间",
 "stat.ic2.laser_kills":"激光实体",
 "stat.ic2.lucky_person":"非常幸运",
 "stat.ic2.nukes_ignited":"点火的核弹",
 "stat.ic2.nukes_survived":"幸存的核弹",
 "stat.ic2.overgrowth_used":"使用的过度生长肥料",
 "stat.ic2.revived_used":"恢复使用的肥料",
-"stat.ic2.rocket_mode_used":"Jetpack火箭升空",
+"stat.ic2.rocket_mode_used":"喷气背包火箭升空",
 "stat.ic2.textures_stolen":"复制的纹理",
 "stat.ic2.withers_nuked":"用螺母拧紧"
 }
