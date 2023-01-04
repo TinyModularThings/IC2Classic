@@ -144,5 +144,5 @@
 "ic2.probe.base_teleporter.connections":"连接：",
 "ic2.probe.villager_o_mat.usage":"每笔交易使用量：%sEU",
 "ic2.probe.villager_o_mat.next":"下一交易：%s勾号",
-"item.ic2.electric_probe":"一个探头（装甲模块）"
+"item.ic2.electric_probe":"一个探头（装备模块）"
 }
