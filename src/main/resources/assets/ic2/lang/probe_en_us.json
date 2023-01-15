@@ -134,6 +134,7 @@
 	"ic2.probe.teleporter.type.item": "Item",
 	"ic2.probe.teleporter.type.fluid": "Fluid",
 	"ic2.probe.teleporter.type.energy": "Energy",
+	"ic2.probe.teleporter.type.spawner": "Spawner",
 	"ic2.probe.tube.transported": "Items:",
 	"ic2.probe.tube.cached": "Cached Items:",
 	"ic2.probe.tube.requests": "Requests:",
