@@ -133,6 +133,7 @@
 "ic2.probe.teleporter.type.item": "Предмет",
 "ic2.probe.teleporter.type.fluid": "Жидкость",
 "ic2.probe.teleporter.type.energy": "Энергия",
+"ic2.probe.teleporter.type.spawner": "Спаунер",
 "ic2.probe.tube.transported": "Предметы:",
 "ic2.probe.tube.cached": "Предметы в кэше:",
 "ic2.probe.tube.requests": "Запросы:",
