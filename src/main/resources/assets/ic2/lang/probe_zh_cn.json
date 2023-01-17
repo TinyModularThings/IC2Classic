@@ -134,6 +134,7 @@
 "ic2.probe.teleporter.type.item":"物品",
 "ic2.probe.teleporter.type.fluid":"液体",
 "ic2.probe.teleporter.type.energy":"能量",
+"ic2.probe.teleporter.type.spawner": "刷怪笼",
 "ic2.probe.tube.transported":"物品：",
 "ic2.probe.tube.cached":"缓存物品：",
 "ic2.probe.tube.requests":"请求：",
