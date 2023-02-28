@@ -476,7 +476,7 @@
   "wiki.ic2.preview.static_boots.desc": "Static Boots are what kids always do when kids find out that carpets can be used to cause shocks. You get a slight EU production for every few blocks you walked.",
   "wiki.ic2.preview.steam_reactor.desc": "The Steam Reactor is the §lUltimate§r §lUpgrade§r to a Reactor. It adds risk, for lot of reward. Energy Production is a lot higher, at the cost of no room for failure.",
   "wiki.ic2.preview.steam_tunnel.desc": "The Steam Tunnel is a multiblock power source producing a whooping 2048EU/t in packets of 512EU for up to 4096mB of Steam. Giving back the water.",
-  "wiki.ic2.preview.steam_turbine.desc": "The Steam Turbine is your way to produce EU from steam. It produces 32EU/t from 64mB of steam, without returning water. Using a §lFuel Boiler§r as source adds 8EU/t.",
+  "wiki.ic2.preview.steam_turbine.desc": "The Steam Turbine is you way to produce EU from steam. It produces 32EU/t from 64mB of steam, without giving water back. Using a §<redirect;true;Fuel Boiler;ic2:preview.fuel_boiler> as source adds 8EU/t.",
   "wiki.ic2.preview.steam_vent.desc": "The Steam Vent uses water from the reactor to create steam. The hotter they are the more efficient they get.",
   "wiki.ic2.preview.step_assist_module.desc": "Everyone loves step assist. Here is the module for it. Though there is a small cost attached to it.",
   "wiki.ic2.preview.stickreed.desc": "Sticky Reeds are the most valuable crop out of all the crops as it produces sticky resin en masse. If you're always out of rubber; this solves all your issues. It is just pretty hard to obtain but no special needs.",
