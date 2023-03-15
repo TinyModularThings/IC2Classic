@@ -28,6 +28,7 @@
   "comparator.ic2.water_tank": "Резервуар воды",
   "comparator.ic2.working": "Работает",
   "death.attack.nuke": "Поражен ядерным взрывом",
+  "death.attack.radiation": "Облучён до смерти",
   "effect.ic2.radiation": "Радиация",
   "effect.ic2.shaky": "Шаткий",
   "entity.ic2.batbox": "Вагонетка с энергохранилищем",
