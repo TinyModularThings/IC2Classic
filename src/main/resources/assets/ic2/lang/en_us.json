@@ -28,6 +28,7 @@
   "comparator.ic2.water_tank": "Water Tank",
   "comparator.ic2.working": "Working",
   "death.attack.nuke": "Hit by a Nuclear Blast",
+  "death.attack.radiation": "Radiated to death",
   "effect.ic2.radiation": "Radiation",
   "effect.ic2.shaky": "Shaky",
   "entity.ic2.batbox": "Batbox Minecart",
