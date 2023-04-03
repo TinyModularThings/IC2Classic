@@ -136,7 +136,7 @@
   "gui.ic2.creative_source.confirm": "Подтвердить",
   "gui.ic2.creative_source.eu": "%s EU за пакет",
   "gui.ic2.creative_source.packets": "Пакетов: %s/t",
-  "gui.ic2.crop_analyzer.breed": "Порода",
+  "gui.ic2.crop_analyzer.breed": "Скрестить",
   "gui.ic2.crop_analyzer.cancel": "Очистить",
   "gui.ic2.crop_analyzer.discovered": "Кем обнаружено:",
   "gui.ic2.crop_analyzer.gain": "Усиление:",
