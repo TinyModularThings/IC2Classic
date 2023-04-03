@@ -468,6 +468,20 @@
   "wiki.ic2.preview.lava_module.desc": "Вы когда-нибудь хотели принять горячую ванну? Как насчет лавовой ванны? Позволяет вам плавать в лаве за счёт постоянного расхода энергии.",
   "wiki.ic2.preview.sonar_module.desc": "Сканер ближнего и дальнего действия, который выделяет все объекты в пределах диапазона. Может оказаться полезным, если вы что-то ищете.",
   "wiki.ic2.preview.energy_hud_module.desc": "Добавляет информационный дисплей, позволяющий видеть разяд брони. Положение можно менять.",
+  "wiki.ic2.page.items.batteries": "Батарейки",
+  "wiki.ic2.page.items.batteries.desc": "Батарейки — это ваш портативный источник энергии, который вы можете использовать во многих случаях.\n\nЛибо чотбы зарядить другие предметы, либо чтобы временно запускать с их помощью механизмы.\n\nЭто может также использоваться в качестве срочного источника питания, в случае, когда потребляется большое количество энергии за короткое время, а ваша энергосистема не справляется.",
+  "wiki.ic2.preview.su_battery.desc": "Небольшой, но полезный инструмент, который дает 1000 EU за немного красного камня и угля",
+  "wiki.ic2.preview.battery": "Батарейки",
+  "wiki.ic2.preview.battery.desc": "Портативные источники энергии, которые можно использовать для запитывания машин даже вне сети.",
+  "wiki.ic2.preview.accumulator": "Квантовый аккумулятор",
+  "wiki.ic2.preview.accumulator.desc": "Хранилище большой емкости с низким энергопотреблением. Он хранит меньше, но более гибкий.",
+  "wiki.ic2.preview.battery.pack": "Энергетический ранец",
+  "wiki.ic2.preview.battery.pack.desc": "Портативная форма источника энергии. От него можно зарядить инструменты и т.д.",
+  "wiki.ic2.preview.industrial_belt.desc": "Позволяет носить на поясе небольшой заряд, который инструменты могут использовать во время добычи.",
+
+
+
+
 
 
 
@@ -499,8 +513,7 @@
   "wiki.ic2.page.fluids.wood_gas": "Дровяной газ",
   "wiki.ic2.page.fluids.wood_gas.desc": "Дровяной газ является побочным продуктом при производстве древесного угля и может быть произведен в §<redirect;true;Wood Gasificator;ic2:preview.wood_gassifier>.\n\nIt является отличным производителем энергии в начале игры, но позже может быть переработан в более мощную жидкость",
 
-  "wiki.ic2.page.items.batteries": "Батарейки",
-  "wiki.ic2.page.items.batteries.desc": "Батарейки — это ваш портативный источник энергии, который вы можете использовать во многих случаях.\n\nЛибо заряжая другие предметы, либо временно запуская с их помощью машины.\n\nЭто может также использоваться в качестве импульсного источника питания, потребляющего большое количество энергии за короткое время\nс которым ваша энергосистема не справляется.",
+
 
   "wiki.ic2.page.items.info.cards": "Карты монитора",
   "wiki.ic2.page.items.info.cards.desc": "IC2Classic добавляет монитор в игру.\n\nЭтот монитор может отображать много информации о себе.\n\nЭти карты предоставляют информацию монитору .",
@@ -528,8 +541,7 @@
   "wiki.ic2.page.table.desc": "Это оглавление.\n\n- §<redirect;true;Tutorials;ic2:tutorials>\n- §<redirect;true;Credits;ic2:credits>\n- §<перенаправление;true;Блоки;ic2:blocks.generators>\n - §<redirect;true;Генераторы;ic2:blocks.generators>\n - §<redirect;true;Машины;ic2:блоки .machines>\n - §<redirect;true;Кабели;ic2:blocks.cables>\n - §<redirect;true;Электрические блоки;ic2:blocks.electric_blocks>\n - §<redirect;true;Персональные блоки; ic2:blocks.personal_blocks>\n - §<redirect;true;Fluid Blocks;ic2:blocks.fluid_blocks>\n - §<redirect;true;Tubes;ic2:blocks.tubes>\n - §<redirect;true; Explosives;ic2:blocks.explosives>\n - §<redirect;true;Misc;ic2:blocks.misc>\n\n\n- §<redirect;true;Items;ic2:items.tools>\n - § <перенаправление;true;Инструменты;ic2:items.tools>\n - §<redirect;true;Электроинструменты;ic2:items.electric_tools>\n - §<redirect;true;Броня;ic2:items.armors>\n - §<redirect;true;Батарейки;ic2:items. батареи>\n - §<redirect;true;Сканеры;ic2:items.scanners>\n - §<redirect;true;Обновления;ic2:items.upgrades>\n - §<redirect;true;Компоненты Reactor;ic2: items.reactor.components>\n - §<redirect;true;Карты монитора;ic2:items.info.cards>\n - §<redirect;true;Misc;ic2:items.misc>\n- §<redirect; true;Fluids;ic2:fluids>\n- §<redirect;true;Crops;ic2:crops>\n- §<redirect;true;Компоненты Reactor;ic2:items.reactor.components>\n - §<redirect;true;Карты мониторинга;ic2:items.info.cards>\n - §<redirect;true;Разное;ic2:items. misc>\n- §<redirect;true;Fluids;ic2:fluids>\n- §<redirect;true;Crops;ic2:crops>\n- §<redirect;true;Компоненты Reactor;ic2:items.reactor.components>\n - §<redirect;true;Карты мониторинга;ic2:items.info.cards>\n - §<redirect;true;Разное;ic2:items. misc>\n- §<redirect;true;Fluids;ic2:fluids>\n- §<redirect;true;Crops;ic2:crops>",
 
   "wiki.ic2.page.tutorials.path": "Учебники по развитию:\n- §<redirect;true;Первый день;ic2:subpage.first_day>\n- §<redirect;true;Ранняя игра;ic2:subpage. Early_game>\n- §<redirect;true;Второй уровень;ic2:subpage.second_tier>\n- §<redirect;true;Третий уровень;ic2:subpage. Third_tier>\n- §<redirect;true;Четвертый уровень; ic2:subpage.fourth_tier>\n\nРазное Учебники:\n- §<redirect;true;Электричество;ic2:subpage.electricity>\n- §<redirect;true;Логистический транспорт;ic2:subpage.logistic_grid>\n- §<redirect;true;Brewing;ic2:subpage.brewing>\n- §<redirect;true;Reactors;ic2:subpage.nuclear_reactor>",
-  "wiki.ic2.preview.accumulator": "Квантовый аккумулятор",
-  "wiki.ic2.preview.accumulator.desc": "Аккумулятор — это хранилище большой емкости с низким энергопотреблением. Он хранит меньше, но более гибкий.",
+
   "wiki.ic2.preview.activity_card.desc": "Карточка активности показывает, активна машина или нет.",
   "wiki.ic2.preview.adamantum.desc": "Адамантум — ваша алмазодобывающая культура. Он растет очень медленно и требует наличия алмазной руды/блока под ним.",
 
@@ -558,10 +570,9 @@
   "wiki.ic2.preview.bamboo.desc": "Урожай бамбука производит бамбук и растет довольно быстро. Хотя он предпочитает низкую (4 или меньше) влажность для роста.",
 
 
-  "wiki.ic2.preview.battery": "Батарейки",
-  "wiki.ic2.preview.battery.desc": "Батарейки — это ваши портативные накопители энергии, которые можно использовать для питания других машин даже за пределами вашей сети.",
-  "wiki.ic2.preview.battery.pack": "Энергетический пакет",
-  "wiki.ic2.preview.battery.pack.desc": "Энергоаккумулятор — еще одна портативная форма накопителя энергии. В нем могут использоваться инструменты и т. д.",
+
+
+
 
   "wiki.ic2.preview.beetroot.desc": "Урожай свеклы дает красную свеклу, которую можно превратить в еду или красную краску.\n\nПри установке в этот режим можно дополнительно производить семена.",
   "wiki.ic2.preview.blackthorn.desc": "Блэкторн — это роза, производящая черную краску. Ходят слухи, что она использовалась для производства чернильных мешков. К сожалению, это оказалось ложью.",
@@ -630,7 +641,7 @@
   "wiki.ic2.preview.horn_coral.desc": "Роговидный коралл — это подводная культура, которую можно использовать для выращивания коралловых блоков. У него есть шанс произвести все варианты роговых кораллов. Это при условии, что он живой. Он для роста требуется чистая вода (3 или более).",
 
   "wiki.ic2.preview.hydration_cell.desc": "Ячейка гидратации — это ваш способ обеспечить дополнительную влажность вашим культурам. Некоторым для роста требуется очень высокая влажность.",
-  "wiki.ic2.preview.industrial_belt.desc": "Промышленный пояс позволяет носить на ногах некоторый заряд, который могут использовать инструменты во время майнинга.",
+
   "wiki.ic2.preview.inkbergine.desc": "Inkbergine — это кальмар, посаженный под водой вниз головой в землю. Он медленно выращивает для вас чернильные мешки. Но будьте осторожны, не прикасайтесь к нему. Он может облить вас чернилами.",
   "wiki.ic2.preview.input_pipe.desc": "Входная труба принимает жидкости из внешних источников, заставляя их распределяться через нее. Имеет силу только 25 блоков.",
 
@@ -733,7 +744,7 @@
   "wiki.ic2.preview.stickreed.desc": "Липкие камыши - самая ценная культура из всех культур, поскольку они массово производят липкую смолу. Если у вас всегда нет каучука, это решит все ваши проблемы. Это просто довольно сложно получить, но особых нужд нет.",
 
 
-  "wiki.ic2.preview.su_battery.desc": "Одноразовая батарея — это небольшой, но полезный инструмент, который дает 1000 евро за немного красного камня и угля. Позволяет быстро получать энергию без строительства генераторов.",
+
   "wiki.ic2.preview.sugarcane.desc": "Сахарный тростник, очень быстрорастущая культура. Он производит сахарный тростник и является материалом для размножения липкого тростника. Ходят слухи, что он растет быстрее на песке, чем на земле. Другие слухи говорят об обратном. Никто не знает, какой из них верный",
   "wiki.ic2.preview.sweet_berry_bush.desc": "Ягодный куст — это источник еды в ранней игре, который жалит вас, если вы не будете осторожны. Помимо этого, у них нет никаких требований.",
 
