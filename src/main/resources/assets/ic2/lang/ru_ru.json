@@ -155,7 +155,7 @@
   "gui.ic2.electric_enchanter.xp.stored": "%s / 1.000 опыта",
   "gui.ic2.electrolyzer.energy": "Энергия: %s EU",
   "gui.ic2.electrolyzer.dual": "Тип: Оба",
-  "gui.ic2.electrolyzer.charging": "Тип: Запядка",
+  "gui.ic2.electrolyzer.charging": "Тип: Зарядка",
   "gui.ic2.electrolyzer.discharging": "Тип: Разрядка",
   "gui.ic2.energy_card.energy": "Показать энергию",
   "gui.ic2.energy_card.energy_progress": "Показывать энергию как прогресс",
