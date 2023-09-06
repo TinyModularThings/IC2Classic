@@ -734,7 +734,7 @@
   "tooltip.item.ic2.tube_tool.special_connection.desc": "Makes that Extraction Tubes can connect to each other",
   "tooltip.item.ic2.tube_tool.pickup_radius": "Large Pickup Tube Radius",
   "tooltip.item.ic2.tube_tool.pickup_radius.desc": "Toggles the larger Pickup Tube Radius",
-  "tooltip.item.ic2.tube_tool.visible_items": "Toggle Item Visiblity",
+  "tooltip.item.ic2.tube_tool.visible_items": "Toggle Item Visibility",
   "tooltip.item.ic2.tube_tool.visible_items.desc": "Toggles if items are visible in tubes. Saves on FPS/Networking. This affects all Players!",
   "tooltip.item.ic2.tube_tool.visible_items.enable": "Enabled Item Rendering/Synchronization",
   "tooltip.item.ic2.tube_tool.visible_items.disable": "Disabled Item Rendering/Synchronization",
