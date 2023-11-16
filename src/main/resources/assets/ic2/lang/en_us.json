@@ -567,6 +567,7 @@
   "info.crop.ic2.data.stat.growth": "Growth",
   "info.crop.ic2.data.stat.resistance": "Resistance",
   "info.crop.ic2.data.stats": "Stats: %1$s / %2$s / %3$s",
+  "info.crop.ic2.data.needs": "Crop Needs: %1$s / %2$s, (Needs/Have)",
   "info.crop.ic2.data.storage": "Storage: %1$s / %2$s / %3$s",
   "info.crop.ic2.data.storage.ex": "WeedEx",
   "info.crop.ic2.data.storage.fertilizer": "Nutrients",
