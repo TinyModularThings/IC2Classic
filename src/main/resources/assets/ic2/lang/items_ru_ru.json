@@ -389,7 +389,7 @@
   "item.ic2.terrawart": "Земляной нарост",
   "item.ic2.text_card": "Текстовая карта",
   "item.ic2.tfbp": "Террачип",
-  "item.ic2.tfbp.radius": "Радиус",
+  "item.ic2.tfbp.radius": "Радиус: %s",
   "item.ic2.tfbp_biome": "Биом террачипа",
   "item.ic2.tfbp_biome_chilling": "Биом террачипа - Охлаждение",
   "item.ic2.tfbp_biome_cultivation": "Биом террачипа - Озеленение",
@@ -754,5 +754,6 @@
   "tooltip.item.ic2.upgrade.usage.mul": "Дополнительное потребление энергии: %s%%",
   "tooltip.item.ic2.upgrade_container.invalid": "%1$sx %2$s (отключено)",
   "tooltip.item.ic2.upgrade_container.valid": "%1$sx %2$s (применено)",
-  "tooltip.item.ic2.weedex.refill": "Пополняется при истощении, если измельчить порошок в инвентаре"
+  "tooltip.item.ic2.weedex.refill": "Пополняется при истощении, если измельчить порошок в инвентаре",
+  "tooltip.item.ic2.wiki.block_click": "открыть страницу данного блока в вики"
 }

@@ -30,6 +30,7 @@
   "ic2.probe.crop.info.growth": "Рост: %1$s/%2$s",
   "ic2.probe.crop.info.gain": "Прирост: %1$s/%2$s",
   "ic2.probe.crop.info.resistance": "Сопротивление: %1$s/%2$s",
+  "ic2.probe.crop.info.needs": "Необходимо: ~%1$s/%2$s",
   "ic2.probe.crop.info.scan": "Сканировать: %1$s/%2$s",
   "ic2.probe.crop.info.fertilizer": "Удобрение: %1$s/%2$s",
   "ic2.probe.crop.info.water": "Вода: %1$s/%2$s",
