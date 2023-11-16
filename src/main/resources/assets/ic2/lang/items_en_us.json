@@ -389,7 +389,7 @@
   "item.ic2.terrawart": "Terrawart",
   "item.ic2.text_card": "Text Card",
   "item.ic2.tfbp": "TFBP",
-  "item.ic2.tfbp.radius": "Radius",
+  "item.ic2.tfbp.radius": "Radius: %s",
   "item.ic2.tfbp_biome": "TFBP Biome",
   "item.ic2.tfbp_biome_chilling": "TFBP Biome - Chilling",
   "item.ic2.tfbp_biome_cultivation": "TFBP Biome - Cultivation",
@@ -754,5 +754,6 @@
   "tooltip.item.ic2.upgrade.usage.mul": "Extra Energy Usage: %s%%",
   "tooltip.item.ic2.upgrade_container.invalid": "%1$sx %2$s (Disabled)",
   "tooltip.item.ic2.upgrade_container.valid": "%1$sx %2$s (Applied)",
-  "tooltip.item.ic2.weedex.refill": "Refills on depletion if grin powder in inventory"
+  "tooltip.item.ic2.weedex.refill": "Refills on depletion if grin powder in inventory",
+  "tooltip.item.ic2.wiki.block_click": "open the page of said Block in the wiki"
 }
