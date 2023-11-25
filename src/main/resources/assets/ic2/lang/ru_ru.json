@@ -567,7 +567,7 @@
   "info.crop.ic2.data.stat.growth": "Рост",
   "info.crop.ic2.data.stat.resistance": "Сопротивление",
   "info.crop.ic2.data.stats": "Параметры: %1$s / %2$s / %3$s",
-  "info.crop.ic2.data.needs": "Необходимо: %1$s / %2$s, (Необходимо/Есть)",
+  "info.crop.ic2.data.needs": "Стресс: %1$s / %2$s, (Текущий/Максимальный)",
   "info.crop.ic2.data.storage": "Хранилище: %1$s / %2$s / %3$s",
   "info.crop.ic2.data.storage.ex": "Средство от сорняков",
   "info.crop.ic2.data.storage.fertilizer": "Питательные вещества",
