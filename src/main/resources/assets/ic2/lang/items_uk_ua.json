@@ -1,50 +1,91 @@
 {
-  "item.ic2.activity_card": "Activity Card",
-  "item.ic2.advanced_chainsaw": "Advanced Chainsaw",
-  "item.ic2.advanced_circuit": "Advanced Circuit",
-  "item.ic2.advanced_drill": "Advanced Drill",
-  "item.ic2.advanced_field_expansion_pad_upgrade": "Advanced Field Expansion Upgrade",
-  "item.ic2.advanced_hoe": "Advanced Hoe",
-  "item.ic2.advanced_solar_helmet": "Solar Helmet",
-  "item.ic2.advanced_tree_tap": "Advanced Tree Tap",
-  "item.ic2.air_refill_module": "Air Refill Module",
-  "item.ic2.aluminium_cable_item": "Aluminium Cable",
-  "item.ic2.aluminium_double_insulated_cable_item": "2x Insulated Aluminium Cable",
-  "item.ic2.aluminium_insulated_cable_item": "1x Insulated Aluminium Cable",
-  "item.ic2.aluminium_quadruple_insulated_cable_item": "8x Insulated Aluminium Cable",
-  "item.ic2.aluminium_shield": "Aluminium Shield",
-  "item.ic2.aluminium_triple_insulated_cable_item": "4x Insulated Aluminium Cable",
-  "item.ic2.armor_bronze_boots": "Bronze Boots",
-  "item.ic2.armor_bronze_chest": "Bronze Chestplate",
-  "item.ic2.armor_bronze_helmet": "Bronze Helmet",
-  "item.ic2.armor_bronze_leggings": "Bronze Leggings",
-  "item.ic2.armor_composite_boots": "Composite Boots",
-  "item.ic2.armor_composite_chest": "Composite Chestplate",
-  "item.ic2.armor_composite_helmet": "Composite Helmet",
-  "item.ic2.armor_composite_leggings": "Composite Leggings",
+  "item.ic2.activity_card": "Карта активності",
+  "item.ic2.inv_card": "Карта інвенторя",
+  "item.ic2.lag_card": "Карта затримок",
+  "item.ic2.detector_card": "Карта детектор",
+  "item.ic2.eu_card": "Eu-карта",
+  "item.ic2.monitor_card": "Карта монітора",
+  "item.ic2.progress_card": "Карта прогресу",
+  "item.ic2.reactor_card": "Карта реактора",
+  "item.ic2.text_card": "Карта тексту",
+  "item.ic2.time_card": "Карта часу",
+
+  "item.ic2.air_refill_module": "Модуль повітряного підвантаження",
+
+  "item.ic2.advanced_chainsaw": "Покращена ланцюгова пила",
+  "item.ic2.advanced_circuit": "Покращена схема",
+  "item.ic2.advanced_drill": "Покращений бур",
+  "item.ic2.advanced_hoe": "Покращена мотика",
+  "item.ic2.advanced_solar_helmet": "Сонячний шолом",
+  "item.ic2.advanced_tree_tap": "Покращений краник для дерева",
+
+  "item.ic2.basic_field_expansion_pad_upgrade": "Базове оновлення розширення поля",
+  "item.ic2.advanced_field_expansion_pad_upgrade": "Покращене оновлення розширення поля",
+  "item.ic2.field_expansion_pad_upgrade": "Оновлення розширення поля",
+  "item.ic2.wide_band_booster_pad_upgrade": "Wide band Booster Upgrade",
+  "item.ic2.proximity_booster_pad_upgrade": "Proximity Booster Upgrade",
+  "item.ic2.damage_conversion_pad_upgrade": "Damage Conversion Upgrade",
+  "item.ic2.drain_conversion_pad_upgrade": "Drain Conversion Upgrade",
+
+  "item.ic2.aluminium_cable_item": "Алюмінієвий кабель",
+  "item.ic2.aluminium_insulated_cable_item": "1x Алюмінієвий ізольований кабель",
+  "item.ic2.aluminium_double_insulated_cable_item": "2x Алюмінієвий ізольований кабель",
+  "item.ic2.aluminium_triple_insulated_cable_item": "4x Алюмінієвий ізольований кабель",
+  "item.ic2.aluminium_quadruple_insulated_cable_item": "8x Алюмінієвий ізольований кабель",
+  "item.ic2.aluminium_shield": "Алюмінієвий щит",
+  "item.ic2.dust_aluminium": "Алюмінієва пиль",
+  "item.ic2.ingot_aluminium": "Алюмінієвий злиток",
+  "item.ic2.tool_hoe_aluminium": "Алюмінієва мотика",
+  "item.ic2.tool_pickaxe_aluminium": "Алюмінієве кайло",
+  "item.ic2.tool_shovel_aluminium": "Алюмінієва лопата",
+  "item.ic2.tool_sword_aluminium": "Алюмінієва меч",
+  "item.ic2.raw_aluminium": "Необробленний алюміній",
+  "item.ic2.tool_axe_aluminium": "Алюмінієва сокира",
+
+  "item.ic2.armor_composite_boots": "Композитні чоботи",
+  "item.ic2.armor_composite_chest": "Композитний нагрудник",
+  "item.ic2.armor_composite_helmet": "Композитний шолом ",
+  "item.ic2.armor_composite_leggings": "Композитні наголінники",
+
   "item.ic2.armor_hazmat_boots": "Rubber Boots",
   "item.ic2.armor_hazmat_chest": "Hazmat Suit",
   "item.ic2.armor_hazmat_helmet": "Scuba Helmet",
   "item.ic2.armor_hazmat_leggings": "Hazmat Suit Leggings",
   "item.ic2.armor_priority_pad_upgrade": "Armor Priority Upgrade",
+
   "item.ic2.auto_feeder_module": "Auto Feeder Module",
   "item.ic2.base_module": "Base Module",
-  "item.ic2.basic_field_expansion_pad_upgrade": "Basic Field Expansion Upgrade",
+
   "item.ic2.batbox_minecart": "Batbox Minecart",
   "item.ic2.batpack": "Batpack",
+
   "item.ic2.bio_ball": "Bio Ball",
   "item.ic2.bio_chunk": "Bio Chunk",
   "item.ic2.bio_mesh": "Bio Mesh",
+
   "item.ic2.bronze_cable_item": "Bronze Cable",
   "item.ic2.bronze_double_insulated_cable_item": "2x Insulated Bronze Cable",
   "item.ic2.bronze_insulated_cable_item": "1x Insulated Bronze Cable",
   "item.ic2.bronze_shield": "Bronze Shield",
+  "item.ic2.armor_bronze_boots": "Bronze Boots",
+  "item.ic2.armor_bronze_chest": "Bronze Chestplate",
+  "item.ic2.armor_bronze_helmet": "Bronze Helmet",
+  "item.ic2.armor_bronze_leggings": "Bronze Leggings",
+  "item.ic2.dust_bronze": "Bronze Dust",
+  "item.ic2.ingot_bronze": "Bronze Ingot",
+  "item.ic2.tool_hoe_bronze": "Bronze Hoe",
+  "item.ic2.tool_axe_bronze": "Bronze Axe",
+  "item.ic2.tool_pickaxe_bronze": "Bronze Pickaxe",
+  "item.ic2.tool_shovel_bronze": "Bronze Shovel",
+  "item.ic2.tool_sword_bronze": "Bronze Sword",
+
   "item.ic2.carbon_boat": "Carbon Boat",
   "item.ic2.carbon_box": "Nano Toolbox",
   "item.ic2.carbon_fiber": "Carbon Fiber",
   "item.ic2.carbon_mesh": "Carbon Mesh",
   "item.ic2.carbon_plate": "Carbon Plate",
   "item.ic2.carbon_rotor": "Carbon Rotor",
+
   "item.ic2.cell_air": "Compressed Air Cell",
   "item.ic2.cell_bio": "Bio Cell",
   "item.ic2.cell_bio_fuel": "Biofuel Cell",
@@ -60,23 +101,29 @@
   "item.ic2.cell_plasma": "Plasma Cell",
   "item.ic2.cell_water": "Water Cell",
   "item.ic2.cell_woodgas": "Woodgas Cell",
+
   "item.ic2.cf_pack": "CFoam Backpack",
   "item.ic2.cf_pellet": "CF Pellet",
+
   "item.ic2.chainsaw": "Chainsaw",
   "item.ic2.charger_module": "Charger Module",
   "item.ic2.chips_roll": "Chips Roll",
   "item.ic2.chocolate_bar": "Chocolate",
   "item.ic2.circuit": "Electronic Circuit",
+
   "item.ic2.coal_ball": "Coal Ball",
   "item.ic2.coal_chunk": "Coal Chunk",
+
   "item.ic2.coffee_beans": "Coffee Beans",
   "item.ic2.coffee_powder": "Coffee Powder",
+
   "item.ic2.coin": "Industrial Credit",
   "item.ic2.coin_32768x": "Industrial Credit",
   "item.ic2.coin_4096x": "Industrial Credit",
   "item.ic2.coin_512x": "Industrial Credit",
   "item.ic2.coin_64x": "Industrial Credit",
   "item.ic2.coin_8x": "Industrial Credit",
+
   "item.ic2.compact_fuel_jetpack": "Compacted Jetpack",
   "item.ic2.compacted_electric_jetpack": "Compacted Electric Jetpack",
   "item.ic2.compacted_nuclear_jetpack": "Compacted Nuclear Jetpack",
@@ -87,30 +134,49 @@
   "item.ic2.compressed_coal_ball": "Compressed Coal Ball",
   "item.ic2.compressed_hydrated_coal": "Compressed Hydrated Coal Ball",
   "item.ic2.compressed_plant_ball": "Compressed Plant Ball",
+
   "item.ic2.condensator": "RSH-Condensator",
   "item.ic2.condensator_lap": "LZH-Condensator",
+
   "item.ic2.copper_cable_item": "Copper Cable",
   "item.ic2.copper_insulated_cable_item": "1x Insulated Copper Cable",
+  "item.ic2.dust_copper": "Copper Dust",
+  "item.ic2.ingot_copper": "Copper Ingot",
+  "item.ic2.plate_dense_copper": "Dense Copper Plate",
+  "item.ic2.raw_copper": "Необроблений Copper",
+
   "item.ic2.copy_tool": "Copy Tool",
+
   "item.ic2.crop_analyzer": "Crop Analyzer",
   "item.ic2.crop_seed": "Crop Seed",
+  "tooltip.item.ic2.crop.item": "Press Ctrl to display a fitting Icon",
+  "tooltip.item.ic2.crop_analyzer.analyzing": "Analyzing",
+  "tooltip.item.ic2.crop_analyzer.breeding": "Breeding",
+  "tooltip.item.ic2.crop_analyzer.mode": "Mode: %s",
+  "tooltip.item.ic2.crop_analyzer.toggleMode": "Toggle Mode",
+
   "item.ic2.crystal_upgrade_kit": "Crystalizer Upgrade Kit",
   "item.ic2.cutter": "Wire Cutter",
-  "item.ic2.damage_conversion_pad_upgrade": "Damage Conversion Upgrade",
+
   "item.ic2.dead_magnet": "Dead Magnet",
   "item.ic2.debug_item": "Debug Item",
   "item.ic2.detector_cable_item": "Detector Cable",
-  "item.ic2.detector_card": "Detector Card",
+
+
   "item.ic2.diamond_drill": "Diamond Drill",
-  "item.ic2.drain_conversion_pad_upgrade": "Drain Conversion Upgrade",
+  "item.ic2.dust_diamond": "Diamond Dust",
+  "tooltip.item.ic2.diamond_drill.dirtModeOff": "Dirt Mode Disabled",
+  "tooltip.item.ic2.diamond_drill.dirtModeOn": "Dirt Mode Enabled",
+  "tooltip.item.ic2.diamond_drill.probe": "Probe for ores with a Offhand Scanner",
+  "tooltip.item.ic2.diamond_drill.toggleDirtMode": "Enable/Disable Dirt Mode",
+  "item.ic2.industrial_diamond": "Industrial Diamond",
+
   "item.ic2.drill": "Drill",
-  "item.ic2.dust_aluminium": "Aluminium Dust",
-  "item.ic2.dust_bronze": "Bronze Dust",
+
   "item.ic2.dust_charcoal": "Charcoal Dust",
   "item.ic2.dust_clay": "Clay Dust",
   "item.ic2.dust_coal": "Coal Dust",
-  "item.ic2.dust_copper": "Copper Dust",
-  "item.ic2.dust_diamond": "Diamond Dust",
+
   "item.ic2.dust_gold": "Gold Dust",
   "item.ic2.dust_hydrated_charcoal": "Hydrated Charcoal Dust",
   "item.ic2.dust_hydrated_coal": "Hydrated Coal Dust",
@@ -120,7 +186,9 @@
   "item.ic2.dust_rare_earth": "Rare Earth Dust",
   "item.ic2.dust_silver": "Silver Dust",
   "item.ic2.dust_tin": "Tin Dust",
+
   "item.ic2.dynamite_remote": "Dynamite-O-Mote",
+
   "item.ic2.electric_hoe": "Electric Hoe",
   "item.ic2.electric_jetpack": "Electric Jetpack",
   "item.ic2.electric_sprayer": "Electric CFoam Sprayer",
@@ -130,34 +198,43 @@
   "item.ic2.electric_vent_core": "Reactor Electric Vent",
   "item.ic2.electric_vent_overclocked": "Overclocked Electric Vent",
   "item.ic2.electric_wrench": "Electric Wrench",
+
   "item.ic2.empty_lingering_potion": "Empty Lingering Potion",
   "item.ic2.empty_splash_potion": "Empty Splash Potion",
+
   "item.ic2.energy_crystal": "Energy Crystal",
   "item.ic2.energy_hud_module": "Energy HUD Module",
   "item.ic2.energy_shield_overlay_module": "Energy Shield Overlay Module",
+
   "item.ic2.esu_minecart": "ESU Minecart",
   "item.ic2.esu_upgrade_kit": "ESU Upgrade Kit",
-  "item.ic2.eu_card": "EU Card",
+
+
   "item.ic2.eu_reader": "EU Reader",
+
   "item.ic2.ev_battery_upgrade_kit": "EV Battery Station Upgrade Kit",
   "item.ic2.ev_charge_upgrade_kit": "EV Charging Bench Upgrade Kit",
+
   "item.ic2.extinguish_module": "Extinguish Module",
   "item.ic2.fertilizer": "Fertilizer",
-  "item.ic2.field_expansion_pad_upgrade": "Field Expansion Upgrade",
+
   "item.ic2.filled_tin_can": "Filled Tin Can",
   "item.ic2.filtered_scanner": "Filtered Scanner",
   "item.ic2.fission_upgrade_kit": "Fission Upgrade Kit",
   "item.ic2.flesh_ball": "Flesh Ball",
   "item.ic2.flour": "Flour",
+
   "item.ic2.fluid_display": "Fluid Display",
   "item.ic2.fluid_scanner": "Fluid Scanner",
   "item.ic2.fluid_scanner_filtered": "Filtered Fluid Scanner",
+
   "item.ic2.foam_sprayer": "CFoam Sprayer",
   "item.ic2.food_storage_module": "Food Storage Module",
   "item.ic2.frequency_transmitter": "Frequency Transmitter",
   "item.ic2.fries": "Fries",
   "item.ic2.fuel_can": "Fuel Can",
   "item.ic2.fuel_jetpack": "Jetpack",
+
   "item.ic2.glass": "Glass",
   "item.ic2.glass_beer": "Beer",
   "item.ic2.glass_black_tea": "Black Tea",
@@ -177,13 +254,17 @@
   "item.ic2.glass_rum": "Rum",
   "item.ic2.glass_tea": "Tea",
   "item.ic2.glass_whisky": "Whisky (%s)",
+
   "item.ic2.glassfiber_cable_item": "Glassfiber Cable",
   "item.ic2.glowtronic_crystal": "Glowtronic Crystal",
+
   "item.ic2.gold_cable_item": "Gold Cable",
   "item.ic2.gold_double_insulated_cable_item": "2x Insulated Gold Cable",
   "item.ic2.gold_insulated_cable_item": "1x Insulated Gold Cable",
   "item.ic2.golden_module": "Golden Module",
+
   "item.ic2.grin_powder": "Grin Powder",
+
   "item.ic2.heat_balancer": "Heat Balancer",
   "item.ic2.heat_balancer_advanced": "Advanced Heat Balancer",
   "item.ic2.heat_balancer_core": "Reactor Heat Balancer",
@@ -202,6 +283,7 @@
   "item.ic2.heat_vent_advanced": "Advanced Heat Vent",
   "item.ic2.heat_vent_core": "Reactor Heat Vent",
   "item.ic2.heat_vent_overclocked": "Overclocked Heat Vent",
+
   "item.ic2.hemp": "Hemp",
   "item.ic2.hemp_seeds": "Hemp Seeds",
   "item.ic2.hops": "Hops",
@@ -209,11 +291,9 @@
   "item.ic2.hv_charge_upgrade_kit": "HV Charging Bench Upgrade Kit",
   "item.ic2.hydration_cell": "Hydration Cell",
   "item.ic2.industrial_belt": "Industrial Belt",
-  "item.ic2.industrial_diamond": "Industrial Diamond",
+
   "item.ic2.ingot_advanced_alloy": "Mixed Metal Ingot",
-  "item.ic2.ingot_aluminium": "Aluminium Ingot",
-  "item.ic2.ingot_bronze": "Bronze Ingot",
-  "item.ic2.ingot_copper": "Copper Ingot",
+
   "item.ic2.ingot_polished_gold": "Polished Gold Ingot",
   "item.ic2.ingot_refined_iron": "Refined Iron Ingot",
   "item.ic2.ingot_silver": "Silver Ingot",
@@ -224,38 +304,53 @@
   "item.ic2.ingot_uranium_enriched_enderpearl": "EnderPearl Enriched Uranium Ingot",
   "item.ic2.ingot_uranium_enriched_netherstar": "NetherStar Enriched Uranium Ingot",
   "item.ic2.ingot_uranium_enriched_redstone": "Redstone Enriched Uranium Ingot",
-  "item.ic2.inv_card": "Inventory Card",
+
+
   "item.ic2.iridium_box": "Quantum Toolbox",
   "item.ic2.iridium_rotor": "Iridium Rotor",
+
   "item.ic2.iron_cable_item": "Iron Cable",
   "item.ic2.iron_double_insulated_cable_item": "2x insulated Iron Cable",
   "item.ic2.iron_insulated_cable_item": "1x Insulated Iron Cable",
   "item.ic2.iron_rotor": "Iron Rotor",
   "item.ic2.iron_triple_insulated_cable_item": "4x Insulated Iron Cable",
+
   "item.ic2.isu_minecart": "ISU Minecart",
   "item.ic2.isu_upgrade_kit": "ISU Upgrade Kit",
+
   "item.ic2.item_icons": "Icon",
   "item.ic2.item_limiter": "Item Limiter",
+
   "item.ic2.iv_battery_upgrade_kit": "IV Battery Station Upgrade Kit",
   "item.ic2.iv_charge_upgrade_kit": "IV Charging Bench Upgrade Kit",
+
   "item.ic2.jump_boost_module": "Jump Boost Module",
-  "item.ic2.lag_card": "Lag Card",
+
+
   "item.ic2.lapatron_crystal": "Lapotron Crystal",
   "item.ic2.lapotronic_upgrade_kit": "Lapotrinic Upgrade Kit",
   "item.ic2.lappack": "Lappack",
+
   "item.ic2.lava_module": "Lava Module",
   "item.ic2.light_module": "Light Module",
+
   "item.ic2.magnet": "Magnet",
   "item.ic2.memory_stick": "Memory Stick",
+
   "item.ic2.mfe_minecart": "MFE Minecart",
   "item.ic2.mfe_upgrade_kit": "MFE Upgrade Kit",
+
   "item.ic2.mfsu_minecart": "MFSU Minecart",
   "item.ic2.mfsu_upgrade_kit": "MFSU Upgrade Kit",
+
   "item.ic2.miner_remote": "Miner Remote",
   "item.ic2.mining_laser": "Mining Laser",
+
   "item.ic2.mixed_alloy_rotor": "Mixed Alloy Rotor",
-  "item.ic2.monitor_card": "Monitor Card",
+
+
   "item.ic2.mowing_tool": "Mowing Tool",
+
   "item.ic2.mug": "Mug",
   "item.ic2.mug_beer": "Beer",
   "item.ic2.mug_black_tea": "Black Tea",
@@ -275,27 +370,35 @@
   "item.ic2.mug_rum": "Rum",
   "item.ic2.mug_tea": "Tea",
   "item.ic2.mug_whisky": "Whisky (%s)",
+
   "item.ic2.mv_battery_upgrade_kit": "MV Battery Station Upgrade Kit",
   "item.ic2.mv_charge_upgrade_kit": "MV Charging Bench Upgrade Kit",
+
   "item.ic2.nano_saber": "Nano Saber",
   "item.ic2.nano_shield": "Nano Shield",
   "item.ic2.nano_suit_boots": "Nano Boots",
   "item.ic2.nano_suit_chestplate": "Nano Chestplate",
   "item.ic2.nano_suit_helmet": "Nano Helmet",
   "item.ic2.nano_suit_leggings": "Nano Leggings",
+
   "item.ic2.nightvision_goggles": "Nightvision Goggles",
   "item.ic2.nuclear_jetpack": "Nuclear Jetpack",
   "item.ic2.obscurator": "Obscurator",
   "item.ic2.obsidian_blade": "Obsidian Blade",
+
   "item.ic2.od_scanner": "OD Scanner",
   "item.ic2.od_scanner_big_ranged": "Big Ranged OD Scanner",
   "item.ic2.od_scanner_ranged": "Ranged OD Scanner",
+
   "item.ic2.ore_iridium": "Iridium Ore",
   "item.ic2.ore_uranium": "Uranium Ore",
+
   "item.ic2.ov_scanner": "OV Scanner",
   "item.ic2.ov_scanner_big_ranged": "Big Ranged OV Scanner",
   "item.ic2.ov_scanner_ranged": "Ranged OV Scanner",
+
   "item.ic2.overgrowth_fertilizer": "Overgrowth Fertilizer",
+
   "item.ic2.painter": "Painter",
   "item.ic2.painter_black": "Black Painter",
   "item.ic2.painter_blue": "Blue Painter",
@@ -313,26 +416,32 @@
   "item.ic2.painter_red": "Red Painter",
   "item.ic2.painter_white": "White Painter",
   "item.ic2.painter_yellow": "Yellow Painter",
+
   "item.ic2.parachute_module": "Parachute Module",
+
   "item.ic2.pesd": "PESD",
   "item.ic2.pesu_minecart": "PESU Minecart",
   "item.ic2.pesu_upgrade_kit": "PESU Upgrade Kit",
+
   "item.ic2.plant_ball": "Plant Ball",
+
   "item.ic2.plasma_cable_item": "Plasma Cable",
   "item.ic2.plasma_core": "Plasma Core",
+
   "item.ic2.plate_advanced_alloy": "Advanced Alloy Plate",
-  "item.ic2.plate_dense_copper": "Dense Copper Plate",
+
   "item.ic2.plate_iridium": "Iridium Plate",
   "item.ic2.plating": "Reactor Plating",
   "item.ic2.plating_containment": "Containment Reactor Plating",
   "item.ic2.plating_heat_capacity": "Heat Capacity Reactor Plating",
+
   "item.ic2.portable_teleporter": "Portable Teleporter",
   "item.ic2.potato_slices": "Potato Slices",
   "item.ic2.precision_wrench": "Precision Wrench",
-  "item.ic2.progress_card": "Progress Card",
+
   "item.ic2.protective_module": "Protective Module",
-  "item.ic2.proximity_booster_pad_upgrade": "Proximity Booster Upgrade",
   "item.ic2.pulsating_quartz": "Pulsating Quartz",
+
   "item.ic2.quantum_accumulator": "Quantum Accumulator",
   "item.ic2.quantum_accumulator_big": "Big Quantum Accumulator",
   "item.ic2.quantum_pack": "Quantum Pack",
@@ -340,56 +449,74 @@
   "item.ic2.quantum_suit_chestplate": "Quantum Chestplate",
   "item.ic2.quantum_suit_helmet": "Quantum Helmet",
   "item.ic2.quantum_suit_leggings": "Quantum Leggings",
+
   "item.ic2.quarry_scanner": "Quarry Scanner",
   "item.ic2.rare_earth_chunk": "Rare Earth Chunk",
-  "item.ic2.raw_aluminium": "Raw Aluminium",
-  "item.ic2.raw_bio_fiber": "Raw Bio Fiber",
-  "item.ic2.raw_copper": "Raw Copper",
-  "item.ic2.raw_gold": "Raw Gold",
-  "item.ic2.raw_iron": "Raw Iron",
-  "item.ic2.raw_leather": "Raw Leather",
-  "item.ic2.raw_obsidian_blade": "Raw Obsidian Blade",
-  "item.ic2.raw_silver": "Raw Silver",
-  "item.ic2.raw_tin": "Raw Tin",
+
+
+
+  "item.ic2.raw_bio_fiber": "Необроблений Bio Fiber",
+  "tooltip.item.ic2.bio_ball": "Bio Ball",
+
+  "item.ic2.raw_gold": "Необроблене золото",
+  "item.ic2.raw_iron": "Необроблене залізо",
+  "item.ic2.raw_leather": "Необроблена шкіра",
+  "item.ic2.raw_obsidian_blade": "Необроблене обсидіанове лезо",
+  "item.ic2.raw_silver": "Необроблене срібло",
+  "item.ic2.raw_tin": "Необроблене олово",
+
   "item.ic2.re_battery": "Reusable Battery",
-  "item.ic2.reactor_card": "Reactor Card",
+
+
   "item.ic2.reactor_fuel_cell": "Reactor Fuel Cell",
+
   "item.ic2.reflector": "Reflector",
   "item.ic2.reflector_iridium": "Iridium Reflector",
   "item.ic2.reflector_thick": "Thick Reflector",
+
   "item.ic2.restoring_fertilizer": "Restoring Fertilizer",
   "item.ic2.rock_cutter_drill": "Jack-Hammer",
+
   "item.ic2.rubber": "Rubber Ball",
   "item.ic2.rubber_boat": "Rubber Boat",
   "item.ic2.rubber_boat_broken": "Broken Rubber Boat",
   "item.ic2.rubberwood_boat": "Rubberwood Boat",
+
   "item.ic2.scrap": "Scrap",
   "item.ic2.scrap_metal": "Scrap Metal",
   "item.ic2.scrap_metal_blade": "Scrap Metal Blade",
   "item.ic2.scrap_metal_chunk": "Scrap Metal Chunk",
   "item.ic2.scrapbox": "Scrapbox",
+
   "item.ic2.solar_helmet": "Solar Helmet",
   "item.ic2.sonar_module": "Sonar Module",
   "item.ic2.speed_boost_module": "Speed Boost Module",
   "item.ic2.splitter_cable_item": "Splitter Cable",
+
   "item.ic2.static_boots": "Static Boots",
+
   "item.ic2.steam_vent": "Steam Vent",
   "item.ic2.steam_vent_advanced": "Advanced Steam Vent",
   "item.ic2.steam_vent_core": "Core Steam Vent",
   "item.ic2.steam_vent_overclocked": "Overclocked Steam Vent",
+
   "item.ic2.step_assist_module": "Step Assist Module",
   "item.ic2.sticky_dynamite": "Sticky Dynamite",
   "item.ic2.sticky_resin": "Sticky Resin",
   "item.ic2.su_battery": "Single Use Battery",
   "item.ic2.super_cable_item": "Super Cable",
+
   "item.ic2.tag_block": "Tag Block: %s",
   "item.ic2.tag_item": "Tag Item: %s",
+
   "item.ic2.tank_storage_module": "Tank Storage Module",
   "item.ic2.tea_leaf": "Tea Leaf",
   "item.ic2.terrawart": "Terrawart",
-  "item.ic2.text_card": "Text Card",
+
+
   "item.ic2.tfbp": "TFBP",
   "item.ic2.tfbp.radius": "Radius: %s",
+
   "item.ic2.tfbp_biome": "TFBP Biome",
   "item.ic2.tfbp_biome_chilling": "TFBP Biome - Chilling",
   "item.ic2.tfbp_biome_cultivation": "TFBP Biome - Cultivation",
@@ -398,33 +525,30 @@
   "item.ic2.tfbp_biome_irrigation": "TFBP Biome - Irrigation",
   "item.ic2.tfbp_biome_mushroom": "TFBP Biome -Mushroom",
   "item.ic2.tfbp_biome_undergrowth": "TFBP Biome - Undergrowth",
+
   "item.ic2.tfbp_chilling": "TFBP - Chilling",
   "item.ic2.tfbp_cultivation": "TFBP - Cultivation",
   "item.ic2.tfbp_desertification": "TFBP - Desertification",
   "item.ic2.tfbp_flatification": "TFBP - Flatification",
   "item.ic2.tfbp_irrigation": "TFBP - Irrigation",
   "item.ic2.tfbp_mushroom": "TFBP - Mushroom",
+
   "item.ic2.thermometer": "Thermometer",
-  "item.ic2.time_card": "Time Card",
+
   "item.ic2.tin_cable_item": "Tin Cable",
   "item.ic2.tin_can": "Tin Can",
-  "item.ic2.tool_axe_aluminium": "Aluminium Axe",
-  "item.ic2.tool_axe_bronze": "Bronze Axe",
+
+
+
   "item.ic2.tool_box": "Toolbox",
-  "item.ic2.tool_hoe_aluminium": "Aluminium Hoe",
-  "item.ic2.tool_hoe_bronze": "Bronze Hoe",
-  "item.ic2.tool_pickaxe_aluminium": "Aluminium Pickaxe",
-  "item.ic2.tool_pickaxe_bronze": "Bronze Pickaxe",
-  "item.ic2.tool_shovel_aluminium": "Aluminium Shovel",
-  "item.ic2.tool_shovel_bronze": "Bronze Shovel",
-  "item.ic2.tool_sword_aluminium": "Aluminium Sword",
-  "item.ic2.tool_sword_bronze": "Bronze Sword",
+
   "item.ic2.tree_tap": "Tree Tap",
   "item.ic2.tube_tool": "Tube Configurator",
   "item.ic2.turbine_blade": "Turbine Blade",
   "item.ic2.uesc": "UESC",
   "item.ic2.uncompressed_super_cable": "Uncompressed Super Cable",
   "item.ic2.unprinted_wiki": "Unprinted Wiki",
+
   "item.ic2.upgrade_base": "Upgrade Base",
   "item.ic2.upgrade_basic_fluid_export": "Basic Fluid Export Upgrade",
   "item.ic2.upgrade_basic_fluid_import": "Basic Fluid Import Upgrade",
@@ -453,6 +577,7 @@
   "item.ic2.upgrade_simple_import": "Simple Import Upgrade",
   "item.ic2.upgrade_slowness": "Slowness Upgrade",
   "item.ic2.upgrade_transformer": "Transformer Upgrade",
+
   "item.ic2.uranium_rod_blaze_dual": "Dual Blaze Enriched Uranium Rod",
   "item.ic2.uranium_rod_blaze_quad": "Quad Blaze Enriched Uranium Rod",
   "item.ic2.uranium_rod_blaze_single": "Blaze Enriched Uranium Rod",
@@ -489,28 +614,31 @@
   "item.ic2.uranium_rod_redstone_quad": "Quad Redstone Enriched Uranium Rod",
   "item.ic2.uranium_rod_redstone_single": "Redstone Enriched Uranium Rod",
   "item.ic2.uranium_rod_single": "Uranium Rod",
+
   "item.ic2.uumatter": "UU-Matter",
   "item.ic2.water_walker_module": "Water Walking Module",
   "item.ic2.weedex": "WeedEx",
   "item.ic2.whisky_grist": "Whisky Grist",
-  "item.ic2.wide_band_booster_pad_upgrade": "Wide band Booster Upgrade",
+
   "item.ic2.wiki_item": "Industrial Craft 2 Classic Wiki",
   "item.ic2.wooden_rotor": "Wooden Rotor",
   "item.ic2.wool_rotor": "Woolen Rotor",
   "item.ic2.wrench": "Wrench",
+
   "tooltip.item.ic2.activity_card.active": "Active",
   "tooltip.item.ic2.activity_card.inactive": "Inactive",
   "tooltip.item.ic2.activity_card.state": "State: ",
+  "tooltip.item.ic2.base_card.invalid_data": "Invalid Card Data",
+  "tooltip.item.ic2.base_card.invalid_tile": "TileEntity Invalid",
+  "tooltip.item.ic2.base_card.tile_not_found": "Tile Entity not found",
+  "tooltip.item.ic2.card.init": "Link to a Info Provider",
+  "tooltip.item.ic2.energy_card.progress": "Progress: %1$s / %2$s",
+
   "tooltip.item.ic2.adv_hoe.radius": "Radius: %s",
   "tooltip.item.ic2.armor_durability": "Durability: %d / %d",
   "tooltip.item.ic2.armor_hazmat.prevent_burn": "Protects you from fire and lets you swim in lava if full set equipped",
   "tooltip.item.ic2.armor_hazmat_helmet.provide_air": "Provides you with air if low and if Air Cells are provided",
-  "tooltip.item.ic2.base_card.invalid_data": "Invalid Card Data",
-  "tooltip.item.ic2.base_card.invalid_tile": "TileEntity Invalid",
-  "tooltip.item.ic2.base_card.tile_not_found": "Tile Entity not found",
   "tooltip.item.ic2.battery.recharge": "Recharge Hotbar Items",
-  "tooltip.item.ic2.bio_ball": "Bio Ball",
-  "tooltip.item.ic2.card.init": "Link to a Info Provider",
   "tooltip.item.ic2.cf_pack.sprayer_uses": "CFoam Stored: %s",
   "tooltip.item.ic2.coin": "Coin Value: %s",
   "tooltip.item.ic2.copy_tool.cleared": "Removed all copy Settings",
@@ -521,19 +649,12 @@
   "tooltip.item.ic2.copy_tool.nothing_to_copy": "Nothing to copy",
   "tooltip.item.ic2.copy_tool.applied": "Settings applied",
   "tooltip.item.ic2.copy_tool.nothing_to_applied": "No Settings to apply found",
-  "tooltip.item.ic2.crop.item": "Press Ctrl to display a fitting Icon",
-  "tooltip.item.ic2.crop_analyzer.analyzing": "Analyzing",
-  "tooltip.item.ic2.crop_analyzer.breeding": "Breeding",
-  "tooltip.item.ic2.crop_analyzer.mode": "Mode: %s",
-  "tooltip.item.ic2.crop_analyzer.toggleMode": "Toggle Mode",
+
   "tooltip.item.ic2.cutter.add": "Add Insulation from Cables (Needs Rubber)",
   "tooltip.item.ic2.cutter.cut": "Remove Insulation from Cables",
   "tooltip.item.ic2.debug.tile.disabled": "Disabled Tile Debug",
   "tooltip.item.ic2.debug.tile.enabled": "Enabled Tile Debug",
-  "tooltip.item.ic2.diamond_drill.dirtModeOff": "Dirt Mode Disabled",
-  "tooltip.item.ic2.diamond_drill.dirtModeOn": "Dirt Mode Enabled",
-  "tooltip.item.ic2.diamond_drill.probe": "Probe for ores with a Offhand Scanner",
-  "tooltip.item.ic2.diamond_drill.toggleDirtMode": "Enable/Disable Dirt Mode",
+
   "tooltip.item.ic2.dim_pos": "[World=%1$s, x=%2$s, y=%3$s, z=%4$s]",
   "tooltip.item.ic2.direction": "Direction: %s",
   "tooltip.item.ic2.dynamite_remote.count": "Linked Dynamite: %s",
@@ -546,8 +667,9 @@
   "tooltip.item.ic2.electric_wrench.losslessWrenchModeOn": "Lossless Mode Enabled",
   "tooltip.item.ic2.electric_wrench.losslessWrenchUses": "Lossless uses Left: %s",
   "tooltip.item.ic2.electric_wrench.toggleLosslessMode": "Enable/Disable Lossless Mode",
-  "tooltip.item.ic2.energy_card.progress": "Progress: %1$s / %2$s",
+
   "tooltip.item.ic2.error": "I AM ERROR",
+
   "tooltip.item.ic2.eu_reader.active_mode": "Current Mode: %s",
   "tooltip.item.ic2.eu_reader.cable_flow": "Energy Flow: %sEU/t",
   "tooltip.item.ic2.eu_reader.packet_flow": "Packet Flow: %s Packets/t",
@@ -580,7 +702,9 @@
   "tooltip.item.ic2.eu_reader.storage": "Storage: %s EU",
   "tooltip.item.ic2.eu_reader.switch_mode": "Switch Reader Mode",
   "tooltip.item.ic2.eu_reader.use": "Consumes: %s EU/use",
+
   "tooltip.item.ic2.exp_collector": "Stored EXP: %s",
+
   "tooltip.item.ic2.filled_tin_can": "This looks good.",
   "tooltip.item.ic2.filled_tin_can.bad": "This doesn't look appetizing.",
   "tooltip.item.ic2.filled_tin_can.chicken": "If I concentrate, I can hear a faint sound of clucking.",
@@ -589,6 +713,7 @@
   "tooltip.item.ic2.filled_tin_can.golden_apple": "This smells of apple.",
   "tooltip.item.ic2.filled_tin_can.poison": "This smells kinda sweet.",
   "tooltip.item.ic2.filled_tin_can.pufferfish": "This smells fishy.",
+
   "tooltip.item.ic2.frequency_transmitter.applied": "Teleportation link established",
   "tooltip.item.ic2.frequency_transmitter.clear": "Frequency Transmitter unlinked",
   "tooltip.item.ic2.frequency_transmitter.clear_key": "Unlink target",
@@ -596,10 +721,13 @@
   "tooltip.item.ic2.frequency_transmitter.same": "Teleportation link unchanged",
   "tooltip.item.ic2.frequency_transmitter.set": "Frequency Transmitter linked to Teleporter",
   "tooltip.item.ic2.frequency_transmitter.valve": "Frequency Transmitter linked to Teleporting Valve",
+
   "tooltip.item.ic2.fuel_can.release": "Supplies 500 Fuel",
   "tooltip.item.ic2.fuel_can.stored": "%1$s / %2$s Fuel",
+
   "tooltip.item.ic2.full_tag": "Full Tag: %s",
   "tooltip.item.ic2.hoe.seedmode": "Change Crop Seed Drop Mode",
+
   "tooltip.item.ic2.jetpack.charge_rocket": "Charge the Rocket Mode",
   "tooltip.item.ic2.jetpack.heat.component": "Average Reactor Part Durability: %s",
   "tooltip.item.ic2.jetpack.heat.reactor": "Reactor Heat: %1$s / %2$s",
@@ -610,10 +738,13 @@
   "tooltip.item.ic2.jetpack.rocket_charge": "Rocket Charge: %s",
   "tooltip.item.ic2.jetpack.toggle": "Enable/Disable the Jetpack",
   "tooltip.item.ic2.jetpack.toggle_rocket": "Enable/Disable the Rocket Mode",
+
   "tooltip.item.ic2.light.disable": "Light Source Disabled",
   "tooltip.item.ic2.light.enable": "Light Source Enabled",
   "tooltip.item.ic2.light.name": "Toggle the Light Source",
+
   "tooltip.item.ic2.memory_stick.clear": "Clear the Stored Recipes",
+
   "tooltip.item.ic2.mining_laser.error.no_target": "No Target Found",
   "tooltip.item.ic2.mining_laser.error.steep": "Angle Too Steep",
   "tooltip.item.ic2.mining_laser.mode": "Mode: %s",
@@ -630,15 +761,20 @@
   "tooltip.item.ic2.mining_remote.location.refuel": "Refuel Position: %s",
   "tooltip.item.ic2.mining_remote.location.refuel_set": "Set Refuel Position to: %s",
   "tooltip.item.ic2.mining_remote.location.rocket_miner": "Rocket Miner\nAt: %1$s,\nRelative %2$s (%3$s Blocks)\n",
+
   "tooltip.item.ic2.module_energy_shield": "Toggle the Visibility of the Overlay",
   "tooltip.item.ic2.module_energy_shield.disable": "Energy Shield only active on Hurt",
   "tooltip.item.ic2.module_energy_shield.enable": "Energy Shield always Active",
+
   "tooltip.item.ic2.multi_mine.disable": "Multi-Mining Disabled",
   "tooltip.item.ic2.multi_mine.enable": "Multi-Mining Enabled",
+
   "tooltip.item.ic2.nano_saber": "Can Destroy Nano & Quantum Armor",
   "tooltip.item.ic2.nano_saber.disable": "Disable the Nano Saber",
   "tooltip.item.ic2.nano_saber.enable": "Enable the Nano Saber",
+
   "tooltip.item.ic2.nightvision_goggles.hud_key": "Enable/Disable NightVision",
+
   "tooltip.item.ic2.obscurator.block": "Stored Block: %s",
   "tooltip.item.ic2.obscurator.change.copy": "Copy a Texture of a Block",
   "tooltip.item.ic2.obscurator.change.layer": "Change the Current Layer",
@@ -651,16 +787,21 @@
   "tooltip.item.ic2.obscurator.range": "Obscurator Area: %1$sx%1$s Blocks",
   "tooltip.item.ic2.obscurator.rotation": "Layer Rotation: %s°",
   "tooltip.item.ic2.obscurator.side": "Side: %s",
+
   "tooltip.item.ic2.painter.change_range": "Toggle the Range",
   "tooltip.item.ic2.painter.change_refill": "Enable/Disable AutoRefill",
   "tooltip.item.ic2.painter.paint_full_block": "Paint all Sides of a Block",
   "tooltip.item.ic2.painter.range": "Range: %s Block(s)",
   "tooltip.item.ic2.painter.refill": "AutoRefill: %s",
+
   "tooltip.item.ic2.parashoot.name": "Open the Parachute while Falling",
+
   "tooltip.item.ic2.portable_teleporter.set_target": "Target Set",
   "tooltip.item.ic2.portable_teleporter.target": "Teleport to Target",
   "tooltip.item.ic2.portable_teleporter.target_set": "Set the Target (On Teleporter)",
+
   "tooltip.item.ic2.pos": "[x=%1$s, y=%2$s, z=%3$s]",
+
   "tooltip.item.ic2.reactor_card.heat.full": "Reactor Heat: %1$s / %2$s",
   "tooltip.item.ic2.reactor_card.heat.simple": "Reactor Heat: %1$s",
   "tooltip.item.ic2.reactor_card.part_health": "Part Health: %s%%",
@@ -671,7 +812,9 @@
   "tooltip.item.ic2.reactor_card.runtime.time": "Running Time: %s",
   "tooltip.item.ic2.reactor_card.time_left.no_uranium": "Time Left: No Uranium",
   "tooltip.item.ic2.reactor_card.time_left.time": "Running Time: %s",
+
   "tooltip.item.ic2.rock_cutter": "Mines Rock insanely fast",
+
   "tooltip.item.ic2.scanner.filter": "Open the Filter",
   "tooltip.item.ic2.scanner.od_scan_result": "SCAN RESULT: Ore Density for %1$s Blocks is %2$s",
   "tooltip.item.ic2.scanner.ov_scan_result": "SCAN RESULT: Ore Density for %1$s Blocks is %2$s, with %3$s Blocks found",
@@ -683,7 +826,9 @@
   "tooltip.item.ic2.scanner.start": "Start a Scan",
   "tooltip.item.ic2.scanner.targets": "Scan Targets: ",
   "tooltip.item.ic2.scanner.use_tags": "Use Tags/Oredict",
+
   "tooltip.item.ic2.set_direction": "Set Direction to %s",
+
   "tooltip.item.ic2.solar_helmet_production": "Produces %d EU/t while the Sky is visible",
   "tooltip.item.ic2.sonar_module.disable": "Disable Low Range Scan",
   "tooltip.item.ic2.sonar_module.disabled": "Low Range Scan Disabled",
@@ -691,14 +836,18 @@
   "tooltip.item.ic2.sonar_module.enabled": "Low Range Scan Enabled",
   "tooltip.item.ic2.sonar_module.long_scan": "Run Long Range Scan",
   "tooltip.item.ic2.sonar_module.toggle": "Toggle Low Range Scan",
+
   "tooltip.item.ic2.static_boots.produce_eu": "Generates between 0 and 3 EU/t depending on how fast you move",
+
   "tooltip.item.ic2.tank_storage_module.empty": "Tank: 0 / %2$s mB",
   "tooltip.item.ic2.tank_storage_module.filled": "Tank: %1$s / %2$s mB, %3$s",
+
   "tooltip.item.ic2.time_card.day": "DayTime: %s",
   "tooltip.item.ic2.time_card.game": "GameTime: %s",
   "tooltip.item.ic2.time_card.no_world": "No World",
   "tooltip.item.ic2.time_card.real": "Real Time: %s",
   "tooltip.item.ic2.time_card.server": "Server Time: %s",
+
   "tooltip.item.ic2.transport_update.compare.durability": "Compare Durability",
   "tooltip.item.ic2.transport_update.compare.fluid": "Compare Fluids",
   "tooltip.item.ic2.transport_update.compare.nbt": "Compare NBT",
@@ -716,6 +865,7 @@
   "tooltip.item.ic2.transport_update.durability.90b": "More then 90% Durability Used",
   "tooltip.item.ic2.transport_update.durability.exact": "Exact Damage",
   "tooltip.item.ic2.transport_update.items": " Items",
+
   "tooltip.item.ic2.tube_tool.block_output": "Block Directional Tube Output",
   "tooltip.item.ic2.tube_tool.block_output.desc": "Makes that the Directional Tube can no longer accept items through its output",
   "tooltip.item.ic2.tube_tool.comparator": "Extraction Tube Comparator Mode",
@@ -740,6 +890,7 @@
   "tooltip.item.ic2.tube_tool.visible_items.disable": "Disabled Item Rendering/Synchronization",
   "tooltip.item.ic2.tube_tool.switch_mode": "Switch Tube Action",
   "tooltip.item.ic2.tube_tool.use": "Apply the Tube Action",
+
   "tooltip.item.ic2.upgrade.set_opposite_side": "Set Facing on the Opposite Clicked Side",
   "tooltip.item.ic2.upgrade.set_side": "Set Facing on the Clicked Side",
   "tooltip.item.ic2.upgrade.speed.add": "Extra Processing Speed: %s /t",
@@ -754,6 +905,7 @@
   "tooltip.item.ic2.upgrade.usage.mul": "Extra Energy Usage: %s%%",
   "tooltip.item.ic2.upgrade_container.invalid": "%1$sx %2$s (Disabled)",
   "tooltip.item.ic2.upgrade_container.valid": "%1$sx %2$s (Applied)",
+
   "tooltip.item.ic2.weedex.refill": "Refills on depletion if grin powder in inventory",
   "tooltip.item.ic2.wiki.block_click": "open the page of said Block in the wiki"
 }
