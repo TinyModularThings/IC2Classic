@@ -10,7 +10,7 @@
   "item.ic2.text_card": "Карта тексту",
   "item.ic2.time_card": "Карта часу",
 
-  "item.ic2.air_refill_module": "Модуль повітряного підвантаження",
+  "item.ic2.eu_reader": "EU-метр",
 
   "item.ic2.advanced_chainsaw": "Покращена ланцюгова пила",
   "item.ic2.advanced_circuit": "Покращена схема",
@@ -22,10 +22,11 @@
   "item.ic2.basic_field_expansion_pad_upgrade": "Базове оновлення розширення поля",
   "item.ic2.advanced_field_expansion_pad_upgrade": "Покращене оновлення розширення поля",
   "item.ic2.field_expansion_pad_upgrade": "Оновлення розширення поля",
-  "item.ic2.wide_band_booster_pad_upgrade": "Wide band Booster Upgrade",
-  "item.ic2.proximity_booster_pad_upgrade": "Proximity Booster Upgrade",
-  "item.ic2.damage_conversion_pad_upgrade": "Damage Conversion Upgrade",
-  "item.ic2.drain_conversion_pad_upgrade": "Drain Conversion Upgrade",
+  "item.ic2.wide_band_booster_pad_upgrade": "Оновлення широкосмугового підсилювача",
+  "item.ic2.proximity_booster_pad_upgrade": "Оновлення близького підсилювача",
+  "item.ic2.damage_conversion_pad_upgrade": "Оновлення перетворення пошкоджень",
+  "item.ic2.drain_conversion_pad_upgrade": "Оновлення перетворення відведення",
+  "item.ic2.armor_priority_pad_upgrade": "Оновлення приоритету обладункків",
 
   "item.ic2.aluminium_cable_item": "Алюмінієвий кабель",
   "item.ic2.aluminium_insulated_cable_item": "1x Алюмінієвий ізольований кабель",
@@ -47,14 +48,30 @@
   "item.ic2.armor_composite_helmet": "Композитний шолом ",
   "item.ic2.armor_composite_leggings": "Композитні наголінники",
 
-  "item.ic2.armor_hazmat_boots": "Rubber Boots",
-  "item.ic2.armor_hazmat_chest": "Hazmat Suit",
-  "item.ic2.armor_hazmat_helmet": "Scuba Helmet",
-  "item.ic2.armor_hazmat_leggings": "Hazmat Suit Leggings",
-  "item.ic2.armor_priority_pad_upgrade": "Armor Priority Upgrade",
+  "item.ic2.armor_hazmat_boots": "Резинові чоботи",
+  "item.ic2.armor_hazmat_chest": "Захистний нагрудник",
+  "item.ic2.armor_hazmat_helmet": "Скафандр",
+  "item.ic2.armor_hazmat_leggings": "Заброди",
 
-  "item.ic2.auto_feeder_module": "Auto Feeder Module",
+  "item.ic2.auto_feeder_module": "Модуль годування",
   "item.ic2.base_module": "Base Module",
+  "item.ic2.charger_module": "Charger Module",
+  "item.ic2.energy_hud_module": "Energy HUD Module",
+  "item.ic2.energy_shield_overlay_module": "Energy Shield Overlay Module",
+  "item.ic2.extinguish_module": "Extinguish Module",
+  "item.ic2.air_refill_module": "Модуль повітряного підвантаження",
+  "item.ic2.food_storage_module": "Food Storage Module",
+  "item.ic2.golden_module": "Golden Module",
+  "item.ic2.jump_boost_module": "Jump Boost Module",
+  "item.ic2.lava_module": "Lava Module",
+  "item.ic2.light_module": "Light Module",
+  "item.ic2.parachute_module": "Parachute Module",
+  "item.ic2.protective_module": "Protective Module",
+  "item.ic2.sonar_module": "Sonar Module",
+  "item.ic2.speed_boost_module": "Speed Boost Module",
+  "item.ic2.step_assist_module": "Step Assist Module",
+  "item.ic2.tank_storage_module": "Tank Storage Module",
+  "item.ic2.water_walker_module": "Water Walking Module",
 
   "item.ic2.batbox_minecart": "Batbox Minecart",
   "item.ic2.batpack": "Batpack",
@@ -106,7 +123,7 @@
   "item.ic2.cf_pellet": "CF Pellet",
 
   "item.ic2.chainsaw": "Chainsaw",
-  "item.ic2.charger_module": "Charger Module",
+
   "item.ic2.chips_roll": "Chips Roll",
   "item.ic2.chocolate_bar": "Chocolate",
   "item.ic2.circuit": "Electronic Circuit",
@@ -203,19 +220,13 @@
   "item.ic2.empty_splash_potion": "Empty Splash Potion",
 
   "item.ic2.energy_crystal": "Energy Crystal",
-  "item.ic2.energy_hud_module": "Energy HUD Module",
-  "item.ic2.energy_shield_overlay_module": "Energy Shield Overlay Module",
 
   "item.ic2.esu_minecart": "ESU Minecart",
   "item.ic2.esu_upgrade_kit": "ESU Upgrade Kit",
 
-
-  "item.ic2.eu_reader": "EU Reader",
-
   "item.ic2.ev_battery_upgrade_kit": "EV Battery Station Upgrade Kit",
   "item.ic2.ev_charge_upgrade_kit": "EV Charging Bench Upgrade Kit",
 
-  "item.ic2.extinguish_module": "Extinguish Module",
   "item.ic2.fertilizer": "Fertilizer",
 
   "item.ic2.filled_tin_can": "Filled Tin Can",
@@ -229,7 +240,7 @@
   "item.ic2.fluid_scanner_filtered": "Filtered Fluid Scanner",
 
   "item.ic2.foam_sprayer": "CFoam Sprayer",
-  "item.ic2.food_storage_module": "Food Storage Module",
+
   "item.ic2.frequency_transmitter": "Frequency Transmitter",
   "item.ic2.fries": "Fries",
   "item.ic2.fuel_can": "Fuel Can",
@@ -261,7 +272,7 @@
   "item.ic2.gold_cable_item": "Gold Cable",
   "item.ic2.gold_double_insulated_cable_item": "2x Insulated Gold Cable",
   "item.ic2.gold_insulated_cable_item": "1x Insulated Gold Cable",
-  "item.ic2.golden_module": "Golden Module",
+
 
   "item.ic2.grin_powder": "Grin Powder",
 
@@ -324,15 +335,13 @@
   "item.ic2.iv_battery_upgrade_kit": "IV Battery Station Upgrade Kit",
   "item.ic2.iv_charge_upgrade_kit": "IV Charging Bench Upgrade Kit",
 
-  "item.ic2.jump_boost_module": "Jump Boost Module",
 
 
   "item.ic2.lapatron_crystal": "Lapotron Crystal",
   "item.ic2.lapotronic_upgrade_kit": "Lapotrinic Upgrade Kit",
   "item.ic2.lappack": "Lappack",
 
-  "item.ic2.lava_module": "Lava Module",
-  "item.ic2.light_module": "Light Module",
+
 
   "item.ic2.magnet": "Magnet",
   "item.ic2.memory_stick": "Memory Stick",
@@ -417,7 +426,7 @@
   "item.ic2.painter_white": "White Painter",
   "item.ic2.painter_yellow": "Yellow Painter",
 
-  "item.ic2.parachute_module": "Parachute Module",
+
 
   "item.ic2.pesd": "PESD",
   "item.ic2.pesu_minecart": "PESU Minecart",
@@ -439,7 +448,7 @@
   "item.ic2.potato_slices": "Potato Slices",
   "item.ic2.precision_wrench": "Precision Wrench",
 
-  "item.ic2.protective_module": "Protective Module",
+
   "item.ic2.pulsating_quartz": "Pulsating Quartz",
 
   "item.ic2.quantum_accumulator": "Quantum Accumulator",
@@ -489,8 +498,7 @@
   "item.ic2.scrapbox": "Scrapbox",
 
   "item.ic2.solar_helmet": "Solar Helmet",
-  "item.ic2.sonar_module": "Sonar Module",
-  "item.ic2.speed_boost_module": "Speed Boost Module",
+
   "item.ic2.splitter_cable_item": "Splitter Cable",
 
   "item.ic2.static_boots": "Static Boots",
@@ -500,7 +508,7 @@
   "item.ic2.steam_vent_core": "Core Steam Vent",
   "item.ic2.steam_vent_overclocked": "Overclocked Steam Vent",
 
-  "item.ic2.step_assist_module": "Step Assist Module",
+
   "item.ic2.sticky_dynamite": "Sticky Dynamite",
   "item.ic2.sticky_resin": "Sticky Resin",
   "item.ic2.su_battery": "Single Use Battery",
@@ -509,7 +517,7 @@
   "item.ic2.tag_block": "Tag Block: %s",
   "item.ic2.tag_item": "Tag Item: %s",
 
-  "item.ic2.tank_storage_module": "Tank Storage Module",
+
   "item.ic2.tea_leaf": "Tea Leaf",
   "item.ic2.terrawart": "Terrawart",
 
@@ -616,7 +624,7 @@
   "item.ic2.uranium_rod_single": "Uranium Rod",
 
   "item.ic2.uumatter": "UU-Matter",
-  "item.ic2.water_walker_module": "Water Walking Module",
+
   "item.ic2.weedex": "WeedEx",
   "item.ic2.whisky_grist": "Whisky Grist",
 
