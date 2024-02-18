@@ -732,7 +732,7 @@
   "tooltip.ic2.nightvision_seeinthedark": "Дає вам можливість бачити у темряві",
   "tooltip.ic2.open_item_inventory": "Відкрити інвентар",
   "tooltip.ic2.press_alt.name": "Натисніть ALT для отримання інформації про статистику.",
-  "tooltip.ic2.press_ctrl.name": "Натисніть CTRL для використання клавіш",
+  "tooltip.ic2.press_ctrl.name": "Натисніть CTRL для розширеної підсказки",
   "tooltip.ic2.press_key_description": "Натисніть (%1$s), щоб: %2$s",
   "tooltip.ic2.press_shift.name": "Натисніть SHIFT для отримання додаткової інформації.",
   "tooltip.ic2.release_upgrade": "витягніть заблоковане оновлення зі слоту",
