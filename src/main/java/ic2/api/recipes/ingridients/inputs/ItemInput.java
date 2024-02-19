@@ -38,7 +38,7 @@ public class ItemInput implements IInput
 	{
 		this.item = item;
 		this.size = size;
-		ingredient = Ingredient.of(item);
+		ingredient = Ingredient.of(new ItemStack(item, size));
 	}
 	
 	public ItemInput(ItemLike prov)

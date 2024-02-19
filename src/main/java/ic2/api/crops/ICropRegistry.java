@@ -1,6 +1,7 @@
 package ic2.api.crops;
 
 import java.util.List;
+import java.util.OptionalLong;
 
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
@@ -58,6 +59,8 @@ public abstract class ICropRegistry
 	 * @return the crop if it exists. Otherwise it returns null
 	 */
 	public abstract ICrop getCrop(ResourceLocation location);
+	
+	public abstract ICrop getRandomCrop(OptionalLong seed);
 	
 	/**
 	 * Get's the Crop of a Seed.

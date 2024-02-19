@@ -15,7 +15,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.crafting.CraftingHelper;
 
-public class ChanceRecipeOutput implements IRecipeOutput
+public class ChanceRecipeOutput implements IRecipeOutputChance
 {
 	List<ItemStack> outputs = new ObjectArrayList<>();
 	float chance;
@@ -75,6 +75,12 @@ public class ChanceRecipeOutput implements IRecipeOutput
 		return rand.nextFloat() < overrides.getChance(chance) ? IRecipeOutput.copyItems(outputs) : Collections.emptyList();
 	}
 	
+	@Override
+	public float getChance() 
+	{
+		return chance; 
+	}
+
 	@Override
 	public List<ItemStack> getAllOutputs()
 	{

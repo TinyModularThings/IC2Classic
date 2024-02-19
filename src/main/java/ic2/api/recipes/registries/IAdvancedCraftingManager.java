@@ -14,21 +14,26 @@ public interface IAdvancedCraftingManager extends IListenableRegistry<IAdvancedC
 	void addShapedRecipe(ResourceLocation location, ItemStack output, Object... args);
 	void addShapelessRecipe(ResourceLocation location, ItemStack output, Object... args);
 	void addRepairRecipe(ResourceLocation id, IRepairable repair, IInput repairMaterial, int effect, Object... args);
+	void removeCraftingRecipe(ResourceLocation id);
+	
 	
 	default void addIC2SmeltingRecipe(String location, ItemStack output, Object input, SmeltingType... types) {addIC2SmeltingRecipe(location, output, input, 0F, types);}
-	default void addIC2SmeltingRecipe(String location, ItemStack output, Object input, float xp, SmeltingType... types) {addIC2SmeltingRecipe(location, output, input, 0F, 1F, types);}
+	default void addIC2SmeltingRecipe(String location, ItemStack output, Object input, float xp, SmeltingType... types) {addIC2SmeltingRecipe(location, output, input, xp, 1F, types);}
 	default void addIC2SmeltingRecipe(String location, ItemStack output, Object input, float xp, float extraTime, SmeltingType... types) {addSmeltingRecipe(new ResourceLocation("ic2", location), output, input, xp, extraTime, types);}
 	
 	default void addSmeltingRecipe(ResourceLocation location, ItemStack output, Object input, SmeltingType... types) {addSmeltingRecipe(location, output, input, 0F, types);}
 	
 	default void addSmeltingRecipe(ResourceLocation location, ItemStack output, Object input, float xp, SmeltingType... types) {addSmeltingRecipe(location, output, input, xp, 1F, types);}
 	void addSmeltingRecipe(ResourceLocation location, ItemStack output, Object input, float xp, float extraTime, SmeltingType... types);
+	void removeSmeltingRecipe(ResourceLocation id, SmeltingType...types);
 	
 	void addStoneCutterRecipe(ResourceLocation location, ItemStack output, Object input);
 	default void addStoneCutterIC2Recipe(String location, ItemStack output, Object input) {addStoneCutterRecipe(new ResourceLocation("ic2", location), output, input);}
+	void removeStoneCutterRecipe(ResourceLocation id);
 	
 	void addSmithingRecipe(ResourceLocation location, Object main, Object secondary, ItemStack output);
 	default void addSmithingIC2Recipe(String location, Object main, Object secondary, ItemStack output) { addSmithingRecipe(new ResourceLocation("ic2", location), main, secondary, output);}
+	void removeSmithingRecipe(ResourceLocation id);
 	
 	enum SmeltingType
 	{

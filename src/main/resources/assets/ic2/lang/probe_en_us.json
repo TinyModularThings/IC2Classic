@@ -30,7 +30,7 @@
 	"ic2.probe.crop.info.growth": "Growth: %1$s/%2$s",
 	"ic2.probe.crop.info.gain": "Gain: %1$s/%2$s",
 	"ic2.probe.crop.info.resistance": "Resist.: %1$s/%2$s",
-	"ic2.probe.crop.info.needs": "Needs: ~%1$s/%2$s",
+	"ic2.probe.crop.info.needs": "Stress: ~%1$s/%2$s",
 	"ic2.probe.crop.info.scan": "Scan: %1$s/%2$s",
 	"ic2.probe.crop.info.fertilizer": "Fertilizer: %1$s/%2$s",
 	"ic2.probe.crop.info.water": "Water: %1$s/%2$s",
