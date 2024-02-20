@@ -30,7 +30,7 @@
 	"ic2.probe.crop.info.growth": "Зростання: %1$s/%2$s",
 	"ic2.probe.crop.info.gain": "Прибуток: %1$s/%2$s",
 	"ic2.probe.crop.info.resistance": "Опір: %1$s/%2$s",
-	"ic2.probe.crop.info.needs": "Необхідно: ~%1$s/%2$s",
+	"ic2.probe.crop.info.needs": "Стрес: ~%1$s/%2$s",
 	"ic2.probe.crop.info.scan": "Сканування: %1$s/%2$s",
 	"ic2.probe.crop.info.fertilizer": "Добрива: %1$s/%2$s",
 	"ic2.probe.crop.info.water": "Вода: %1$s/%2$s",
