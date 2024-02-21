@@ -19,7 +19,7 @@
 	"ic2.probe.progress.material.name": "Матеріалу: %s / 1000",
 	"ic2.probe.scrap.chance.name": "Верогідність утилізації: %s%%",
 	"ic2.probe.crop.grow.not": "Не росте",
-	"ic2.probe.crop.grow.rate": "~ Час зростання: %s",
+	"ic2.probe.crop.grow.rate": "Час зростання: ~ %s",
 	"ic2.probe.crop.growth": "Зростання",
 	"ic2.probe.crop.stats": "Показники",
 	"ic2.probe.crop.storage": "Сховище",
