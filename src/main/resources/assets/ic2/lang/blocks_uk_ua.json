@@ -1,7 +1,7 @@
 {
   "block.ic2.adjustable_luminator": "Регульований освітлювач",
   "block.ic2.advanced_comparator": "Покращений компаратор",
-  "block.ic2.advanced_machine_block": "Покращений машинний блок",
+  "block.ic2.advanced_machine_block": "Покращений машинний корпус",
   "block.ic2.alloy_smelter": "Сплавна піч",
   "block.ic2.aluminium_block": "Алюмінієвий блок",
   "block.ic2.aluminium_cable": "Алюмінієвий кабель",
@@ -390,7 +390,7 @@
   "block.ic2.speed_tube": "Швидкісна труба",
   "block.ic2.splitter_cable": "Кабель розгалужувача",
   "block.ic2.splitter_pipe": "Розгалужувачева рідинна труба",
-  "block.ic2.stabilized_machine_block": "Стабілізований машиний блок",
+  "block.ic2.stabilized_machine_block": "Стабілізований машинний корпус",
   "block.ic2.stacking_tube": "Складальна труба",
   "block.ic2.steam_chamber": "Парова камера",
   "block.ic2.steam_reactor": "Паровий реактор",
