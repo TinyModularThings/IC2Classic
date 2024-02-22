@@ -586,7 +586,7 @@
   "info.crop.ic2.plant.placement_error.not_compatible": "Невідповідні умови для вирощування цієї культури",
   "info.crop.ic2.plant.placement_error.not_compatible.land": "Ця рослина не може рости на землі",
   "info.crop.ic2.plant.placement_error.not_compatible.water": "Ця рослина не може рости у воді",
-  "info.crop.ic2.plant.placement_error.not_enough": "Недостатньо насіння для посадки цієї культури. (%s)",
+  "info.crop.ic2.plant.placement_error.not_enough": "Недостатньо насіння для сівання цієї культури. (%s)",
   "info.crop.ic2.plant.placement_error.nutrients.nutrients": "%s Поживних речовин",
   "info.crop.ic2.plant.placement_error.quality": "%1$s %2$s якість",
   "info.crop.ic2.plant.placement_error.water": "Вода",
