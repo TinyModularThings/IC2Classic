@@ -4,7 +4,7 @@
 	"ic2.probe.eu.output.name": "Вироблення: %s EU/т",
 	"ic2.probe.eu.output.current.name": "Вироблення: %s EU/т",
 	"ic2.probe.eu.storage.name": "Енергії: %s EU",
-	"ic2.probe.eu.max_in.name": "Макс. Споживання: %s EU",
+	"ic2.probe.eu.max_in.name": "Макс. Вхід: %s EU",
 	"ic2.probe.eu.usage.name": "Споживання: %s EU/т",
 	"ic2.probe.eu.suffix.name": " EU",
 	"ic2.probe.steam.output.name": "Виробництво Пари: %s mB/т",
