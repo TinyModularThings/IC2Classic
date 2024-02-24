@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 import com.google.gson.JsonObject;
 
+import ic2.api.recipes.ingridients.generators.IOutputGenerator;
 import ic2.api.recipes.ingridients.inputs.IInput;
 import ic2.api.recipes.ingridients.queue.IStackOutput;
 import ic2.api.recipes.ingridients.recipes.IFluidRecipeOutput;
@@ -23,6 +24,8 @@ public interface IIngredientRegistry
 	
 	void registerQueue(ResourceLocation location, Class<? extends IStackOutput> clz, Function<CompoundTag, IStackOutput> creator);
 	
+	void registerOutputGenerators(ResourceLocation location, Class<? extends IOutputGenerator> clz, Function<JsonObject, IOutputGenerator> creator);
+	
 	void writeInput(IInput input, FriendlyByteBuf buffer);
 	void writeRecipeOutput(IRecipeOutput output, FriendlyByteBuf buffer);
 	void writeFluidOutput(IFluidRecipeOutput output, FriendlyByteBuf buffer);
@@ -36,9 +39,11 @@ public interface IIngredientRegistry
 	IInput readInput(JsonObject obj);
 	IRecipeOutput readOutput(JsonObject obj);
 	IFluidRecipeOutput readFluidOutput(JsonObject obj);
+	IOutputGenerator readOutputGenerator(JsonObject obj);
 	
 	IInput createInputFrom(Object obj);
 	JsonObject serializeInput(IInput input);
 	JsonObject serializeOutput(IRecipeOutput output);
 	JsonObject serializeFluidOutput(IFluidRecipeOutput output);
+	JsonObject serializeOutputGenerator(IOutputGenerator generator);
 }

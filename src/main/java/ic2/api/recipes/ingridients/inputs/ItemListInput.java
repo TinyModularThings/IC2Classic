@@ -169,7 +169,7 @@ public class ItemListInput implements IInput
 		JsonArray array = new JsonArray();
 		for(ItemStack stack : list)
 		{
-			array.add(IInput.writeItemStack(stack));
+			array.add(IInput.writeItemStack(stack, false));
 		}
 		JsonObject obj = new JsonObject();
 		obj.add("items", array);

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.google.gson.JsonObject;
 
+import ic2.api.recipes.ingridients.generators.IOutputGenerator;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.RandomSource;
@@ -23,17 +24,17 @@ public class SawMillOutput extends SimpleRecipeOutput
 		super(buffer);
 	}
 	
-	public SawMillOutput(List<ItemStack> outputs)
+	public SawMillOutput(List<IOutputGenerator> outputs)
 	{
 		super(outputs);
 	}
 	
-	public SawMillOutput(List<ItemStack> outputs, float xp)
+	public SawMillOutput(List<IOutputGenerator> outputs, float xp)
 	{
 		super(outputs, xp);
 	}
 	
-	public SawMillOutput(List<ItemStack> outputs, CompoundTag nbt, float xp)
+	public SawMillOutput(List<IOutputGenerator> outputs, CompoundTag nbt, float xp)
 	{
 		super(outputs, nbt, xp);
 	}

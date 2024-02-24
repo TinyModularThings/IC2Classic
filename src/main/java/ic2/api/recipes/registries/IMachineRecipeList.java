@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 import ic2.api.recipes.RecipeRegistry;
+import ic2.api.recipes.ingridients.generators.ItemWithNBTGenerator;
 import ic2.api.recipes.ingridients.inputs.IInput;
 import ic2.api.recipes.ingridients.inputs.INullableInput;
 import ic2.api.recipes.ingridients.recipes.ChanceRecipeOutput;
@@ -22,14 +23,14 @@ public interface IMachineRecipeList extends IListenableRegistry<IMachineRecipeLi
 	
 	default void addRecipe(ResourceLocation id, IRecipeOutput output, IInput... inputs){addRecipe(new RecipeEntry(id, output, inputs));}
 	
-	default void addSimpleRecipe(ResourceLocation id, ItemStack output, Object... inputs){addRecipe(id, new SimpleRecipeOutput(ObjectLists.singleton(output)), inputs);}
-	default void addSimpleRecipe(ResourceLocation id, ItemStack output, CompoundTag data, Object... inputs){addRecipe(id, new SimpleRecipeOutput(ObjectLists.singleton(output), data), inputs);}
-	default void addXPRecipe(ResourceLocation id, ItemStack output, float xp, Object... inputs){addRecipe(id, new SimpleRecipeOutput(ObjectLists.singleton(output), xp), inputs);}
-	default void addXPRecipe(ResourceLocation id, ItemStack output, float xp, CompoundTag data, Object... inputs){addRecipe(id, new SimpleRecipeOutput(ObjectLists.singleton(output), data, xp), inputs);}
-	default void addChanceRecipe(ResourceLocation id, ItemStack output, float xp, float chance, Object... inputs){addRecipe(id, new ChanceRecipeOutput(ObjectLists.singleton(output), xp, chance), inputs);}
-	default void addChanceRecipe(ResourceLocation id, ItemStack output, float xp, float chance, CompoundTag data, Object... inputs){addRecipe(id, new ChanceRecipeOutput(ObjectLists.singleton(output), xp, data, chance), inputs);}
-	default void addRangeRecipe(ResourceLocation id, ItemStack output, int minValue, int maxValue, Object... inputs){addRecipe(id, new RangeRecipeOutput(output, minValue, maxValue), inputs);}
-	default void addRangeRecipe(ResourceLocation id, ItemStack output, int minValue, int maxValue, CompoundTag data, Object... inputs){addRecipe(id, new RangeRecipeOutput(output, data, minValue, maxValue), inputs);}
+	default void addSimpleRecipe(ResourceLocation id, ItemStack output, Object... inputs){addRecipe(id, new SimpleRecipeOutput(ObjectLists.singleton(new ItemWithNBTGenerator(output, output.getCount()))), inputs);}
+	default void addSimpleRecipe(ResourceLocation id, ItemStack output, CompoundTag data, Object... inputs){addRecipe(id, new SimpleRecipeOutput(ObjectLists.singleton(new ItemWithNBTGenerator(output, output.getCount())), data), inputs);}
+	default void addXPRecipe(ResourceLocation id, ItemStack output, float xp, Object... inputs){addRecipe(id, new SimpleRecipeOutput(ObjectLists.singleton(new ItemWithNBTGenerator(output, output.getCount())), xp), inputs);}
+	default void addXPRecipe(ResourceLocation id, ItemStack output, float xp, CompoundTag data, Object... inputs){addRecipe(id, new SimpleRecipeOutput(ObjectLists.singleton(new ItemWithNBTGenerator(output, output.getCount())), data, xp), inputs);}
+	default void addChanceRecipe(ResourceLocation id, ItemStack output, float xp, float chance, Object... inputs){addRecipe(id, new ChanceRecipeOutput(ObjectLists.singleton(new ItemWithNBTGenerator(output, output.getCount())), xp, chance), inputs);}
+	default void addChanceRecipe(ResourceLocation id, ItemStack output, float xp, float chance, CompoundTag data, Object... inputs){addRecipe(id, new ChanceRecipeOutput(ObjectLists.singleton(new ItemWithNBTGenerator(output, output.getCount())), xp, data, chance), inputs);}
+	default void addRangeRecipe(ResourceLocation id, ItemStack output, int minValue, int maxValue, Object... inputs){addRecipe(id, new RangeRecipeOutput(new ItemWithNBTGenerator(output, output.getCount()), minValue, maxValue), inputs);}
+	default void addRangeRecipe(ResourceLocation id, ItemStack output, int minValue, int maxValue, CompoundTag data, Object... inputs){addRecipe(id, new RangeRecipeOutput(new ItemWithNBTGenerator(output, output.getCount()), data, minValue, maxValue), inputs);}
 	default void addRecipe(ResourceLocation id, IRecipeOutput output, Object... inputs){addRecipe(id, output, convertInputs(inputs));}
 	
 	default void addIC2SimpleRecipe(String id, ItemStack output, Object... inputs){addSimpleRecipe(new ResourceLocation("ic2", id), output, inputs);}

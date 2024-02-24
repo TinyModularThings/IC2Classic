@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.google.gson.JsonObject;
 
+import ic2.api.recipes.RecipeRegistry;
+import ic2.api.recipes.ingridients.generators.IOutputGenerator;
 import ic2.api.recipes.ingridients.inputs.IInput;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectLists;
@@ -11,9 +13,8 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.crafting.CraftingHelper;
 
-public class RangeRecipeOutput implements IRecipeOutput
+public class RangeRecipeOutput extends BaseRecipeOutput
 {
 	CompoundTag nbt;
 	ItemStack output;
@@ -22,7 +23,9 @@ public class RangeRecipeOutput implements IRecipeOutput
 	
 	public RangeRecipeOutput(JsonObject obj)
 	{
-		output = CraftingHelper.getItemStack(obj.getAsJsonObject("output"), true);
+		IOutputGenerator generator = RecipeRegistry.INGREDIENTS.readOutputGenerator(obj.getAsJsonObject("output"));
+		generator.addItems(T -> output = T);
+		generators.add(generator);
 		minValue = obj.get("minOut").getAsInt();
 		maxValue = obj.get("maxOut").getAsInt();
 		if(obj.has("nbt")) nbt = IInput.readNBT(obj.get("nbt").getAsString());
@@ -35,16 +38,18 @@ public class RangeRecipeOutput implements IRecipeOutput
 		maxValue = buffer.readByte();
 	}
 	
-	public RangeRecipeOutput(ItemStack output, int minValue, int maxValue)
+	public RangeRecipeOutput(IOutputGenerator output, int minValue, int maxValue)
 	{
-		this.output = output.copy();
+		output.addItems(T -> this.output = T);
+		generators.add(output);
 		this.minValue = minValue;
 		this.maxValue = maxValue;
 	}
 	
-	public RangeRecipeOutput(ItemStack output, CompoundTag nbt, int minValue, int maxValue)
+	public RangeRecipeOutput(IOutputGenerator output, CompoundTag nbt, int minValue, int maxValue)
 	{
-		this.output = output.copy();
+		output.addItems(T -> this.output = T);
+		generators.add(output);
 		this.nbt = nbt;
 		this.minValue = minValue;
 		this.maxValue = maxValue;
@@ -96,7 +101,7 @@ public class RangeRecipeOutput implements IRecipeOutput
 	public JsonObject serialize()
 	{
 		JsonObject obj = new JsonObject();
-		obj.add("output", IInput.writeItemStack(output));
+		obj.add("output", RecipeRegistry.INGREDIENTS.serializeOutputGenerator(generators.get(0)));
 		obj.addProperty("minOut", minValue);
 		obj.addProperty("maxOut", maxValue);
 		if(nbt != null && nbt != EMPTY_COMPOUND)

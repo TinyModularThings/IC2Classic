@@ -614,6 +614,7 @@
   "tooltip.item.ic2.light.enable": "Light Source Enabled",
   "tooltip.item.ic2.light.name": "Toggle the Light Source",
   "tooltip.item.ic2.memory_stick.clear": "Clear the Stored Recipes",
+  "tooltip.item.ic2.memory_stick.setup": "Stored Setup: %s",
   "tooltip.item.ic2.mining_laser.error.no_target": "No Target Found",
   "tooltip.item.ic2.mining_laser.error.steep": "Angle Too Steep",
   "tooltip.item.ic2.mining_laser.mode": "Mode: %s",
@@ -630,6 +631,7 @@
   "tooltip.item.ic2.mining_remote.location.refuel": "Refuel Position: %s",
   "tooltip.item.ic2.mining_remote.location.refuel_set": "Set Refuel Position to: %s",
   "tooltip.item.ic2.mining_remote.location.rocket_miner": "Rocket Miner\nAt: %1$s,\nRelative %2$s (%3$s Blocks)\n",
+  "tooltip.item.ic2.mining_remote.location.to_close": "Rocket Miner is 5 blocks or closer on a 5 Block Axis. Miner remote is the refuel station not the starting location",
   "tooltip.item.ic2.module_energy_shield": "Toggle the Visibility of the Overlay",
   "tooltip.item.ic2.module_energy_shield.disable": "Energy Shield only active on Hurt",
   "tooltip.item.ic2.module_energy_shield.enable": "Energy Shield always Active",
@@ -754,6 +756,7 @@
   "tooltip.item.ic2.upgrade.usage.mul": "Extra Energy Usage: %s%%",
   "tooltip.item.ic2.upgrade_container.invalid": "%1$sx %2$s (Disabled)",
   "tooltip.item.ic2.upgrade_container.valid": "%1$sx %2$s (Applied)",
+  "tooltip.item.ic2.upgrade_transformer.disabled": "Disabled due to Easy mode",
   "tooltip.item.ic2.weedex.refill": "Refills on depletion if grin powder in inventory",
   "tooltip.item.ic2.wiki.block_click": "open the page of said Block in the wiki"
 }
