@@ -16,7 +16,7 @@ public class ItemStackInput implements IInput
 	
 	public ItemStackInput(JsonObject obj)
 	{
-		input = CraftingHelper.getItemStack(obj.getAsJsonObject("item"), true);
+		input = CraftingHelper.getItemStack(obj, true);
 		size = obj.get("size").getAsInt();
 	}
 	
@@ -65,8 +65,7 @@ public class ItemStackInput implements IInput
 	@Override
 	public JsonObject serialize()
 	{
-		JsonObject obj = new JsonObject();
-		obj.add("item", IInput.writeItemStack(input));
+		JsonObject obj = IInput.writeItemStack(input, false);
 		obj.addProperty("size", size);
 		return obj;
 	}

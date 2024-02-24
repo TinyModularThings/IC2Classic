@@ -4,6 +4,9 @@ import java.util.List;
 
 import com.google.gson.JsonObject;
 
+import ic2.api.recipes.RecipeRegistry;
+import ic2.api.recipes.ingridients.generators.EmptyGenerator;
+import ic2.api.recipes.ingridients.generators.IOutputGenerator;
 import ic2.api.recipes.ingridients.inputs.IInput;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectLists;
@@ -11,10 +14,9 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.fluids.FluidStack;
 
-public class RangeFluidOutput implements IRecipeOutput, IFluidRecipeOutput
+public class RangeFluidOutput extends BaseRecipeOutput implements IFluidRecipeOutput
 {
 	CompoundTag nbt;
 	ItemStack output;
@@ -26,7 +28,9 @@ public class RangeFluidOutput implements IRecipeOutput, IFluidRecipeOutput
 	
 	public RangeFluidOutput(JsonObject obj)
 	{
-		output = CraftingHelper.getItemStack(obj.getAsJsonObject("output"), true);
+		IOutputGenerator generator = RecipeRegistry.INGREDIENTS.readOutputGenerator(obj.getAsJsonObject("output"));
+		generator.addItems(T -> output = T);
+		generators.add(generator);
 		minValue = obj.get("minOut").getAsInt();
 		maxValue = obj.get("maxOut").getAsInt();
 		fluidOutput = IInput.readFluidStack(obj.getAsJsonObject("fluidOutput"));
@@ -45,17 +49,19 @@ public class RangeFluidOutput implements IRecipeOutput, IFluidRecipeOutput
 		maxFluid = buffer.readVarInt();
 	}
 	
-	public RangeFluidOutput(ItemStack output, int minValue, int maxValue)
+	public RangeFluidOutput(IOutputGenerator output, int minValue, int maxValue)
 	{
-		this.output = output.copy();
+		output.addItems(T -> this.output = T);
+		generators.add(output);
 		this.minValue = minValue;
 		this.maxValue = maxValue;
 		this.fluidOutput = FluidStack.EMPTY;
 	}
 	
-	public RangeFluidOutput(ItemStack output, int minValue, int maxValue, CompoundTag nbt)
+	public RangeFluidOutput(IOutputGenerator output, int minValue, int maxValue, CompoundTag nbt)
 	{
-		this.output = output.copy();
+		output.addItems(T -> this.output = T);
+		generators.add(output);
 		this.nbt = nbt;
 		this.minValue = minValue;
 		this.maxValue = maxValue;
@@ -65,6 +71,7 @@ public class RangeFluidOutput implements IRecipeOutput, IFluidRecipeOutput
 	public RangeFluidOutput(FluidStack fluidOutput, int minFluid, int maxFluid)
 	{
 		this.output = ItemStack.EMPTY;
+		generators.add(EmptyGenerator.EMPTY);
 		this.fluidOutput = fluidOutput.copy();
 		this.minFluid = minFluid;
 		this.maxFluid = maxFluid;
@@ -73,15 +80,17 @@ public class RangeFluidOutput implements IRecipeOutput, IFluidRecipeOutput
 	public RangeFluidOutput(FluidStack fluidOutput, int minFluid, int maxFluid, CompoundTag nbt)
 	{
 		this.output = ItemStack.EMPTY;
+		generators.add(EmptyGenerator.EMPTY);
 		this.nbt = nbt;
 		this.fluidOutput = fluidOutput.copy();
 		this.minFluid = minFluid;
 		this.maxFluid = maxFluid;
 	}
 	
-	public RangeFluidOutput(ItemStack output, int minValue, int maxValue, FluidStack fluidOutput, int minFluid, int maxFluid)
+	public RangeFluidOutput(IOutputGenerator output, int minValue, int maxValue, FluidStack fluidOutput, int minFluid, int maxFluid)
 	{
-		this.output = output.copy();
+		output.addItems(T -> this.output = T);
+		generators.add(output);
 		this.minValue = minValue;
 		this.maxValue = maxValue;
 		this.fluidOutput = fluidOutput.copy();
@@ -89,9 +98,10 @@ public class RangeFluidOutput implements IRecipeOutput, IFluidRecipeOutput
 		this.maxFluid = maxFluid;
 	}
 	
-	public RangeFluidOutput(ItemStack output, int minValue, int maxValue, FluidStack fluidOutput, int minFluid, int maxFluid, CompoundTag nbt)
+	public RangeFluidOutput(IOutputGenerator output, int minValue, int maxValue, FluidStack fluidOutput, int minFluid, int maxFluid, CompoundTag nbt)
 	{
-		this.output = output.copy();
+		output.addItems(T -> this.output = T);
+		generators.add(output);
 		this.nbt = nbt;
 		this.minValue = minValue;
 		this.maxValue = maxValue;
@@ -190,7 +200,7 @@ public class RangeFluidOutput implements IRecipeOutput, IFluidRecipeOutput
 	public JsonObject serialize()
 	{
 		JsonObject obj = new JsonObject();
-		obj.add("output", IInput.writeItemStack(output));
+		obj.add("output", RecipeRegistry.INGREDIENTS.serializeOutputGenerator(generators.get(0)));
 		obj.addProperty("minOut", minValue);
 		obj.addProperty("maxOut", maxValue);
 		obj.add("fluidOutput", IInput.writeFluidStack(fluidOutput));

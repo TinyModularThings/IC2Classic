@@ -5,6 +5,7 @@ import java.util.Map;
 
 import ic2.api.blocks.wrench.BaseWrenchHandler;
 import ic2.api.blocks.wrench.ChestWrenchHandler;
+import ic2.api.blocks.wrench.DispenserWrenchHandler;
 import ic2.api.blocks.wrench.HopperWrenchHandler;
 import ic2.api.blocks.wrench.HorizontalWrenchHandler;
 import ic2.api.blocks.wrench.InvertedHorizontalWrenchHandler;
@@ -151,6 +152,7 @@ public interface IWrenchable
 					Blocks.ACACIA_LOG, Blocks.BIRCH_LOG, Blocks.DARK_OAK_LOG, Blocks.JUNGLE_LOG, Blocks.OAK_LOG, Blocks.SPRUCE_LOG,
 					Blocks.STRIPPED_ACACIA_LOG, Blocks.STRIPPED_BIRCH_LOG, Blocks.STRIPPED_DARK_OAK_LOG, Blocks.STRIPPED_JUNGLE_LOG, Blocks.STRIPPED_OAK_LOG, Blocks.STRIPPED_SPRUCE_LOG
 			);
+			registerWrenchHandler(DispenserWrenchHandler.INSTANCE, Blocks.DISPENSER, Blocks.DROPPER);
 			registerWrenchHandler(HopperWrenchHandler.INSTANCE, Blocks.HOPPER);
 			for(Block block : ForgeRegistries.BLOCKS)
 			{

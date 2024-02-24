@@ -55,11 +55,13 @@ public interface IInput
 	void serialize(FriendlyByteBuf buffer);
 	JsonObject serialize();
 	
-	static JsonObject writeItemStack(ItemStack stack)
+	static JsonObject writeItemStack(ItemStack stack, boolean includeSize)
 	{
 		JsonObject obj = new JsonObject();
 		obj.addProperty("item", ForgeRegistries.ITEMS.getKey(stack.getItem()).toString());
-		obj.addProperty("count", stack.getCount());
+		if(includeSize) {
+			obj.addProperty("count", stack.getCount());
+		}
 		if(stack.hasTag()) {
 			obj.addProperty("nbt", stack.getTag().toString());
 		}

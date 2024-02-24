@@ -15,9 +15,17 @@ public interface ITeleporterTarget extends ILocation
 	enum TeleportType
 	{
 		ENTITY,
+		SPAWNER,
 		ITEM,
 		FLUID,
 		ENERGY,
-		NOTHING
+		NOTHING;
+		
+		public boolean matches(TeleportType other)
+		{
+			if(other == SPAWNER) return this == ENTITY;
+			if(this == SPAWNER) return other == ENTITY;
+			return this == other;
+		}
 	}
 }

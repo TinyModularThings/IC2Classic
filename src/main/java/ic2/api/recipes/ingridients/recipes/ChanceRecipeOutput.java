@@ -7,15 +7,16 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import ic2.api.recipes.RecipeRegistry;
+import ic2.api.recipes.ingridients.generators.IOutputGenerator;
 import ic2.api.recipes.ingridients.inputs.IInput;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.crafting.CraftingHelper;
 
-public class ChanceRecipeOutput implements IRecipeOutput
+public class ChanceRecipeOutput extends BaseRecipeOutput implements IRecipeOutputChance
 {
 	List<ItemStack> outputs = new ObjectArrayList<>();
 	float chance;
@@ -32,7 +33,11 @@ public class ChanceRecipeOutput implements IRecipeOutput
 		}
 		for(JsonElement el : obj.getAsJsonArray("outputs"))
 		{
-			outputs.add(CraftingHelper.getItemStack(el.getAsJsonObject(), true));
+			IOutputGenerator generator = RecipeRegistry.INGREDIENTS.readOutputGenerator(el.getAsJsonObject());
+			if(generator != null) {
+				generators.add(generator);
+				generator.addItems(outputs::add);
+			}
 		}
 	}
 	
@@ -48,17 +53,17 @@ public class ChanceRecipeOutput implements IRecipeOutput
 		xp = buffer.readFloat();
 	}
 
-	public ChanceRecipeOutput(List<ItemStack> outputs, float xp, CompoundTag nbt, float chance)
+	public ChanceRecipeOutput(List<IOutputGenerator> outputs, float xp, CompoundTag nbt, float chance)
 	{
-		this.outputs.addAll(outputs);
+		handleGenerators(outputs, this.outputs);
 		this.chance = chance;
 		this.nbt = nbt;
 		this.xp = xp;
 	}
 	
-	public ChanceRecipeOutput(List<ItemStack> outputs, float xp, float chance)
+	public ChanceRecipeOutput(List<IOutputGenerator> outputs, float xp, float chance)
 	{
-		this.outputs = outputs;
+		handleGenerators(outputs, this.outputs);
 		this.chance = chance;
 		this.xp = xp;
 	}
@@ -75,6 +80,12 @@ public class ChanceRecipeOutput implements IRecipeOutput
 		return rand.nextFloat() < overrides.getChance(chance) ? IRecipeOutput.copyItems(outputs) : Collections.emptyList();
 	}
 	
+	@Override
+	public float getChance() 
+	{
+		return chance; 
+	}
+
 	@Override
 	public List<ItemStack> getAllOutputs()
 	{
@@ -114,8 +125,8 @@ public class ChanceRecipeOutput implements IRecipeOutput
 		obj.addProperty("xp", xp);
 		if(nbt != null && nbt != EMPTY_COMPOUND) obj.addProperty("nbt", nbt.toString());
 		JsonArray array = new JsonArray();
-		for(ItemStack stack : outputs) {
-			array.add(IInput.writeItemStack(stack));
+		for(IOutputGenerator stack : generators) {
+			array.add(RecipeRegistry.INGREDIENTS.serializeOutputGenerator(stack));
 		}
 		obj.add("outputs", array);
 		return obj;

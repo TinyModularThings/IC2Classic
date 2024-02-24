@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
+import ic2.api.recipes.ingridients.generators.IOutputGenerator;
 import ic2.api.recipes.ingridients.inputs.EmptyInput;
 import ic2.api.recipes.ingridients.inputs.IInput;
 import ic2.api.recipes.ingridients.inputs.ItemInput;
@@ -177,17 +178,17 @@ public interface IRefiningRecipeList extends IListenableRegistry<IRefiningRecipe
 			return this;
 		}
 		
-		public void buildSimple(ItemStack output)
+		public void buildSimple(IOutputGenerator output)
 		{
 			registry.addRecipe(id, firstInput, secondInput, catalyst, new SimpleFluidOutput(ObjectLists.singleton(output), data));			
 		}
 		
-		public void buildSimple(ItemStack output, FluidStack...fluidOutputs)
+		public void buildSimple(IOutputGenerator output, FluidStack...fluidOutputs)
 		{
 			registry.addRecipe(id, firstInput, secondInput, catalyst, new SimpleFluidOutput(ObjectLists.singleton(output), ObjectArrayList.wrap(fluidOutputs), data));			
 		}
 		
-		public void buildSimple(ItemStack...itemOutputs)
+		public void buildSimple(IOutputGenerator...itemOutputs)
 		{
 			registry.addRecipe(id, firstInput, secondInput, catalyst, new SimpleFluidOutput(ObjectArrayList.wrap(itemOutputs), data));			
 		}
@@ -197,12 +198,12 @@ public interface IRefiningRecipeList extends IListenableRegistry<IRefiningRecipe
 			registry.addRecipe(id, firstInput, secondInput, catalyst, new SimpleFluidOutput(Collections.emptyList(), ObjectArrayList.wrap(fluidOutputs), data));			
 		}
 		
-		public void buildSimple(List<ItemStack> itemOutputs, List<FluidStack> fluidOutputs)
+		public void buildSimple(List<IOutputGenerator> itemOutputs, List<FluidStack> fluidOutputs)
 		{
 			registry.addRecipe(id, firstInput, secondInput, catalyst, new SimpleFluidOutput(itemOutputs, fluidOutputs, data));
 		}
 		
-		public void buildRange(ItemStack itemOutput, int minItem, int maxItem)
+		public void buildRange(IOutputGenerator itemOutput, int minItem, int maxItem)
 		{
 			registry.addRecipe(id, firstInput, secondInput, catalyst, new RangeFluidOutput(itemOutput, minItem, maxItem, data));
 		}
@@ -212,7 +213,7 @@ public interface IRefiningRecipeList extends IListenableRegistry<IRefiningRecipe
 			registry.addRecipe(id, firstInput, secondInput, catalyst, new RangeFluidOutput(fluidOutput, minFluid, maxFluid, data));			
 		}
 		
-		public void buildRange(ItemStack itemOutput, int minItem, int maxItem, FluidStack fluidOutput, int minFluid, int maxFluid)
+		public void buildRange(IOutputGenerator itemOutput, int minItem, int maxItem, FluidStack fluidOutput, int minFluid, int maxFluid)
 		{
 			registry.addRecipe(id, firstInput, secondInput, catalyst, new RangeFluidOutput(itemOutput, minItem, maxItem, fluidOutput, minFluid, maxFluid, data));
 		}
