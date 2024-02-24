@@ -192,7 +192,7 @@
   "item.ic2.rare_earth_chunk": "Рідкоземельний чанк",
   "item.ic2.dust_silver": "Срібний пил",
   "item.ic2.dust_tin": "Олов'яний пил",
-  "item.ic2.dynamite_remote": "Пульт дистанційної детонації",
+  "item.ic2.dynamite_remote": "Детонатор",
   "item.ic2.empty_lingering_potion": "Порожнє осідаюче зілля", 
   "item.ic2.empty_splash_potion": "Порожнє вибухове зілля",
   "item.ic2.energy_crystal": "Енергетичний кристал",
@@ -614,6 +614,7 @@
   "tooltip.item.ic2.light.enable": "Джерело світла: Увімкнено",
   "tooltip.item.ic2.light.name": "Перемикання джерела світла",
   "tooltip.item.ic2.memory_stick.clear": "Очистити збережені рецепти",
+  "tooltip.item.ic2.memory_stick.setup": "Збережена рецепти: %s",
   "tooltip.item.ic2.mining_laser.error.no_target": "Ціль не знайдено",
   "tooltip.item.ic2.mining_laser.error.steep": "Кут занадто крутий",
   "tooltip.item.ic2.mining_laser.mode": "Режим: %s",
@@ -630,6 +631,7 @@
   "tooltip.item.ic2.mining_remote.location.refuel": "Позиція дозаправки: %s",
   "tooltip.item.ic2.mining_remote.location.refuel_set": "Встановити позицію дозаправки на: %s",
   "tooltip.item.ic2.mining_remote.location.rocket_miner": "Ракетний гірник\nAt: %1$s,\nВідносно %2$s (%3$s Блоків)\n",
+  "tooltip.item.ic2.mining_remote.location.to_close": "Ракетный гірник знаходиться на відстані 5 блоків або ближче. Дистанційний гірник це заправна станція, а не стартова локація",
   "tooltip.item.ic2.module_energy_shield": "Перемкнути видимість накладання",
   "tooltip.item.ic2.module_energy_shield.disable": "Енергетичний щит Активний лише при отриманні урону",
   "tooltip.item.ic2.module_energy_shield.enable": "Енергетичний щит завжди Активний",
@@ -754,6 +756,7 @@
   "tooltip.item.ic2.upgrade.usage.mul": "Додаткове використання енергії: %s%%",
   "tooltip.item.ic2.upgrade_container.invalid": "%1$sx %2$s (Вимкнено)",
   "tooltip.item.ic2.upgrade_container.valid": "%1$sx %2$s (Застосовано)",
+  "tooltip.item.ic2.upgrade_transformer.disabled": "Цю річ вимкнено у Легкому режимі",
   "tooltip.item.ic2.weedex.refill": "Поповнюється при закінченні, якщо в інвентарі є Ґербіцид",
   "tooltip.item.ic2.wiki.block_click": "відкрити сторінку цього блоку у вікі"
 }
