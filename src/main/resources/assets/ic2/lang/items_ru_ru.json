@@ -614,6 +614,7 @@
   "tooltip.item.ic2.light.enable": "Источник света включен",
   "tooltip.item.ic2.light.name": "Переключить источник света",
   "tooltip.item.ic2.memory_stick.clear": "Очистить сохраненные рецепты",
+  "tooltip.item.ic2.memory_stick.setup": "Сохраненная схема: %s",
   "tooltip.item.ic2.mining_laser.error.no_target": "Цель не найдена",
   "tooltip.item.ic2.mining_laser.error.steep": "Слишком крутой угол",
   "tooltip.item.ic2.mining_laser.mode": "Режим: %s",
@@ -630,6 +631,7 @@
   "tooltip.item.ic2.mining_remote.location.refuel": "Позиция заправки: %s",
   "tooltip.item.ic2.mining_remote.location.refuel_set": "Установить положение дозаправки: %s",
   "tooltip.item.ic2.mining_remote.location.rocket_miner": "Ракетный шахтер\nВ: %1$s,\nОтносительно %2$s (%3$s блоков)\n",
+  "tooltip.item.ic2.mining_remote.location.to_close": "Ракетный шахтер находится на расстоянии 5 блоков или ближе. Шахтерский пульт это заправочная станция, а не стартовая локация",
   "tooltip.item.ic2.module_energy_shield": "Переключить видимость наложения",
   "tooltip.item.ic2.module_energy_shield.disable": "Энергетический щит активен только при ранении",
   "tooltip.item.ic2.module_energy_shield.enable": "Энергетический щит всегда активен",
@@ -754,6 +756,7 @@
   "tooltip.item.ic2.upgrade.usage.mul": "Дополнительное потребление энергии: %s%%",
   "tooltip.item.ic2.upgrade_container.invalid": "%1$sx %2$s (отключено)",
   "tooltip.item.ic2.upgrade_container.valid": "%1$sx %2$s (применено)",
+  "tooltip.item.ic2.upgrade_transformer.disabled": "Этот предмет отключен в Лёгком режиме",
   "tooltip.item.ic2.weedex.refill": "Пополняется при истощении, если измельчить порошок в инвентаре",
   "tooltip.item.ic2.wiki.block_click": "открыть страницу данного блока в вики"
 }
