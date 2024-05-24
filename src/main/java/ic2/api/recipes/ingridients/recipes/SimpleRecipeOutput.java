@@ -6,15 +6,16 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import ic2.api.recipes.RecipeRegistry;
+import ic2.api.recipes.ingridients.generators.IOutputGenerator;
 import ic2.api.recipes.ingridients.inputs.IInput;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.crafting.CraftingHelper;
 
-public class SimpleRecipeOutput implements IRecipeOutput
+public class SimpleRecipeOutput extends BaseRecipeOutput
 {
 	protected List<ItemStack> outputs = new ObjectArrayList<>();
 	protected CompoundTag nbt;
@@ -29,7 +30,11 @@ public class SimpleRecipeOutput implements IRecipeOutput
 		}
 		for(JsonElement el : obj.getAsJsonArray("outputs"))
 		{
-			outputs.add(CraftingHelper.getItemStack(el.getAsJsonObject(), true));
+			IOutputGenerator generator = RecipeRegistry.INGREDIENTS.readOutputGenerator(el.getAsJsonObject());
+			if(generator != null) {
+				generators.add(generator);
+				generator.addItems(outputs::add);
+			}
 		}
 	}
 	
@@ -44,26 +49,26 @@ public class SimpleRecipeOutput implements IRecipeOutput
 		xp = buffer.readFloat();
 	}
 	
-	public SimpleRecipeOutput(List<ItemStack> outputs)
+	public SimpleRecipeOutput(List<IOutputGenerator> outputs)
 	{
-		this.outputs.addAll(outputs);
+		handleGenerators(outputs, this.outputs);
 	}
 	
-	public SimpleRecipeOutput(List<ItemStack> outputs, CompoundTag nbt)
+	public SimpleRecipeOutput(List<IOutputGenerator> outputs, CompoundTag nbt)
 	{
-		this.outputs.addAll(outputs);
+		handleGenerators(outputs, this.outputs);
 		this.nbt = nbt;
 	}
 	
-	public SimpleRecipeOutput(List<ItemStack> outputs, float xp)
+	public SimpleRecipeOutput(List<IOutputGenerator> outputs, float xp)
 	{
-		this.outputs.addAll(outputs);
+		handleGenerators(outputs, this.outputs);
 		this.xp = xp;
 	}
 	
-	public SimpleRecipeOutput(List<ItemStack> outputs, CompoundTag nbt, float xp)
+	public SimpleRecipeOutput(List<IOutputGenerator> outputs, CompoundTag nbt, float xp)
 	{
-		this.outputs.addAll(outputs);
+		handleGenerators(outputs, this.outputs);
 		this.nbt = nbt;
 		this.xp = xp;
 	}
@@ -111,8 +116,8 @@ public class SimpleRecipeOutput implements IRecipeOutput
 		obj.addProperty("xp", xp);
 		if(nbt != null && nbt != EMPTY_COMPOUND) obj.addProperty("nbt", nbt.toString());
 		JsonArray array = new JsonArray();
-		for(ItemStack stack : outputs) {
-			array.add(IInput.writeItemStack(stack));
+		for(IOutputGenerator stack : generators) {
+			array.add(RecipeRegistry.INGREDIENTS.serializeOutputGenerator(stack));
 		}
 		obj.add("outputs", array);
 		return obj;

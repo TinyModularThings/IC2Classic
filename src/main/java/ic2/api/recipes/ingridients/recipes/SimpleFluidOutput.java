@@ -6,6 +6,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import ic2.api.recipes.ingridients.generators.IOutputGenerator;
 import ic2.api.recipes.ingridients.inputs.IInput;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.nbt.CompoundTag;
@@ -18,45 +19,45 @@ public class SimpleFluidOutput extends SimpleRecipeOutput implements IFluidRecip
 {
 	List<FluidStack> fluidOutputs = new ObjectArrayList<>();
 	
-	public SimpleFluidOutput(List<ItemStack> outputs)
+	public SimpleFluidOutput(List<IOutputGenerator> outputs)
 	{
 		super(outputs);
 	}
 	
-	public SimpleFluidOutput(List<ItemStack> outputs, List<FluidStack> fluidOutputs)
+	public SimpleFluidOutput(List<IOutputGenerator> outputs, List<FluidStack> fluidOutputs)
 	{
 		super(outputs);
 		this.fluidOutputs.addAll(fluidOutputs);
 	}
 	
-	public SimpleFluidOutput(List<ItemStack> outputs, CompoundTag nbt)
+	public SimpleFluidOutput(List<IOutputGenerator> outputs, CompoundTag nbt)
 	{
 		super(outputs, nbt);
 	}
 	
-	public SimpleFluidOutput(List<ItemStack> outputs, List<FluidStack> fluidOutputs, CompoundTag nbt)
+	public SimpleFluidOutput(List<IOutputGenerator> outputs, List<FluidStack> fluidOutputs, CompoundTag nbt)
 	{
 		super(outputs, nbt);
 		this.fluidOutputs.addAll(fluidOutputs);
 	}
 	
-	public SimpleFluidOutput(List<ItemStack> outputs, float xp)
+	public SimpleFluidOutput(List<IOutputGenerator> outputs, float xp)
 	{
 		super(outputs, xp);
 	}
 	
-	public SimpleFluidOutput(List<ItemStack> outputs, List<FluidStack> fluidOutputs, float xp)
+	public SimpleFluidOutput(List<IOutputGenerator> outputs, List<FluidStack> fluidOutputs, float xp)
 	{
 		super(outputs, xp);
 		this.fluidOutputs.addAll(fluidOutputs);
 	}
 	
-	public SimpleFluidOutput(List<ItemStack> outputs, CompoundTag nbt, float xp)
+	public SimpleFluidOutput(List<IOutputGenerator> outputs, CompoundTag nbt, float xp)
 	{
 		super(outputs, nbt, xp);
 	}
 	
-	public SimpleFluidOutput(List<ItemStack> outputs, List<FluidStack> fluidOutputs, CompoundTag nbt, float xp)
+	public SimpleFluidOutput(List<IOutputGenerator> outputs, List<FluidStack> fluidOutputs, CompoundTag nbt, float xp)
 	{
 		super(outputs, nbt, xp);
 		this.fluidOutputs.addAll(fluidOutputs);
