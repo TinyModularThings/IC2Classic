@@ -27,6 +27,7 @@
   "comparator.ic2.uu": "Хранилища UU-материи",
   "comparator.ic2.water_tank": "Резервуар воды",
   "comparator.ic2.working": "Работает",
+  "death.attack.electricity.player": "Убит Током",
   "death.attack.nuke": "Поражен ядерным взрывом",
   "death.attack.radiation": "Облучён до смерти",
   "effect.ic2.radiation": "Радиация",
