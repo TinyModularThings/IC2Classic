@@ -27,6 +27,7 @@
   "comparator.ic2.uu": "Stored UU-Matter",
   "comparator.ic2.water_tank": "Water Tank",
   "comparator.ic2.working": "Working",
+  "death.attack.electricity.player": "Electrocuted",
   "death.attack.nuke": "Hit by a Nuclear Blast",
   "death.attack.radiation": "Radiated to death",
   "effect.ic2.radiation": "Radiation",
