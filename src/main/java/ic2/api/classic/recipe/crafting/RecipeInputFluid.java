@@ -20,7 +20,6 @@ public class RecipeInputFluid implements ICustomRecipeInput
 	private static boolean init = false;
 	public final FluidStack fluid;
 	public final int stacksize;
-	private List<ItemStack> list = null;
 	
 	
 	public RecipeInputFluid(Fluid fluid)
@@ -64,11 +63,7 @@ public class RecipeInputFluid implements ICustomRecipeInput
 	@Override
 	public List<ItemStack> getInputs()
 	{
-		if(list == null)
-		{
-			list = getFluids();
-		}
-		return list;
+		return getList(fluid.getFluid());
 	}
 	
 	@Override
@@ -89,15 +84,15 @@ public class RecipeInputFluid implements ICustomRecipeInput
 		return null;
 	}
 
-	private List<ItemStack> getFluids()
-	{
-		List<ItemStack> list = new ArrayList<ItemStack>();
-		for(ItemStack stack : getList(fluid.getFluid()))
-		{
-			list.add(stack.copy());
-		}
-		return list;
-	}
+//	private List<ItemStack> getFluids()
+//	{
+//		List<ItemStack> list = new ArrayList<ItemStack>();
+//		for(ItemStack stack : getList(fluid.getFluid()))
+//		{
+//			list.add(stack.copy());
+//		}
+//		return list;
+//	}
 	
 	static List<ItemStack> getList(Fluid fluid)
 	{
@@ -119,13 +114,7 @@ public class RecipeInputFluid implements ICustomRecipeInput
 				FluidStack fluid = FluidUtil.getFluidContained(stack);
 				if(fluid != null)
 				{
-					List<ItemStack> resultList = map.get(fluid.getFluid());
-					if(resultList == null)
-					{
-						resultList = new ArrayList<ItemStack>();
-						map.put(fluid.getFluid(), resultList);
-					}
-					resultList.add(stack);
+					map.computeIfAbsent(fluid.getFluid(), T -> new ArrayList<>()).add(stack);
 				}
 			}
 		}
