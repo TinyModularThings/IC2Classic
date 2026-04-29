@@ -6,7 +6,7 @@ import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 
 import ic2.api.reactor.planner.SimulatedStack;
-import ic2.core.utils.collection.CollectionUtils;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectLists;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.FloatTag;
@@ -51,7 +51,7 @@ public interface IReactorPlannerComponent extends IReactorComponent
 	
 	public static class ComponentType
 	{
-		static final List<ComponentType> TYPES = ObjectLists.synchronize(CollectionUtils.createList());
+		static final List<ComponentType> TYPES = ObjectLists.synchronize(new ObjectArrayList<>());
 		public static final ComponentType FUEL_ROD = new ComponentType("gui.ic2.reactor_planner.component.fuel_rod");
 		public static final ComponentType COOLANT_CELL = new ComponentType("gui.ic2.reactor_planner.component.coolant_cell");
 		public static final ComponentType CONDENSATOR = new ComponentType("gui.ic2.reactor_planner.component.condensator");

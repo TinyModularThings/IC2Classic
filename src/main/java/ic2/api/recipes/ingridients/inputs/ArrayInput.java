@@ -9,7 +9,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import ic2.api.recipes.RecipeRegistry;
-import ic2.core.platform.recipes.misc.IngredientRegistry;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.item.ItemStack;
@@ -131,7 +130,7 @@ public class ArrayInput implements IInput
 		JsonArray array = new JsonArray();
 		for(IInput input : inputs)
 		{
-			array.add(IngredientRegistry.INSTANCE.serializeInput(input));
+			array.add(RecipeRegistry.INGREDIENTS.serializeInput(input));
 		}
 		JsonObject obj = new JsonObject();
 		obj.addProperty("size", stacksize);

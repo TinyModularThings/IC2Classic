@@ -271,6 +271,7 @@
   "gui.ic2.progress_card.progress": "Show progress",
   "gui.ic2.progress_card.progress_progress": "Show progress as bar",
   "gui.ic2.pump_charge": "Pump Charge: %1$s / %2$s",
+  "gui.ic2.pump_no_fluid": "No fluid found directly below",
   "gui.ic2.reactor.energy_output": "Output: %s eu",
   "gui.ic2.reactor.fluid_output": "Output: %s mB",
   "gui.ic2.reactor.filter": "Filter: ",
