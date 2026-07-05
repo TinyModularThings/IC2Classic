@@ -4,7 +4,7 @@ import java.util.function.BooleanSupplier;
 import java.util.function.Supplier;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Matrix3f;
+import org.joml.Matrix3f;
 
 import ic2.api.tiles.display.IDisplayInfo;
 import ic2.api.tiles.display.IMonitorRenderer;

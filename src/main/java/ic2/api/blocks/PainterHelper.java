@@ -174,9 +174,9 @@ public class PainterHelper
 			BlockEntity tileEntity = world.getBlockEntity(pos);
 			if(tileEntity instanceof SignBlockEntity) {
 				SignBlockEntity signEntity = (SignBlockEntity) tileEntity;
-				if(signEntity.getColor() != color)
+				if(getSignColor(signEntity) != color)
 				{
-					signEntity.setColor(color);
+					setSignColor(signEntity, color);
 				}
 				return true;
 			}
