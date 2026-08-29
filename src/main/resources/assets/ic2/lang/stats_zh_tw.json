@@ -2,6 +2,7 @@
   "stat.ic2.air_cells_used": "空氣單元使用次數",
   "stat.ic2.blocks_drilled": "電鑽鑽數",
   "stat.ic2.blocks_sawed": "鏈鋸鋸數",
+  "stat.ic2.blocks_lasered": "用雷射摧毀方塊次數",
   "stat.ic2.cable_shock_damage": "電纜損壞數",
   "stat.ic2.chainsaws_kills": "實體被鏈鋸殺死數",
   "stat.ic2.crops_breed": "複製的紋理數",
