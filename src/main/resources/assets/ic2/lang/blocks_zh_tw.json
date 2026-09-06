@@ -452,7 +452,7 @@
   "tooltip.block.ic2.barrel.unknown": "未知",
   "tooltip.block.ic2.barrel.water.stored": "水：%s / 32,000mB",
   "tooltip.block.ic2.basic_steam_turbine.fuel_boiler": "當連線到燃油鍋爐時至多額外發電%d EU/t",
-  "tooltip.block.ic2.capacity_pipe": "每刻可抽取更多流體",
+  "tooltip.block.ic2.capacity_pipe": "每 tick 可抽取更多流體",
   "tooltip.block.ic2.cfoam.light.disable": "建築泡沫停止發光",
   "tooltip.block.ic2.cfoam.light.enable": "建築泡沫開始發光",
   "tooltip.block.ic2.cfoam.redstone.disable": "建築泡沫停止脈動",

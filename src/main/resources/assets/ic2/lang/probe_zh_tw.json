@@ -125,7 +125,7 @@
   "ic2.probe.barrel.beer.glowstone.name": "螢光石：%s/20",
   "ic2.probe.barrel.whisky.grist.name": "麵粉：%s/16",
   "ic2.probe.barrel.whisky.years.name": "年份：%s/50",
-  "ic2.probe.crafter.delay": "製作延遲：%s 刻",
+  "ic2.probe.crafter.delay": "製作延遲：%s tick",
   "ic2.probe.crafter.crafts": "每次製作：%s",
   "ic2.probe.crafter.usage": "每次製作使用：%s",
   "ic2.probe.crop_library.type.name": "類型限制：%1$s/%2$s",
@@ -185,6 +185,6 @@
   "ic2.probe.redirector.slave.info": "%s%%份額",
   "ic2.probe.base_teleporter.connections": "連線：",
   "ic2.probe.villager_o_mat.usage": "每筆交易使用量：%sEU",
-  "ic2.probe.villager_o_mat.next": "下一交易：%s 刻",
+  "ic2.probe.villager_o_mat.next": "下一交易：%s tick",
   "item.ic2.electric_probe": "檢測器（裝備模組）"
 }
