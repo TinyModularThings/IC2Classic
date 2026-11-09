@@ -1,5 +1,6 @@
 package ic2.api.recipes.registries;
 
+import java.util.Set;
 import java.util.function.Function;
 
 import javax.annotation.Nullable;
@@ -14,6 +15,7 @@ import ic2.api.recipes.ingridients.recipes.IRecipeOutput;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 
 public interface IIngredientRegistry
 {
@@ -46,4 +48,6 @@ public interface IIngredientRegistry
 	JsonObject serializeOutput(IRecipeOutput output);
 	JsonObject serializeFluidOutput(IFluidRecipeOutput output);
 	JsonObject serializeOutputGenerator(IOutputGenerator generator);
+	
+	Set<ItemStack> createDeduplicationSet();
 }

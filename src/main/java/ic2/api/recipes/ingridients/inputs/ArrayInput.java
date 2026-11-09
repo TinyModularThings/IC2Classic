@@ -1,8 +1,8 @@
 package ic2.api.recipes.ingridients.inputs;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -17,12 +17,14 @@ public class ArrayInput implements IInput
 {
 	List<IInput> inputs = new ObjectArrayList<>();
 	boolean and;
+	boolean not;
 	int stacksize;
 	
 	public ArrayInput(JsonObject obj)
 	{
 		stacksize = obj.get("size").getAsInt();
 		and = obj.get("and").getAsBoolean();
+		not = obj.has("not") ? obj.get("not").getAsBoolean() : false;
 		for(JsonElement element : obj.getAsJsonArray("elements"))
 		{
 			IInput input = RecipeRegistry.INGREDIENTS.readInput(element.getAsJsonObject());
@@ -34,6 +36,7 @@ public class ArrayInput implements IInput
 	{
 		stacksize = buffer.readByte();
 		and = buffer.readBoolean();
+		not = buffer.readBoolean();
 		int size = buffer.readByte();
 		for(int i = 0;i<size;i++)
 		{
@@ -75,15 +78,26 @@ public class ArrayInput implements IInput
 		}
 	}
 	
+	public ArrayInput invert(boolean value) {
+		not = value;
+		return this;
+	}
+	
+	@Override
+	public boolean isInverted() {
+		return not; 
+	}
+	
 	@Override
 	public List<ItemStack> getComponents()
 	{
-		List<ItemStack> stacks = new ArrayList<>();
+		Set<ItemStack> stacks = RecipeRegistry.INGREDIENTS.createDeduplicationSet();
 		for(IInput input : inputs)
 		{
-			stacks.addAll(input.getComponents());
+			if(input.isInverted()) input.getComponents().forEach(stacks::remove);
+			else stacks.addAll(input.getComponents());
 		}
-		return stacks;
+		return new ObjectArrayList<>(stacks);
 	}
 	
 	@Override
@@ -101,15 +115,15 @@ public class ArrayInput implements IInput
 			{
 				if(!and)
 				{
-					return true;
+					return !not;
 				}
 			}
 			else if(and)
 			{
-				return false;
+				return not;
 			}
 		}
-		return and;
+		return and ? !not : not;
 	}
 	
 	@Override
@@ -117,6 +131,7 @@ public class ArrayInput implements IInput
 	{
 		buffer.writeByte(stacksize);
 		buffer.writeBoolean(and);
+		buffer.writeBoolean(not);
 		buffer.writeByte(inputs.size());
 		for(IInput input : inputs)
 		{
@@ -135,6 +150,7 @@ public class ArrayInput implements IInput
 		JsonObject obj = new JsonObject();
 		obj.addProperty("size", stacksize);
 		obj.addProperty("and", and);
+		obj.addProperty("not", not);
 		obj.add("elements", array);
 		return obj;
 	}

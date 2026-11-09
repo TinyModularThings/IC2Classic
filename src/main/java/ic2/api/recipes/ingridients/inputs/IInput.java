@@ -19,7 +19,7 @@ public interface IInput
 	default Ingredient asIngredient()
 	{
 		List<ItemStack> stacks = getComponents();
-		return Ingredient.of(stacks.toArray(new ItemStack[stacks.size()]));
+		return Ingredient.of(stacks.toArray(ItemStack[]::new));
 	}
 	
 	List<ItemStack> getComponents();
@@ -27,6 +27,10 @@ public interface IInput
 	int getInputSize();
 	
 	boolean matches(ItemStack stack);
+	
+	default boolean isInverted() {
+		return false;
+	}
 	
 	default boolean matchesAll(ItemStack... stacks)
 	{
@@ -63,6 +67,7 @@ public interface IInput
 			obj.addProperty("count", stack.getCount());
 		}
 		if(stack.hasTag()) {
+			//noinspection DataFlowIssue
 			obj.addProperty("nbt", stack.getTag().toString());
 		}
 		return obj;
@@ -122,6 +127,7 @@ public interface IInput
 		}
 		CompoundTag keyTag = subject.getTag();
 		CompoundTag valueTag = target.getTag();
+		//noinspection DataFlowIssue
 		if(keyTag.size() != valueTag.size())
 		{
 			return false;
@@ -130,7 +136,7 @@ public interface IInput
 		{
 			Tag subjectNBT = keyTag.get(entry);
 			Tag targetNBT = valueTag.get(entry);
-			if(targetNBT == null || subjectNBT.getId() != targetNBT.getId() || !subjectNBT.equals(targetNBT))
+			if(subjectNBT == null || targetNBT == null || subjectNBT.getId() != targetNBT.getId() || !subjectNBT.equals(targetNBT))
 			{
 				return false;
 			}
