@@ -1,7 +1,7 @@
 {
   "comparator.ic2.active": "작동",
   "comparator.ic2.air_speed": "공기 속도",
-  "comparator.ic2.brew.progres": "양조 진행 단계",
+  "comparator.ic2.brew.progress": "양조 진행 단계",
   "comparator.ic2.brew.stage": "양조 단계",
   "comparator.ic2.cell_filled_inventory": "채워진 셀 인벤토리",
   "comparator.ic2.cell_filled_slots": "채워진 셀 슬롯",
@@ -401,7 +401,7 @@
   "gui.ic2.tank.multi": "멀티 탱크: ",
   "gui.ic2.tank.no_fluid": "액체 없음",
   "gui.ic2.tank.simple": "액체 탱크: ",
-  "gui.ic2.teleport_tube.networkid": "네트워크 ID:",
+  "gui.ic2.teleport_tube.network_id": "네트워크 ID:",
   "gui.ic2.teleport_tube.receive": "수신",
   "gui.ic2.teleport_tube.send": "송신",
   "gui.ic2.teleport_valve.send": "밸브가 액체를 대상으로 밀어 넣습니다.",

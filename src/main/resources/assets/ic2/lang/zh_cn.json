@@ -1,7 +1,7 @@
 {
   "comparator.ic2.active": "激活的",
   "comparator.ic2.air_speed": "空气速度",
-  "comparator.ic2.brew.progres": "酿造阶段进度",
+  "comparator.ic2.brew.progress": "酿造阶段进度",
   "comparator.ic2.brew.stage": "酿造阶段",
   "comparator.ic2.cell_filled_inventory": "填充单元库存",
   "comparator.ic2.cell_filled_slots": "填充单元格子",
@@ -405,7 +405,7 @@
   "gui.ic2.tank.multi": "多储罐：",
   "gui.ic2.tank.no_fluid": "无流体",
   "gui.ic2.tank.simple": "流体储罐：",
-  "gui.ic2.teleport_tube.networkid": "网络ID:",
+  "gui.ic2.teleport_tube.network_id": "网络ID:",
   "gui.ic2.teleport_tube.receive": "接收",
   "gui.ic2.teleport_tube.send": "发送",
   "gui.ic2.teleport_valve.send": "阀门将流体推向目标",

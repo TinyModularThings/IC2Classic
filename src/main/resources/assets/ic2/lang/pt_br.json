@@ -1,7 +1,7 @@
 {
   "comparator.ic2.active": "Ativo",
   "comparator.ic2.air_speed": "Velocidade do Ar",
-  "comparator.ic2.brew.progres": "Progresso da Fase de Fermentação",
+  "comparator.ic2.brew.progress": "Progresso da Fase de Fermentação",
   "comparator.ic2.brew.stage": "Fase de Fermentação",
   "comparator.ic2.cell_filled_inventory": "Inventário de Células Cheio",
   "comparator.ic2.cell_filled_slots": "Espaços de Células Cheios",
@@ -415,7 +415,7 @@
   "gui.ic2.tank.multi": "Tanque Múltiplo: ",
   "gui.ic2.tank.no_fluid": "Sem Fluido",
   "gui.ic2.tank.simple": "Tanque de Fluido: ",
-  "gui.ic2.teleport_tube.networkid": "ID de Rede:",
+  "gui.ic2.teleport_tube.network_id": "ID de Rede:",
   "gui.ic2.teleport_tube.receive": "Receber",
   "gui.ic2.teleport_tube.send": "Enviar",
   "gui.ic2.teleport_valve.send": "Válvula empurra fluidos para o alvo",

@@ -1,7 +1,7 @@
 {
   "comparator.ic2.active": "Aktivní",
   "comparator.ic2.air_speed": "Rychlost vzduchu",
-  "comparator.ic2.brew.progres": "Brew Stage Progress",
+  "comparator.ic2.brew.progress": "Brew Stage Progress",
   "comparator.ic2.brew.stage": "Brew Stage",
   "comparator.ic2.cell_filled_inventory": "Filled Cell Inventory",
   "comparator.ic2.cell_filled_slots": "Filled Cell Slots",
@@ -411,7 +411,7 @@
   "gui.ic2.tank.multi": "Multi Tank: ",
   "gui.ic2.tank.no_fluid": "No Fluid",
   "gui.ic2.tank.simple": "Fluid Tank: ",
-  "gui.ic2.teleport_tube.networkid": "Network ID:",
+  "gui.ic2.teleport_tube.network_id": "Network ID:",
   "gui.ic2.teleport_tube.receive": "Receive",
   "gui.ic2.teleport_tube.send": "Send",
   "gui.ic2.teleport_valve.send": "Valve pushes fluids to target",

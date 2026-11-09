@@ -1,7 +1,7 @@
 {
   "comparator.ic2.active": "アクティブ",
   "comparator.ic2.air_speed": "風速",
-  "comparator.ic2.brew.progres": "醸造段階の進行度",
+  "comparator.ic2.brew.progress": "醸造段階の進行度",
   "comparator.ic2.brew.stage": "醸造段階",
   "comparator.ic2.cell_filled_inventory": "満たされたセルのインベントリ",
   "comparator.ic2.cell_filled_slots": "満たされたセルのスロット",
@@ -449,7 +449,7 @@
   "gui.ic2.tank.multi": "マルチタンク: ",
   "gui.ic2.tank.no_fluid": "液体なし",
   "gui.ic2.tank.simple": "液体タンク: ",
-  "gui.ic2.teleport_tube.networkid": "ネットワークID:",
+  "gui.ic2.teleport_tube.network_id": "ネットワークID:",
   "gui.ic2.teleport_tube.receive": "受信",
   "gui.ic2.teleport_tube.send": "送信",
   "gui.ic2.teleport_valve.receive": "バルブはターゲットから液体を受け取ります",

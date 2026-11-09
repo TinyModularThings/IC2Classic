@@ -1,7 +1,7 @@
 {
   "comparator.ic2.active": "Активный",
   "comparator.ic2.air_speed": "Скорость ветра",
-  "comparator.ic2.brew.progres": "Прогресс стадии варки",
+  "comparator.ic2.brew.progress": "Прогресс стадии варки",
   "comparator.ic2.brew.stage": "Стадия варки",
   "comparator.ic2.cell_filled_inventory": "Заполнено инвентарь ячейки",
   "comparator.ic2.cell_filled_slots": "Заполненные слоты ячейки",
@@ -412,7 +412,7 @@
   "gui.ic2.tank.multi": "Выходной бак: ",
   "gui.ic2.tank.no_fluid": "Нет жидкости",
   "gui.ic2.tank.simple": "Бак с жидкостью: ",
-  "gui.ic2.teleport_tube.networkid": "Идентификатор сети:",
+  "gui.ic2.teleport_tube.network_id": "Идентификатор сети:",
   "gui.ic2.teleport_tube.receive": "Принимать",
   "gui.ic2.teleport_tube.send": "Отправлять",
   "gui.ic2.teleport_valve.send": "Клапан выталкивает жидкости к цели",
